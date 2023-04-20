@@ -5,6 +5,7 @@ project:
 format:
   html:
     theme: www/web_report.scss
+    toc: true
 website:
   favicon: www/images/CPAL_favicon.ico
   description: Description of this web report.

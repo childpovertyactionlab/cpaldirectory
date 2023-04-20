@@ -1,5 +1,5 @@
 ---
-title: "Report Title"
+title: "Packages and Functions"
 title-block-banner: TRUE
 fig-width: 7
 fig-height: 5
@@ -9,30 +9,39 @@ echo: FALSE
 message: FALSE
 ---
 
-# Main Header
+## cpaldirectory
+Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.
 
-Here's some text for you.
-
-## Second Header
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+You can install the latest version of `cpaldirectory` from GitHub:
 
 ```{r}
-#| echo: TRUE
+# | echo = TRUE
 
-library(ggplot2)
-library(cpaltemplates)
-# mtcars dataset is natively available in R
-# head(mtcars)
- 
-# A basic scatterplot with color depending on Species
-ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
-  geom_point(size=2) +
-  theme_cpal() +
-  scale_color_cpal(theme = "factor") +
-  labs(title = "Chart Title")
+# install.packages("devtools")
+#devtools::install_github("childpovertyactionlab/cpaldirectory")
+```
+
+## cpaltemplates
+
+Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.
+
+You can install the latest version of `cpaltemplates` from GitHub:
+
+```{r}
+# | echo = TRUE
+
+# install.packages("devtools")
+#devtools::install_github("childpovertyactionlab/cpaltemplates")
+```
+
+## CPALtools 
+Soon to be depreciated and replaced with `cpaltools`. A package containing functions for analysis by CPAL Analytics team.
+
+You can install the latest version of `CPALtools` from GitHub:
+
+```{r}
+# | echo = TRUE
+
+# install.packages("devtools")
+#devtools::install_github("childpovertyactionlab/CPALtools")
 ```

@@ -40,5 +40,117 @@
     "title": "Home",
     "section": "Data Visualization",
     "text": "Data Visualization\nThis section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization."
+  },
+  {
+    "objectID": "dataviz.html#etl-packages",
+    "href": "dataviz.html#etl-packages",
+    "title": "Data Visualization",
+    "section": "ETL Packages",
+    "text": "ETL Packages\nIn R we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.\n\n\nReveal Code\nlibrary(tidyverse) # Hadley Wickham universe of packages\nlibrary(tidycensus) # Interaction with census API\nlibrary(googlesheets4) # Interaction with google ecosystem\nlibrary(sf) # Geographic analysis and data wrangling\nlibrary(arcgisbinding) # interaction with ArcGIS\nlibrary(tidygeocoder) # geocoding\nlibrary(tigris) # shapefiles"
+  },
+  {
+    "objectID": "dataviz.html#visualization-packages",
+    "href": "dataviz.html#visualization-packages",
+    "title": "Data Visualization",
+    "section": "Visualization Packages",
+    "text": "Visualization Packages\nIn R we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.\n\n\nReveal Code\nlibrary(cpaltemplates)\nlibrary(shiny) # dashboard tool\nlibrary(ggplot2) # visualization\nlibrary(leaflet) # interactive maps\nlibrary(leaflet.extras) # more map options\nlibrary(plotly) # interactive graphs\nlibrary(reactable) # interactive tables"
+  },
+  {
+    "objectID": "dataviz.html#ggplot2",
+    "href": "dataviz.html#ggplot2",
+    "title": "Data Visualization",
+    "section": "ggplot2",
+    "text": "ggplot2\n\nScatter Plot\n\n\nReveal Code\n# A basic scatterplot with color depending on Species\nggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + \n  geom_point(size=2) +\n  theme_cpal() +\n  scale_color_cpal(theme = \"factor\") +\n  labs(title = \"Chart Title\")\n\n\n\n\n\n\n\nLine Graph\n\n\nBar Graph\n\n\nHistogram\n\n\nFacet Graph\n\n\nMap"
+  },
+  {
+    "objectID": "dataviz.html#plotly",
+    "href": "dataviz.html#plotly",
+    "title": "Data Visualization",
+    "section": "plotly",
+    "text": "plotly"
+  },
+  {
+    "objectID": "dataviz.html#leaflet",
+    "href": "dataviz.html#leaflet",
+    "title": "Data Visualization",
+    "section": "leaflet",
+    "text": "leaflet\n\n\nReveal Code\n# A basic leaflet map\n\n#counties <- tigris::counties(state = \"TX\")\n\ndallas <- filter(counties, NAME == \"Dallas\")\n\nbbox <- dallas %>%\n      st_bbox(.) %>%\n      as.vector()\n\nleaflet(dallas) %>%\n  fitBounds(bbox[1], bbox[2], bbox[3], bbox[4]) %>%\n  addTiles(urlTemplate = cpal_mapbox, attribution = cpal_leaflet) %>%\n  addPolygons(weight = 1,     \n              opacity = 0.5,\n              color = \"#686158\",\n              fillOpacity = 0.1)"
+  },
+  {
+    "objectID": "packagesfunctions.html",
+    "href": "packagesfunctions.html",
+    "title": "Packages and Functions",
+    "section": "",
+    "text": "Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.\nYou can install the latest version of cpaldirectory from GitHub:"
+  },
+  {
+    "objectID": "packagesfunctions.html#cpaltemplates",
+    "href": "packagesfunctions.html#cpaltemplates",
+    "title": "Packages and Functions",
+    "section": "cpaltemplates",
+    "text": "cpaltemplates\nPrimary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.\nYou can install the latest version of cpaltemplates from GitHub:"
+  },
+  {
+    "objectID": "packagesfunctions.html#cpaltools",
+    "href": "packagesfunctions.html#cpaltools",
+    "title": "Packages and Functions",
+    "section": "CPALtools",
+    "text": "CPALtools\nSoon to be depreciated and replaced with cpaltools. A package containing functions for analysis by CPAL Analytics team.\nYou can install the latest version of CPALtools from GitHub:"
+  },
+  {
+    "objectID": "projectdirectory.html",
+    "href": "projectdirectory.html",
+    "title": "Project Directory",
+    "section": "",
+    "text": "Community Resource Explorer\nAfterschool Landscape Tool\nNorth Texas Social Mobility Hub"
+  },
+  {
+    "objectID": "projectdirectory.html#social-capital",
+    "href": "projectdirectory.html#social-capital",
+    "title": "Project Directory",
+    "section": "Social Capital",
+    "text": "Social Capital"
+  },
+  {
+    "objectID": "projectdirectory.html#birth-to-three",
+    "href": "projectdirectory.html#birth-to-three",
+    "title": "Project Directory",
+    "section": "Birth to Three",
+    "text": "Birth to Three"
+  },
+  {
+    "objectID": "projectdirectory.html#reproductive-health",
+    "href": "projectdirectory.html#reproductive-health",
+    "title": "Project Directory",
+    "section": "Reproductive Health",
+    "text": "Reproductive Health"
+  },
+  {
+    "objectID": "projectdirectory.html#benefits-delivery",
+    "href": "projectdirectory.html#benefits-delivery",
+    "title": "Project Directory",
+    "section": "Benefits Delivery",
+    "text": "Benefits Delivery"
+  },
+  {
+    "objectID": "projectdirectory.html#housing",
+    "href": "projectdirectory.html#housing",
+    "title": "Project Directory",
+    "section": "Housing",
+    "text": "Housing\nNorth Texas Evictions Project\nDallas ISD Campus Housing Profiles"
+  },
+  {
+    "objectID": "projectdirectory.html#violence-preventionsafety",
+    "href": "projectdirectory.html#violence-preventionsafety",
+    "title": "Project Directory",
+    "section": "Violence Prevention/Safety",
+    "text": "Violence Prevention/Safety\nDallas Police Department Incident Report"
+  },
+  {
+    "objectID": "projectdirectory.html#criminal-justice",
+    "href": "projectdirectory.html#criminal-justice",
+    "title": "Project Directory",
+    "section": "Criminal Justice",
+    "text": "Criminal Justice"
   }
 ]

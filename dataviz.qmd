@@ -1,5 +1,5 @@
 ---
-title: "Report Title"
+title: "Data Visualization"
 title-block-banner: TRUE
 fig-width: 7
 fig-height: 5
@@ -7,32 +7,90 @@ warning: FALSE
 error: TRUE
 echo: FALSE
 message: FALSE
+code-fold: TRUE
+code-summary: "Reveal Code"
+code-copy: hover
 ---
 
-# Main Header
+## Graphic Design Principles
 
-Here's some text for you.
-
-## Second Header
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## ETL Packages
+In `R` we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.
 
 ```{r}
 #| echo: TRUE
 
-library(ggplot2)
+library(tidyverse) # Hadley Wickham universe of packages
+library(tidycensus) # Interaction with census API
+library(googlesheets4) # Interaction with google ecosystem
+library(sf) # Geographic analysis and data wrangling
+library(arcgisbinding) # interaction with ArcGIS
+library(tidygeocoder) # geocoding
+library(tigris) # shapefiles
+```
+
+## Visualization Packages
+In `R` we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.
+
+```{r}
+#| echo: TRUE
+
 library(cpaltemplates)
-# mtcars dataset is natively available in R
-# head(mtcars)
- 
+library(shiny) # dashboard tool
+library(ggplot2) # visualization
+library(leaflet) # interactive maps
+library(leaflet.extras) # more map options
+library(plotly) # interactive graphs
+library(reactable) # interactive tables
+```
+
+## ggplot2
+### Scatter Plot
+```{r, Scatter Plot}
+#| echo: TRUE
 # A basic scatterplot with color depending on Species
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
   geom_point(size=2) +
   theme_cpal() +
   scale_color_cpal(theme = "factor") +
   labs(title = "Chart Title")
+```
+
+### Line Graph
+
+### Bar Graph
+
+### Histogram
+
+### Facet Graph
+
+### Map
+
+## plotly
+
+## leaflet
+```{r}
+#| include: FALSE
+counties <- tigris::counties(state = "TX")
+```
+```{r, Leaflet}
+#| echo: TRUE
+# A basic leaflet map
+
+#counties <- tigris::counties(state = "TX")
+
+dallas <- filter(counties, NAME == "Dallas")
+
+bbox <- dallas %>%
+      st_bbox(.) %>%
+      as.vector()
+
+leaflet(dallas) %>%
+  fitBounds(bbox[1], bbox[2], bbox[3], bbox[4]) %>%
+  addTiles(urlTemplate = cpal_mapbox, attribution = cpal_leaflet) %>%
+  addPolygons(weight = 1,     
+              opacity = 0.5,
+              color = "#686158",
+              fillOpacity = 0.1)
+
 ```
