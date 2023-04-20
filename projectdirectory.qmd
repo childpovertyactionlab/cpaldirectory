@@ -1,0 +1,38 @@
+---
+title: "Project Directory"
+title-block-banner: TRUE
+fig-width: 7
+fig-height: 5
+warning: FALSE
+error: TRUE
+echo: FALSE
+message: FALSE
+---
+
+## Strong Neighborhoods
+
+[Community Resource Explorer](https://dallasisd.resourceexplorer.org/)
+
+[Afterschool Landscape Tool](https://childpovertyactionlab.github.io/dallas-afterschool/)
+
+[North Texas Social Mobility Hub](https://socialmobilityhub.org/)
+
+## Social Capital
+
+## Birth to Three
+
+## Reproductive Health
+
+## Benefits Delivery
+
+## Housing
+
+[North Texas Evictions Project](https://northtexasevictions.org/)
+
+[Dallas ISD Campus Housing Profiles](https://cpal.shinyapps.io/disd-profiles/)
+
+## Violence Prevention/Safety
+
+[Dallas Police Department Incident Report](https://childpovertyactionlab.github.io/dpd-incident-report//)
+
+## Criminal Justice
