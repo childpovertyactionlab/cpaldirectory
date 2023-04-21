@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "CPAL Analytics"
 title-block-banner: TRUE
 fig-width: 7
 fig-height: 5
@@ -9,7 +9,7 @@ echo: FALSE
 message: FALSE
 ---
 
-## About
+## About Us
 
 This page and directory serve as a central hub for the Child Poverty Action Lab's internal analytics team to access and share information about completed projects, tools, and R packages. The directory is designed to help the team stay organized and informed about the different resources available, and to facilitate collaboration and knowledge-sharing among team members.
 
@@ -46,3 +46,7 @@ We understand that data doesn't exist in a vacuum and that historical context is
 **People-Centric**
 
 At the Child Poverty Action Lab, we understand that child poverty affects different individuals and communities in unique ways. That's why we include data on different races, ethnicities, incomes, and family structures to provide a nuanced understanding of child poverty. Ensuring that our data is people-centric and reflective of the diverse experiences of individuals and communities of Dallas
+
+## Contact Us
+
+For any questions 

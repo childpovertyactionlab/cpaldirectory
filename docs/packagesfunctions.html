@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -63,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -133,7 +196,36 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cpaldirectory" id="toc-cpaldirectory" class="nav-link active" data-scroll-target="#cpaldirectory">cpaldirectory</a></li>
+  <li><a href="#cpaltemplates" id="toc-cpaltemplates" class="nav-link" data-scroll-target="#cpaltemplates">cpaltemplates</a>
+  <ul>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <ul class="collapse">
+  <li><a href="#start-function" id="toc-start-function" class="nav-link" data-scroll-target="#start-function">start function</a></li>
+  <li><a href="#construct-functions" id="toc-construct-functions" class="nav-link" data-scroll-target="#construct-functions">construct functions</a></li>
+  <li><a href="#use-functions" id="toc-use-functions" class="nav-link" data-scroll-target="#use-functions">use functions</a></li>
+  <li><a href="#theme-functions" id="toc-theme-functions" class="nav-link" data-scroll-target="#theme-functions">theme functions</a></li>
+  <li><a href="#scale-functions" id="toc-scale-functions" class="nav-link" data-scroll-target="#scale-functions">scale functions</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">datasets</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#cpaltools" id="toc-cpaltools" class="nav-link" data-scroll-target="#cpaltools">cpaltools</a>
+  <ul>
+  <li><a href="#usage-1" id="toc-usage-1" class="nav-link" data-scroll-target="#usage-1">Usage</a>
+  <ul class="collapse">
+  <li><a href="#geo-functions" id="toc-geo-functions" class="nav-link" data-scroll-target="#geo-functions">Geo* functions</a></li>
+  <li><a href="#extract_-functions" id="toc-extract_-functions" class="nav-link" data-scroll-target="#extract_-functions">extract_* functions</a></li>
+  <li><a href="#get_-functions" id="toc-get_-functions" class="nav-link" data-scroll-target="#get_-functions">get_* functions</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -145,7 +237,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.</p>
 <p>You can install the latest version of <code>cpaldirectory</code> from GitHub:</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaldirectory")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cpaltemplates" class="level2">
@@ -153,18 +246,104 @@ ul.task-list li input[type="checkbox"] {
 <p>Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.</p>
 <p>You can install the latest version of <code>cpaltemplates</code> from GitHub:</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaltemplates")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="usage" class="level3">
+<h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<p><code>library(cpaltemplates)</code> contains six families of functions:</p>
+<p><code>start_project()</code> generates a new project with a .Rproj, README, and .gitignore at the specified location on a machine.</p>
+<p><code>construct_*()</code> functions add multiple, related templates and documents to a project directory or sub-directory. The templates and documents are related in important ways. For example, <code>construct_shiny()</code> adds <code>app.R</code> and an R Shiny specific CSS. It also adds instructions for using the selected template.</p>
+<p><code>use_*()</code> functions add individual templates and documents to a project directory or sub directory.</p>
+<p><code>theme</code> functions contain theme styling for various R outputs.</p>
+<p><code>scale_*()</code> functions generate color sets to be used in visualizations.</p>
+<p><code>data</code> datasets stored within package to keep consistency across CPAL workflows.</p>
+<section id="start-function" class="level4">
+<h4 class="anchored" data-anchor-id="start-function">start function</h4>
+<ul>
+<li><code>start_project()</code> Creates a set of folders and a new Rproj file within a specified directory. Folders included are <em>Scripts</em>, <em>Data</em>, and <em>Graphics</em> to house anything necessary for a new analysis.</li>
+</ul>
+</section>
+<section id="construct-functions" class="level4">
+<h4 class="anchored" data-anchor-id="construct-functions">construct functions</h4>
+<ul>
+<li><code>construct_shiny()</code> Generates an app.R file along with scss theme templates and images for a shiny dashboard with CPAL branding that can be uploaded to shinyapps.io.</li>
+<li><code>construct_web_report()</code> Generates a .qmd file along with _quarto.yml theme templates and images for a web report with CPAL branding that can be uploaded to github pages.</li>
+</ul>
+</section>
+<section id="use-functions" class="level4">
+<h4 class="anchored" data-anchor-id="use-functions">use functions</h4>
+<ul>
+<li><code>use_content()</code> Imports content from package templates folder into respective product types. Content such as CPAL branded images/logos.</li>
+<li><code>use_css()</code> Imports scss file where needed from package templates folder into respective product types such as web reports or fact sheets.</li>
+<li><code>use_git_ignore_cpal()</code> Generates a .gitignore file for use in files that will be uploaded to github.</li>
+<li><code>use_instructions()</code> Generates an instructions markdown document for respective product types to guide users on correct practices for use of web products.</li>
+<li><code>use_readme_cpal()</code>Generates a readme markdown document which should be filled out by user to provide necessary information project being completed.</li>
+<li><code>use_shiny_app()</code> Generates a new shiny app template for use alongside <code>construct_shiny()</code> function, when new app templates are needed.</li>
+<li><code>use_web_report()</code> Generates a new web report template for use alongside <code>construct_web_report()</code> function, when new app templates are needed.</li>
+</ul>
+</section>
+<section id="theme-functions" class="level4">
+<h4 class="anchored" data-anchor-id="theme-functions">theme functions</h4>
+<ul>
+<li><code>cpal_shiny</code> Theme to be used for all CPAL branded shiny dashboards. Shiny template already contains insertion of this function.</li>
+<li><code>theme_cpal</code> Used to provide a<code>ggplot2</code> for use across all CPAL branded plots.</li>
+</ul>
+</section>
+<section id="scale-functions" class="level4">
+<h4 class="anchored" data-anchor-id="scale-functions">scale functions</h4>
+<ul>
+<li><code>scale_fill_cpal()</code> Fill function used for <code>ggplot2</code> visualizations, contains three themes named <em>factor</em>, <em>diverge</em>, and <em>triad</em> that should be used with respective visualization type.</li>
+<li><code>scale_color_cpal()</code> Color function used for <code>ggplot2</code> visualizations, contains three themes named <em>factor</em>, <em>diverge</em>, and <em>triad</em> that should be used with respective visualization type.</li>
+</ul>
+</section>
+<section id="datasets" class="level4">
+<h4 class="anchored" data-anchor-id="datasets">datasets</h4>
+<ul>
+<li><code>acs_variables</code> Contains commonly used acs field tables which are consistently used when pulling data from the <code>tidycensus</code> package.</li>
+<li><code>ntx_county</code> Contains a named list of the eight surrounding counties around Dallas County.</li>
+<li><code>cpal_leaflet</code> Contains attribution information for leaflet maps.</li>
+<li><code>cpal_mapbox</code> Contains mapbox link for theming leaflet maps.</li>
+</ul>
+</section>
+</section>
 </section>
 <section id="cpaltools" class="level2">
-<h2 class="anchored" data-anchor-id="cpaltools">CPALtools</h2>
-<p>Soon to be depreciated and replaced with <code>cpaltools</code>. A package containing functions for analysis by CPAL Analytics team.</p>
+<h2 class="anchored" data-anchor-id="cpaltools">cpaltools</h2>
+<p>A package containing functions for analysis by CPAL Analytics team.</p>
 <p>You can install the latest version of <code>CPALtools</code> from GitHub:</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/CPALtools")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="usage-1" class="level3">
+<h3 class="anchored" data-anchor-id="usage-1">Usage</h3>
+<p><code>library(cpaltools)</code> contains three families of functions:</p>
+<p><code>Geo*</code> functions related to geographic interactions within data that are not currently available within commonly used GIS packages such as <code>sf</code>.</p>
+<p><code>extract_*</code> utility functions focused on extracting specific pieces of information from a string.</p>
+<p><code>get_*</code> loop functions related to downloading multiple years of data from various api’s such as <code>tidycensus</code></p>
+<section id="geo-functions" class="level4">
+<h4 class="anchored" data-anchor-id="geo-functions">Geo* functions</h4>
+<ul>
+<li><code>GeoIntersect()</code> Similar to the summarize within functionality within ArcGIS. Compares fields between two geography types and generates estimates between them.</li>
+</ul>
+</section>
+<section id="extract_-functions" class="level4">
+<h4 class="anchored" data-anchor-id="extract_-functions">extract_* functions</h4>
+<ul>
+<li><code>extract_zip()</code> Extracts the 5 digit zip code from a string address.</li>
+<li><code>extract_city()</code> Extracts a city name from a string address.</li>
+</ul>
+</section>
+<section id="get_-functions" class="level4">
+<h4 class="anchored" data-anchor-id="get_-functions">get_* functions</h4>
+<ul>
+<li><code>get_acs_years()</code> Pulls multiple years of data from the census api through <code>tidycensus</code> for specified fields, geographies, and years.</li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

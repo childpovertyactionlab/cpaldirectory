@@ -6,6 +6,7 @@ format:
   html:
     theme: www/web_report.scss
     toc: true
+    toc-depth: 4
 website:
   favicon: www/images/CPAL_favicon.ico
   description: Description of this web report.
