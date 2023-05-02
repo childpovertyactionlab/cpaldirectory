@@ -9,30 +9,234 @@ echo: FALSE
 message: FALSE
 ---
 
-## Strong Neighborhoods
+All projects listed in this directory contain a set of four icons describing what CPAL pillar, update cadence, intended audience, and product type the project is. 
+Additionally, projects are classified into one of three sections.
 
-[Community Resource Explorer](https://dallasisd.resourceexplorer.org/)
+- **Active:** A product that is currently being used by its intended audience and that contains an underlying infrastructure which needs to be updated at variance cadences.
 
-[Afterschool Landscape Tool](https://childpovertyactionlab.github.io/dallas-afterschool/)
+- **In Progress:** A product that is currently being developed or thought through which will be released within the next 6 months.
 
-[North Texas Social Mobility Hub](https://socialmobilityhub.org/)
+- **Deprecated:** A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.
 
-## Social Capital
+# Icon Key
+::: {.grid}
 
-## Birth to Three
+::: {.g-col-6}
++--------------------------------------------------------------------------+------------------------+
+| **Icon**                                                                 | **Pillar**             |
++:========================================================================:+:=======================+
+| {{< fa people-group size=lg title="Strong Neighborhoods" >}} <br>        | - Strong Neighborhoods |
+| {{< fa palette size=lg title="Social Capital" >}} <br>                   | - Social Capital       |
+| {{< fa baby-carriage size=lg title="Birth to Three" >}} <br>             | - Birth to Three       |
+| {{< fa person-breastfeeding size=lg title="Reproductive Health" >}} <br> | - Reproductive Health  |
+| {{< fa truck size=lg title="Benefits Delivery" >}} <br>                  | - Benefits Delivery    |
+| {{< fa house-chimney size=lg title="Housing" >}} <br>                    | - Housing              |
+| {{< fa shield size=lg title="Public Safety" >}} <br>                     | - Public Safety        |
+| {{< fa scale-balanced size=lg title="Criminal Justice" >}} <br>          | - Criminal Justice     |
++--------------------------------------------------------------------------+------------------------+
+: {tbl-colwidths="[30,70]"}
+:::
 
-## Reproductive Health
+::: {.g-col-6}
++--------------------------------------------------------------------------+------------------------+
+| **Icon**                                                                 | **Update Cadence**     |
++:========================================================================:+:=======================+
+| {{< fa calendar-day size=lg title="Daily" >}} <br>                       | - Daily                |
+| {{< fa calendar-week size=lg title="Weekly" >}} <br>                     | - Weekly               |
+| {{< fa calendar-days size=lg title="Monthly" >}} <br>                    | - Monthly              |
+| {{< fa calendar size=lg title="Quarterly" >}} <br>                       | - Quarterly            |
+| {{< fa calendar-plus size=lg title="Yearly" >}} <br>                     | - Yearly               |
+| {{< fa calendar-xmark size=lg title="Not Updated" >}} <br>               | - Not Updated          |
++--------------------------------------------------------------------------+------------------------+
+: {tbl-colwidths="[30,70]"}
+:::
 
-## Benefits Delivery
+::: {.g-col-6}
++--------------------------------------------------------------------------+------------------------+
+| **Icon**                                                                 | **Audience**           |
++:========================================================================:+:=======================+
+| {{< fa moon size=lg title="Internal" >}} <br>                            | - Internal             |
+| {{< fa sun size=lg title="External" >}} <br>                             | - External             |
+| {{< fa skull-crossbones size=lg title="Power User" >}} <br>              | - Power User           |
++--------------------------------------------------------------------------+------------------------+
+: {tbl-colwidths="[30,70]"}
+:::
 
-## Housing
+::: {.g-col-6}
++--------------------------------------------------------------------------+------------------------+
+| **Icon**                                                                 | **Product Type**       |
++:========================================================================:+:=======================+
+| {{< fa book size=lg title="Web Report" >}} <br>                          | - Web Report           |
+| {{< fa map size=lg title="Mapping Tool" >}} <br>                         | - Mapping Tool         |
+| {{< fa table-columns size=lg title="Dashboard" >}} <br>                  | - Dashboard            |
+| {{< fa sheet-plastic size=lg title="Fact Sheet" >}} <br>                 | - Fact Sheet           |
++--------------------------------------------------------------------------+------------------------+
+: {tbl-colwidths="[30,70]"}
+:::
 
-[North Texas Evictions Project](https://northtexasevictions.org/)
+:::
 
-[Dallas ISD Campus Housing Profiles](https://cpal.shinyapps.io/disd-profiles/)
+# Active
+::: {.grid}
+::: {.g-col-8}
+[**Dallas ISD Campus Housing Profiles (2023)**](https://cpal.shinyapps.io/disd-profiles/)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+This is a tool generated to give Dallas ISD information related to middle of the year moves and evictions in attendance zones for all school campuses.
+:::
+::: {.g-col-8}
+[**Trust Her Clinic Reimbursement (2023)**](NONE)
+:::
+::: {.g-col-4}
+{{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+A private tableau dashboard intended to help produce reimbursement estimates for Trust Her partner clinics.
+:::
+::: {.g-col-8}
+[**North Texas Evictions Project (2022)**](https://northtexasevictions.org/)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-week size=lg title="Weekly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+North Texas Evictions was developed with the intention of aiding advocacy partners in North Texas to blah, blah, blah.
+:::
+::: {.g-col-8}
+[**Daily Eviction Filings (2022)**](https://docs.google.com/spreadsheets/d/1qk6AYls47fg3L1k7d-Le4J3cSg5smGgXoaE7QQhAck4)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-day size=lg title="Daily" >}} {{< fa sun size=lg title="External" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+Spreadsheet shared with partner organizations containing new daily eviction case filings in Dallas County.
+:::
+::: {.g-col-8}
+[**North Texas Small-Area Fair Market Rent (2022)**](https://childpovertyactionlab.github.io/dmc-public-land/)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar size=lg title="Quarterly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+Comparison of current Small-Area Fair Market rent from HUD against the average rents for apartment complexes in North Texas across various bedroom sizes.
+:::
+::: {.g-col-8}
+[**Publicly Owned Land in Dallas County (2022)**](https://childpovertyactionlab.github.io/dmc-public-land/)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+Review of all publicly owned land in the City of Dallas by owner type. Intended to understand how much land owned by the City of Dallas is available for development.
+:::
+::: {.g-col-8}
+[**Afterschool Landscape Tool (2022)**](https://childpovertyactionlab.github.io/dallas-afterschool/) 
+:::
+::: {.g-col-4}
+{{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+An analysis generated for Dallas Afterschool intended to aid them in understanding the current landscape of after school programming need relative to programs they currently offer. 
+:::
+::: {.g-col-8}
+[**CUSP Housing Quality Analysis (2022)**](https://docs.google.com/document/d/1SSujyrh7k7_RKnqugQiP88RrJboafchf)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+An analysis generated by the NYU CUSP Team as a two semester program. The project was intended to review the state of housing quality in the City of Dallas and estimate need for housing repairs across City of Dallas Census Tracts. 
+:::
+::: {.g-col-8}
+[**Urban Blight Explorer (2022)**](https://cpal-urban-blight.surge.sh/)
+:::
+::: {.g-col-4}
+{{< fa shield size=lg title="Public Safety" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+Machine learning model of select neighborhoods in the City of Dallas intended to spot areas of blight across the city based on photos captured by a mobile photo car.
+:::
+::: {.g-col-8}
+[**Child Care Deserts (2022)**](https://public.tableau.com/app/profile/cpal/viz/TexasChildCareDesertsandCenters/ChildCareDeserts)
+:::
+::: {.g-col-4}
+{{< fa baby-carriage size=lg title="Birth to Three" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+Description
+:::
+::: {.g-col-8}
+[**Dallas Police Department Incident Report (2021)**](https://childpovertyactionlab.github.io/dpd-incident-report//)
+:::
+::: {.g-col-4}
+{{< fa shield size=lg title="Public Safety" >}} {{< fa calendar-week size=lg title="Weekly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+An online web report detailing violent gun crime in the City of Dallas using Incidents from the Open Data Portal.
+:::
+::: {.g-col-8}
+[**North Texas Social Mobility Hub (2021)**](https://socialmobilityhub.org/)
+:::
+::: {.g-col-4}
+{{< fa palette size=lg title="Social Capital" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+The Social Mobility Hub was developed in conjunction with UNTD in order to do a thing.
+:::
+::: {.g-col-8}
+[**Community Resource Explorer (2020)**](https://dallasisd.resourceexplorer.org/) 
+:::
+::: {.g-col-4}
+{{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+The Community Resource Explorer is a mapping tool first developed in 2020 in order to help allocate a 40 million dollar bond package to Dallas ISD Campuses.
+:::
+::: {.g-col-8}
+[**City of Dallas Lighting Analysis (2022)**](NONE)
+:::
+::: {.g-col-4}
+{{< fa shield size=lg title="Public Safety" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+An analysis reviewing areas of highest need and ROI for LED lighting improvements acrosss the City of Dallas.
+:::
+:::
 
-## Violence Prevention/Safety
+# In Progress
+::: {.grid}
+::: {.g-col-8}
+[**Birth Rate Explorer (2023)**](Link)
+:::
+::: {.g-col-4}
+{{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
+:::
+:::
 
-[Dallas Police Department Incident Report](https://childpovertyactionlab.github.io/dpd-incident-report//)
-
-## Criminal Justice
+# Deprecated
+::: {.grid}
+::: {.g-col-8}
+[**Teen Birth Rates (2022)**](https://public.tableau.com/app/profile/cpal/viz/THCICTeenBirths/TeenBirthRateinNorthTexas)
+:::
+::: {.g-col-4}
+{{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+A report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL.
+:::
+::: {.g-col-8}
+[**WIC Participation Report (2020)**](https://childpovertyactionlab.github.io/wic-participation-reports/)
+:::
+::: {.g-col-4}
+{{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+A report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL.
+:::
+:::

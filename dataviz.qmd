@@ -12,10 +12,158 @@ code-summary: "Reveal Code"
 code-copy: hover
 ---
 
+```{r}
+#| include: FALSE
+library(tidycensus)
+library(tidyverse)
+library(rio)
+library(sf)
+
+counties <- tigris::counties(state = "TX")
+
+yearsOld <- lst(2010, 2011)
+yearsNew <- lst(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021)
+
+acs_varOld <- c(
+  tot_pop = "S1703_C01_001", #total population
+  pop_u18 = "S1703_C01_004", #population under 18
+  pop_bp = "S1703_C03_001", #population below poverty
+  bp_u18 = "S1701_C02_002", #population under 18 below poverty
+  mhi = "S0501_C01_101", #median household income
+  rcb = "S0501_C01_137", #renter cost burden over 30%
+  ocb = "S0501_C01_134", #owner cost burden over 30%
+  rohh = "S0501_C01_135", #renter occupied households
+  oohh = "S0501_C01_132" #owner occupied households
+)
+
+acs_varNew <- c(
+  tot_pop = "S1701_C01_001", #total population
+  pop_u18 = "S1701_C01_002", #population under 18
+  pop_bp = "S1701_C02_001", #population below poverty
+  bp_u18 = "S1701_C02_002", #population under 18 below poverty
+  mhi = "S0501_C01_101", #median household income
+  rcb = "S0501_C01_137", #renter cost burden over 30%
+  ocb = "S0501_C01_134", #owner cost burden over 30%
+  rohh = "S0501_C01_135", #renter occupied households
+  oohh = "S0501_C01_132" #owner occupied households
+)
+
+##### Pull Data from 2010 to 2020 #####
+cpal_old <- map(
+  yearsOld,
+  ~get_acs(
+    geography = "place", 
+    variables = acs_varOld,
+    year = .x,
+    survey = "acs1", 
+    output = "wide"),
+  ) %>%
+  map2(yearsOld, ~mutate(.x, year = .y)) %>%
+  reduce(., rbind) %>%
+  mutate(NAME = str_replace(NAME, " city", "")) %>%
+  mutate(cbp = bp_u18E/pop_u18E,
+         bp = pop_bpE/100,
+         pop_bpE = bp*tot_popE,
+         #bp_u18E = cbp*pop_u18E,
+         pop_bpM = round(pop_bpE*(pop_bpM/100), digits = 0),
+         #bp_u18M = round(bp_u18E*(bp_u18M/100), digits = 0),
+         pop_bpE = round(pop_bpE, digits = 0),
+         #bp_u18E = round(bp_u18E, digits = 0)
+  )
+
+cpal_2020 <- get_acs(
+    geography = "place", 
+    variables = acs_varNew,
+    year = 2020, 
+    survey = "acs5", 
+    output = "wide") %>%
+  mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
+         bp = round(pop_bpE/tot_popE, digits = 4),
+         NAME = str_replace(NAME, " city", ""),
+         year = 2020)
+
+cpal_multi <- map(
+  yearsNew,
+  ~get_acs(
+    geography = "place", 
+    variables = acs_varNew,
+    year = .x, 
+    survey = "acs1", 
+    output = "wide"),
+  ) %>%
+  map2(yearsNew, ~mutate(.x, year = .y)) %>%
+  reduce(., rbind) %>%
+  mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
+         bp = round(pop_bpE/tot_popE, digits = 4),
+         NAME = str_replace(NAME, " city", ""))
+
+cpal_dallas <- get_acs(
+    geography = "tract", 
+    state = "TX",
+    county = "Dallas County",
+    variables = acs_varNew,
+    year = 2021, 
+    survey = "acs5", 
+    output = "wide") %>%
+  mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
+         bp = round(pop_bpE/tot_popE, digits = 4))
+
+##### Join into Complete Dataset #####
+cpal_comp <- rbind(cpal_old, cpal_multi) %>%
+  rbind(., cpal_2020) %>%
+  group_by(NAME) %>%
+  arrange(NAME, year) %>%
+  mutate(rcbE = rcbE/100,
+         ocbE = ocbE/100) %>%
+  mutate(cbp_diff = cbp-lag(cbp, n=1),
+         cbp_ave = (cbp+lag(cbp, n=1)+lag(cbp, n=2))/3,
+         cbp_avedif = cbp_ave-lag(cbp_ave, n=1),
+         
+         rcb_diff = rcbE-lag(rcbE, n=1),
+         rcb_ave = (rcbE+lag(rcbE, n=1)+lag(rcbE, n=2))/3,
+         rcb_avedif = rcb_ave-lag(rcb_ave, n=1),
+         
+         ocb_diff = ocbE-lag(ocbE, n=1),
+         ocb_ave = (ocbE+lag(ocbE, n=1)+lag(ocbE, n=2))/3,
+         ocb_avedif = ocb_ave-lag(ocb_ave, n=1)) %>%
+  ungroup() %>%
+  mutate(highlight=ifelse(NAME == "Dallas, Texas", "DAL", "NONE"),
+         year = as.Date(paste0(year, "-01-01")))
+
+##### Filter out multiple groups based on population size #####
+cpal_1mil <- cpal_comp %>%
+  group_by(NAME) %>%
+  filter(any(tot_popE >= 1000000)) %>%
+  mutate(CODE = ifelse(NAME == "Chicago, Illinois", "CHI", 
+                       ifelse(NAME == "Dallas, Texas", "DAL", 
+                              ifelse(NAME == "Houston, Texas", "HOU", 
+                                     ifelse(NAME == "Los Angeles, California", "LA", 
+                                            ifelse(NAME == "New York, New York", "NYC", 
+                                                   ifelse(NAME == "Philadelphia, Pennsylvania", "PHI", 
+                                                          ifelse(NAME == "Phoenix, Arizona", "PHO", 
+                                                                 ifelse(NAME == "San Antonio, Texas", "SATX", 
+                                                                        ifelse(NAME == "San Diego, California", "SD", 
+                                                                               ifelse(NAME == "San Jose, California", "SJ", "ERROR")))))))))))
+cpal_texas <- cpal_comp %>%
+  filter(str_detect(NAME, ", Texas")) %>%
+  group_by(NAME) %>%
+  filter(any(tot_popE >= 500000)) %>%
+  mutate(CITY = str_remove(NAME, ", Texas"))
+
+rm(cpal_old)
+rm(cpal_multi)
+rm(cpal_comp)
+rm(cpal_2020)
+rm(yearsNew)
+rm(yearsOld)
+
+```
+
+
 ## Graphic Design Principles
 
 ## ETL Packages
-In `R` we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.
+In `R` we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.
 
 ```{r}
 #| echo: TRUE
@@ -48,20 +196,69 @@ library(reactable) # interactive tables
 ### Scatter Plot
 ```{r, Scatter Plot}
 #| echo: TRUE
-# A basic scatterplot with color depending on Species
-ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+#| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income
+# A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income
+ggplot(cpal_1mil, aes(x=cbp, y=mhiE, color=highlight)) + 
   geom_point(size=2) +
   theme_cpal() +
+  labs(title = "Median Household Income vs Child Poverty Rate",
+       subtitle = "Cities Over 1,000,000 Population",
+       x = "Child Poverty Rate",
+       y = "Median Household Income") +
   scale_color_cpal(theme = "factor") +
-  labs(title = "Chart Title")
+  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +
+  scale_x_continuous(labels = scales::percent_format())
 ```
 
 ### Line Graph
-
+```{r, Line Plot}
+#| echo: TRUE
+#| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
+# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
+cpal_1mil %>%
+  filter(highlight == "DAL") %>%
+  ggplot(aes(x=year, y=cbp)) + 
+  geom_line(size = 2, color = "#008097") +
+  geom_point(size=3, color = "#008097") +
+  theme_cpal() +
+  labs(title = "Child Poverty Rate in the City of Dallas",
+       x = "Year",
+       y = "Child Poverty Rate") +
+  scale_color_cpal(theme = "factor") +
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y")
+```
 ### Bar Graph
+```{r, Bar Graph}
+#| echo: TRUE
+#| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
+# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
+cpal_1mil %>%
+  filter(year == as.Date("2021-01-01")) %>%
+  ggplot(aes(x=cbp, y=CODE)) + 
+  geom_bar(stat = "identity", size = 2, fill = "#008097", color = "#E7ECEE") +
+  theme_cpal() +
+  labs(title = "Child Poverty Rate in the City of Dallas",
+       x = "Year",
+       y = "Child Poverty Rate") +
+  scale_color_cpal(theme = "factor") +
+  scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))
+```
 
 ### Histogram
-
+```{r, Histogram}
+#| echo: TRUE
+#| fig-cap: A basic histogram visualizing 
+# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
+cpal_dallas %>%
+  ggplot(aes(x = pop_u18E)) + 
+  geom_histogram(colour="#E7ECEE", fill="#008097") +
+  geom_vline(aes(xintercept = mean(pop_u18E)), color="#E98816", linetype="dashed", size=1) +
+  theme_cpal() +
+  labs(title = "Histogram of Children Below Poverty in City of Dallas",
+       x = "Year",
+       y = "Child Poverty Rate")
+```
 ### Facet Graph
 
 ### Map
@@ -69,10 +266,6 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
 ## plotly
 
 ## leaflet
-```{r}
-#| include: FALSE
-counties <- tigris::counties(state = "TX")
-```
 ```{r, Leaflet}
 #| echo: TRUE
 # A basic leaflet map

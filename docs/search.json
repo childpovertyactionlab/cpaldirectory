@@ -46,7 +46,7 @@
     "href": "dataviz.html#etl-packages",
     "title": "Data Visualization",
     "section": "ETL Packages",
-    "text": "ETL Packages\nIn R we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.\n\n\nReveal Code\nlibrary(tidyverse) # Hadley Wickham universe of packages\nlibrary(tidycensus) # Interaction with census API\nlibrary(googlesheets4) # Interaction with google ecosystem\nlibrary(sf) # Geographic analysis and data wrangling\nlibrary(arcgisbinding) # interaction with ArcGIS\nlibrary(tidygeocoder) # geocoding\nlibrary(tigris) # shapefiles"
+    "text": "ETL Packages\nIn R we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.\n\n\nReveal Code\nlibrary(tidyverse) # Hadley Wickham universe of packages\nlibrary(tidycensus) # Interaction with census API\nlibrary(googlesheets4) # Interaction with google ecosystem\nlibrary(sf) # Geographic analysis and data wrangling\nlibrary(arcgisbinding) # interaction with ArcGIS\nlibrary(tidygeocoder) # geocoding\nlibrary(tigris) # shapefiles"
   },
   {
     "objectID": "dataviz.html#visualization-packages",
@@ -60,7 +60,7 @@
     "href": "dataviz.html#ggplot2",
     "title": "Data Visualization",
     "section": "ggplot2",
-    "text": "ggplot2\n\nScatter Plot\n\n\nReveal Code\n# A basic scatterplot with color depending on Species\nggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + \n  geom_point(size=2) +\n  theme_cpal() +\n  scale_color_cpal(theme = \"factor\") +\n  labs(title = \"Chart Title\")\n\n\n\n\n\n\n\nLine Graph\n\n\nBar Graph\n\n\nHistogram\n\n\nFacet Graph\n\n\nMap"
+    "text": "ggplot2\n\nScatter Plot\n\n\nReveal Code\n# A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income\nggplot(cpal_1mil, aes(x=cbp, y=mhiE, color=highlight)) + \n  geom_point(size=2) +\n  theme_cpal() +\n  labs(title = \"Median Household Income vs Child Poverty Rate\",\n       subtitle = \"Cities Over 1,000,000 Population\",\n       x = \"Child Poverty Rate\",\n       y = \"Median Household Income\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +\n  scale_x_continuous(labels = scales::percent_format())\n\n\n\n\n\nA basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income\n\n\n\n\n\n\nLine Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %>%\n  filter(highlight == \"DAL\") %>%\n  ggplot(aes(x=year, y=cbp)) + \n  geom_line(size = 2, color = \"#008097\") +\n  geom_point(size=3, color = \"#008097\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +\n  scale_x_date(date_breaks = \"2 years\", date_labels = \"%Y\")\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas\n\n\n\n\n\n\nBar Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %>%\n  filter(year == as.Date(\"2021-01-01\")) %>%\n  ggplot(aes(x=cbp, y=CODE)) + \n  geom_bar(stat = \"identity\", size = 2, fill = \"#008097\", color = \"#E7ECEE\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas\n\n\n\n\n\n\nHistogram\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_dallas %>%\n  ggplot(aes(x = pop_u18E)) + \n  geom_histogram(colour=\"#E7ECEE\", fill=\"#008097\") +\n  geom_vline(aes(xintercept = mean(pop_u18E)), color=\"#E98816\", linetype=\"dashed\", size=1) +\n  theme_cpal() +\n  labs(title = \"Histogram of Children Below Poverty in City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\")\n\n\n\n\n\nA basic histogram visualizing\n\n\n\n\n\n\nFacet Graph\n\n\nMap"
   },
   {
     "objectID": "dataviz.html#plotly",
@@ -102,7 +102,7 @@
     "href": "projectdirectory.html",
     "title": "Project Directory",
     "section": "",
-    "text": "Community Resource Explorer\nAfterschool Landscape Tool\nNorth Texas Social Mobility Hub"
+    "text": "All projects listed in this directory contain a set of four icons describing what CPAL pillar, update cadence, intended audience, and product type the project is. Additionally, projects are classified into one of three sections.\n\nActive: A product that is currently being used by its intended audience and that contains an underlying infrastructure which needs to be updated at variance cadences.\nIn Progress: A product that is currently being developed or thought through which will be released within the next 6 months.\nDeprecated: A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.\n\n\nIcon Key\n\n\n\n\n\n\n\n\n\nIcon\nPillar\n\n\n\n\n               \n\nStrong Neighborhoods\nSocial Capital\nBirth to Three\nReproductive Health\nBenefits Delivery\nHousing\nPublic Safety\nCriminal Justice\n\n\n\n\n\n\n\n\n\n\n\n\n\nIcon\nUpdate Cadence\n\n\n\n\n           \n\nDaily\nWeekly\nMonthly\nQuarterly\nYearly\nNot Updated\n\n\n\n\n\n\n\n\n\n\n\n\n\nIcon\nAudience\n\n\n\n\n     \n\nInternal\nExternal\nPower User\n\n\n\n\n\n\n\n\n\n\n\n\n\nIcon\nProduct Type\n\n\n\n\n       \n\nWeb Report\nMapping Tool\nDashboard\nFact Sheet\n\n\n\n\n\n\n\n\nActive\n\n\nDallas ISD Campus Housing Profiles (2023)\n\n\n   \n\n\nThis is a tool generated to give Dallas ISD information related to middle of the year moves and evictions in attendance zones for all school campuses.\n\n\nTrust Her Clinic Reimbursement (2023)\n\n\n   \n\n\nA private tableau dashboard intended to help produce reimbursement estimates for Trust Her partner clinics.\n\n\nNorth Texas Evictions Project (2022)\n\n\n   \n\n\nNorth Texas Evictions was developed with the intention of aiding advocacy partners in North Texas to blah, blah, blah.\n\n\nDaily Eviction Filings (2022)\n\n\n   \n\n\nSpreadsheet shared with partner organizations containing new daily eviction case filings in Dallas County.\n\n\nNorth Texas Small-Area Fair Market Rent (2022)\n\n\n   \n\n\nComparison of current Small-Area Fair Market rent from HUD against the average rents for apartment complexes in North Texas across various bedroom sizes.\n\n\nPublicly Owned Land in Dallas County (2022)\n\n\n   \n\n\nReview of all publicly owned land in the City of Dallas by owner type. Intended to understand how much land owned by the City of Dallas is available for development.\n\n\nAfterschool Landscape Tool (2022)\n\n\n   \n\n\nAn analysis generated for Dallas Afterschool intended to aid them in understanding the current landscape of after school programming need relative to programs they currently offer.\n\n\nCUSP Housing Quality Analysis (2022)\n\n\n   \n\n\nAn analysis generated by the NYU CUSP Team as a two semester program. The project was intended to review the state of housing quality in the City of Dallas and estimate need for housing repairs across City of Dallas Census Tracts.\n\n\nUrban Blight Explorer (2022)\n\n\n   \n\n\nMachine learning model of select neighborhoods in the City of Dallas intended to spot areas of blight across the city based on photos captured by a mobile photo car.\n\n\nChild Care Deserts (2022)\n\n\n   \n\n\nDescription\n\n\nDallas Police Department Incident Report (2021)\n\n\n   \n\n\nAn online web report detailing violent gun crime in the City of Dallas using Incidents from the Open Data Portal.\n\n\nNorth Texas Social Mobility Hub (2021)\n\n\n   \n\n\nThe Social Mobility Hub was developed in conjunction with UNTD in order to do a thing.\n\n\nCommunity Resource Explorer (2020)\n\n\n   \n\n\nThe Community Resource Explorer is a mapping tool first developed in 2020 in order to help allocate a 40 million dollar bond package to Dallas ISD Campuses.\n\n\nCity of Dallas Lighting Analysis (2022)\n\n\n   \n\n\nAn analysis reviewing areas of highest need and ROI for LED lighting improvements acrosss the City of Dallas.\n\n\n\n\nIn Progress\n\n\nBirth Rate Explorer (2023)\n\n\n   \n\n\nBirth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.\n\n\n\n\nDeprecated\n\n\nTeen Birth Rates (2022)\n\n\n   \n\n\nA report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL.\n\n\nWIC Participation Report (2020)\n\n\n   \n\n\nA report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL."
   },
   {
     "objectID": "projectdirectory.html#social-capital",
@@ -159,5 +159,138 @@
     "title": "CPAL Analytics",
     "section": "Contact Us",
     "text": "Contact Us\nFor any questions"
+  },
+  {
+    "objectID": "projectdirectory.html#strong-neighborhoods",
+    "href": "projectdirectory.html#strong-neighborhoods",
+    "title": "Project Directory",
+    "section": "Strong Neighborhoods",
+    "text": "Strong Neighborhoods\nCommunity Resource Explorer\nAfterschool Landscape Tool\nNorth Texas Social Mobility Hub"
+  },
+  {
+    "objectID": "projectdirectory.html#community-resource-explorer",
+    "href": "projectdirectory.html#community-resource-explorer",
+    "title": "Project Directory",
+    "section": "Community Resource Explorer",
+    "text": "Community Resource Explorer"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CPAL Analytics",
+    "section": "",
+    "text": "This page and directory serve as a central hub for the Child Poverty Action Lab’s internal analytics team to access and share information about completed projects, tools, and R packages. The directory is designed to help the team stay organized and informed about the different resources available, and to facilitate collaboration and knowledge-sharing among team members.\n\n\nThe Project Directory contains links and descriptions of completed projects and tools created by the Analytics team at the Child Poverty Action Lab. The projects and tools included in the directory are mostly web-based, such as Shiny dashboards and Quarto web reports. Each project or tool listed in the directory includes a brief description, outlining its purpose and functionality, as well as a link to access the project or tool.\n\n\n\nThis section details the functions contained within the R packages generated by the Child Poverty Action Lab’s analytics team and their use cases. The packages are designed to make it easier for team members to access and use specific functions for their projects. Each package includes a brief description of its purpose, as well as a list of the functions included within the package and their intended use cases. This information is useful for team members who are looking for specific functionality within their R code and need to know which package to use.\n\n\n\nThis section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization."
+  },
+  {
+    "objectID": "index.html#project-directory",
+    "href": "index.html#project-directory",
+    "title": "CPAL Analytics",
+    "section": "Project Directory",
+    "text": "Project Directory\nThe Project Directory contains links and descriptions of completed projects and tools created by the Analytics team at the Child Poverty Action Lab. The projects and tools included in the directory are mostly web-based, such as Shiny dashboards and Quarto web reports. Each project or tool listed in the directory includes a brief description, outlining its purpose and functionality, as well as a link to access the project or tool."
+  },
+  {
+    "objectID": "index.html#packages-and-functions",
+    "href": "index.html#packages-and-functions",
+    "title": "CPAL Analytics",
+    "section": "Packages and Functions",
+    "text": "Packages and Functions\nThis section details the functions contained within the R packages generated by the Child Poverty Action Lab’s analytics team and their use cases. The packages are designed to make it easier for team members to access and use specific functions for their projects. Each package includes a brief description of its purpose, as well as a list of the functions included within the package and their intended use cases. This information is useful for team members who are looking for specific functionality within their R code and need to know which package to use."
+  },
+  {
+    "objectID": "index.html#data-visualization",
+    "href": "index.html#data-visualization",
+    "title": "CPAL Analytics",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nThis section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization."
+  },
+  {
+    "objectID": "index.html#data-principles",
+    "href": "index.html#data-principles",
+    "title": "CPAL Analytics",
+    "section": "Data Principles",
+    "text": "Data Principles\nComprehensive\nAt the Child Poverty Action Lab, we strive to provide a holistic view of child poverty and its impact on individuals, families, and communities. We collect and analyze data from various sources, including government agencies, academic research, and community organizations, to provide a comprehensive understanding of the root causes and effects of child poverty. Our data encompasses local, state, and national levels to offer a complete picture of child poverty in Dallas.\nUnderstandable\nWe know that data can be overwhelming and difficult to understand, especially when it comes to complex social issues. That’s why we take the data we collect and make it easy to understand through reports and visualizations. We use clear, concise language and vibrant visuals to illustrate the data, making it accessible and understandable for everyone.\nFactual and Unbiased\nOur commitment to factual and unbiased data is at the core of everything we do. We rely on reliable and credible sources, including government agencies, to provide accurate data that is free from bias. We don’t have any political affiliations or agendas, and our data is presented in a neutral and non-partisan way. We believe that everyone deserves access to accurate and unbiased data to make informed decisions about policies and programs.\nContextual\nWe understand that data doesn’t exist in a vacuum and that historical context is critical to understanding trends and patterns. That’s why we provide data with historical context, allowing users to compare current data with data from the past. Our visualizations are designed to be user-friendly, enabling users to explore the data and analyze changes over time.\nPeople-Centric\nAt the Child Poverty Action Lab, we understand that child poverty affects different individuals and communities in unique ways. That’s why we include data on different races, ethnicities, incomes, and family structures to provide a nuanced understanding of child poverty. Ensuring that our data is people-centric and reflective of the diverse experiences of individuals and communities of Dallas"
+  },
+  {
+    "objectID": "index.html#contact-us",
+    "href": "index.html#contact-us",
+    "title": "CPAL Analytics",
+    "section": "Contact Us",
+    "text": "Contact Us\nFor any questions"
+  },
+  {
+    "objectID": "index.html#comprehensive",
+    "href": "index.html#comprehensive",
+    "title": "CPAL Analytics",
+    "section": "Comprehensive",
+    "text": "Comprehensive\nAt the Child Poverty Action Lab, we strive to provide a holistic view of child poverty and its impact on individuals, families, and communities. We collect and analyze data from various sources, including government agencies, academic research, and community organizations, to provide a comprehensive understanding of the root causes and effects of child poverty. Our data encompasses local, state, and national levels to offer a complete picture of child poverty in Dallas."
+  },
+  {
+    "objectID": "index.html#understandable",
+    "href": "index.html#understandable",
+    "title": "CPAL Analytics",
+    "section": "Understandable",
+    "text": "Understandable\nWe know that data can be overwhelming and difficult to understand, especially when it comes to complex social issues. That’s why we take the data we collect and make it easy to understand through reports and visualizations. We use clear, concise language and vibrant visuals to illustrate the data, making it accessible and understandable for everyone."
+  },
+  {
+    "objectID": "index.html#factual-and-unbiased",
+    "href": "index.html#factual-and-unbiased",
+    "title": "CPAL Analytics",
+    "section": "Factual and Unbiased",
+    "text": "Factual and Unbiased\nOur commitment to factual and unbiased data is at the core of everything we do. We rely on reliable and credible sources, including government agencies, to provide accurate data that is free from bias. We don’t have any political affiliations or agendas, and our data is presented in a neutral and non-partisan way. We believe that everyone deserves access to accurate and unbiased data to make informed decisions about policies and programs."
+  },
+  {
+    "objectID": "index.html#contextual",
+    "href": "index.html#contextual",
+    "title": "CPAL Analytics",
+    "section": "Contextual",
+    "text": "Contextual\nWe understand that data doesn’t exist in a vacuum and that historical context is critical to understanding trends and patterns. That’s why we provide data with historical context, allowing users to compare current data with data from the past. Our visualizations are designed to be user-friendly, enabling users to explore the data and analyze changes over time."
+  },
+  {
+    "objectID": "index.html#people-centric",
+    "href": "index.html#people-centric",
+    "title": "CPAL Analytics",
+    "section": "People-Centric",
+    "text": "People-Centric\nAt the Child Poverty Action Lab, we understand that child poverty affects different individuals and communities in unique ways. That’s why we include data on different races, ethnicity, incomes, and family structures to provide a nuanced understanding of child poverty. Ensuring that our data is people-centric and reflective of the diverse experiences of individuals and communities of Dallas"
+  },
+  {
+    "objectID": "projectdirectory.html#afterschool-landscape-tool",
+    "href": "projectdirectory.html#afterschool-landscape-tool",
+    "title": "Project Directory",
+    "section": "Afterschool Landscape Tool",
+    "text": "Afterschool Landscape Tool"
+  },
+  {
+    "objectID": "projectdirectory.html#north-texas-social-mobility-hub",
+    "href": "projectdirectory.html#north-texas-social-mobility-hub",
+    "title": "Project Directory",
+    "section": "North Texas Social Mobility Hub",
+    "text": "North Texas Social Mobility Hub"
+  },
+  {
+    "objectID": "projectdirectory.html#north-texas-evictions-project",
+    "href": "projectdirectory.html#north-texas-evictions-project",
+    "title": "Project Directory",
+    "section": "North Texas Evictions Project",
+    "text": "North Texas Evictions Project"
+  },
+  {
+    "objectID": "projectdirectory.html#dallas-isd-campus-housing-profiles",
+    "href": "projectdirectory.html#dallas-isd-campus-housing-profiles",
+    "title": "Project Directory",
+    "section": "Dallas ISD Campus Housing Profiles",
+    "text": "Dallas ISD Campus Housing Profiles"
+  },
+  {
+    "objectID": "projectdirectory.html#dallas-police-department-incident-report",
+    "href": "projectdirectory.html#dallas-police-department-incident-report",
+    "title": "Project Directory",
+    "section": "Dallas Police Department Incident Report",
+    "text": "Dallas Police Department Incident Report"
+  },
+  {
+    "objectID": "projectdirectory.html#title-with-link",
+    "href": "projectdirectory.html#title-with-link",
+    "title": "Project Directory",
+    "section": "Title With Link",
+    "text": "Title With Link"
   }
 ]

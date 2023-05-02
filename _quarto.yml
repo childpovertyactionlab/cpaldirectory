@@ -7,6 +7,7 @@ format:
     theme: www/web_report.scss
     toc: true
     toc-depth: 4
+    anchor-sections: false
 website:
   favicon: www/images/CPAL_favicon.ico
   description: Description of this web report.
@@ -20,9 +21,9 @@ website:
       search: FALSE
       collapse: TRUE
       right:
-        - icon: house-door-fill
-          text: "Home"
-          href: home.html
+        - icon: gem
+          text: "Index"
+          href: index.html
         - icon: card-list
           text: "Project Directory"
           href: projectdirectory.html
