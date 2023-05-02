@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: "docs"
-  title: "CPAL Analytics Directory"
+#  title: "CPAL Analytics"
 format:
   html:
     theme: www/web_report.scss
@@ -15,20 +15,21 @@ website:
 #  repo-url:
 #  google-analytics:
 #  cookie consent: implied
+  search:
+    location: navbar
   navbar:
-      logo: www/images/CPAL_Logo_White.png
-      logo-href: "https://childpovertyactionlab.org/"
-      search: FALSE
+#      logo: www/images/CPAL_Skyline_White.png
+#      logo-href: "https://childpovertyactionlab.org/"
       collapse: TRUE
       right:
         - icon: gem
-          text: "Index"
+          text: "Home"
           href: index.html
         - icon: card-list
           text: "Project Directory"
           href: projectdirectory.html
         - icon: box-seam
-          text: "Packages and Functions"
+          text: "Packages"
           href: packagesfunctions.html
         - icon: bar-chart-fill
           text: "Data Visualization"

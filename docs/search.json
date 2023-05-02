@@ -60,7 +60,7 @@
     "href": "dataviz.html#ggplot2",
     "title": "Data Visualization",
     "section": "ggplot2",
-    "text": "ggplot2\n\nScatter Plot\n\n\nReveal Code\n# A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income\nggplot(cpal_1mil, aes(x=cbp, y=mhiE, color=highlight)) + \n  geom_point(size=2) +\n  theme_cpal() +\n  labs(title = \"Median Household Income vs Child Poverty Rate\",\n       subtitle = \"Cities Over 1,000,000 Population\",\n       x = \"Child Poverty Rate\",\n       y = \"Median Household Income\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +\n  scale_x_continuous(labels = scales::percent_format())\n\n\n\n\n\nA basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income\n\n\n\n\n\n\nLine Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %>%\n  filter(highlight == \"DAL\") %>%\n  ggplot(aes(x=year, y=cbp)) + \n  geom_line(size = 2, color = \"#008097\") +\n  geom_point(size=3, color = \"#008097\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +\n  scale_x_date(date_breaks = \"2 years\", date_labels = \"%Y\")\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas\n\n\n\n\n\n\nBar Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %>%\n  filter(year == as.Date(\"2021-01-01\")) %>%\n  ggplot(aes(x=cbp, y=CODE)) + \n  geom_bar(stat = \"identity\", size = 2, fill = \"#008097\", color = \"#E7ECEE\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas\n\n\n\n\n\n\nHistogram\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_dallas %>%\n  ggplot(aes(x = pop_u18E)) + \n  geom_histogram(colour=\"#E7ECEE\", fill=\"#008097\") +\n  geom_vline(aes(xintercept = mean(pop_u18E)), color=\"#E98816\", linetype=\"dashed\", size=1) +\n  theme_cpal() +\n  labs(title = \"Histogram of Children Below Poverty in City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\")\n\n\n\n\n\nA basic histogram visualizing\n\n\n\n\n\n\nFacet Graph\n\n\nMap"
+    "text": "ggplot2\n\nScatter Plot\n\n\nReveal Code\n# A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income\nggplot(cpal_1mil, aes(x=cbp, y=mhiE, color=highlight)) + \n  geom_point(size=2) +\n  theme_cpal() +\n  labs(title = \"MHI vs Child Poverty Rate\",\n       subtitle = \"Cities Over 1,000,000 Population\",\n       x = \"Child Poverty Rate\",\n       y = \"Median Household Income\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +\n  scale_x_continuous(labels = scales::percent_format())\n\n\n\n\n\nA basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income\n\n\n\n\n\n\nLine Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %>%\n  filter(highlight == \"DAL\") %>%\n  ggplot(aes(x=year, y=cbp)) + \n  geom_line(size = 2, color = \"#008097\") +\n  geom_point(size=3, color = \"#008097\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +\n  scale_x_date(date_breaks = \"2 years\", date_labels = \"%Y\")\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas\n\n\n\n\n\n\nBar Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %>%\n  filter(year == as.Date(\"2021-01-01\")) %>%\n  ggplot(aes(x=cbp, y=CODE)) + \n  geom_bar(stat = \"identity\", size = 2, fill = \"#008097\", color = \"#E7ECEE\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas\n\n\n\n\n\n\nHistogram\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_dallas %>%\n  ggplot(aes(x = pop_u18E)) + \n  geom_histogram(colour=\"#E7ECEE\", fill=\"#008097\") +\n  geom_vline(aes(xintercept = mean(pop_u18E)), color=\"#E98816\", linetype=\"dashed\", size=1) +\n  theme_cpal() +\n  labs(title = \"Histogram of Children Below Poverty in City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\")\n\n\n\n\n\nA basic histogram visualizing\n\n\n\n\n\n\nFacet Graph\n\n\nMap"
   },
   {
     "objectID": "dataviz.html#plotly",
@@ -74,26 +74,26 @@
     "href": "dataviz.html#leaflet",
     "title": "Data Visualization",
     "section": "leaflet",
-    "text": "leaflet\n\n\nReveal Code\n# A basic leaflet map\n\n#counties <- tigris::counties(state = \"TX\")\n\ndallas <- filter(counties, NAME == \"Dallas\")\n\nbbox <- dallas %>%\n      st_bbox(.) %>%\n      as.vector()\n\nleaflet(dallas) %>%\n  fitBounds(bbox[1], bbox[2], bbox[3], bbox[4]) %>%\n  addTiles(urlTemplate = cpal_mapbox, attribution = cpal_leaflet) %>%\n  addPolygons(weight = 1,     \n              opacity = 0.5,\n              color = \"#686158\",\n              fillOpacity = 0.1)"
+    "text": "leaflet\n\n\nReveal Code\n# A basic leaflet map\n\n#counties &lt;- tigris::counties(state = \"TX\")\n\ndallas &lt;- filter(counties, NAME == \"Dallas\")\n\nbbox &lt;- dallas %&gt;%\n      st_bbox(.) %&gt;%\n      as.vector()\n\nleaflet(dallas) %&gt;%\n  fitBounds(bbox[1], bbox[2], bbox[3], bbox[4]) %&gt;%\n  addTiles(urlTemplate = cpal_mapbox, attribution = cpal_leaflet) %&gt;%\n  addPolygons(weight = 1,     \n              opacity = 0.5,\n              color = \"#686158\",\n              fillOpacity = 0.1)\n\n\nError in addPolygons(., weight = 1, opacity = 0.5, color = \"#686158\", : could not find function \"addPolygons\""
   },
   {
     "objectID": "packagesfunctions.html",
     "href": "packagesfunctions.html",
-    "title": "Packages and Functions",
+    "title": "Functions",
     "section": "",
-    "text": "Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.\nYou can install the latest version of cpaldirectory from GitHub:\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"childpovertyactionlab/cpaldirectory\")"
+    "text": "In R we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.\n\nlibrary(tidyverse) # Hadley Wickham universe of packages\nlibrary(tidycensus) # Interaction with census API\nlibrary(googlesheets4) # Interaction with google ecosystem\nlibrary(sf) # Geographic analysis and data wrangling\nlibrary(arcgisbinding) # interaction with ArcGIS\nlibrary(tidygeocoder) # geocoding\nlibrary(tigris) # shapefiles"
   },
   {
     "objectID": "packagesfunctions.html#cpaltemplates",
     "href": "packagesfunctions.html#cpaltemplates",
-    "title": "Packages and Functions",
+    "title": "Functions",
     "section": "cpaltemplates",
     "text": "cpaltemplates\nPrimary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.\nYou can install the latest version of cpaltemplates from GitHub:\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"childpovertyactionlab/cpaltemplates\")\n\n\nUsage\nlibrary(cpaltemplates) contains six families of functions:\nstart_project() generates a new project with a .Rproj, README, and .gitignore at the specified location on a machine.\nconstruct_*() functions add multiple, related templates and documents to a project directory or sub-directory. The templates and documents are related in important ways. For example, construct_shiny() adds app.R and an R Shiny specific CSS. It also adds instructions for using the selected template.\nuse_*() functions add individual templates and documents to a project directory or sub directory.\ntheme functions contain theme styling for various R outputs.\nscale_*() functions generate color sets to be used in visualizations.\ndata datasets stored within package to keep consistency across CPAL workflows.\n\nstart function\n\nstart_project() Creates a set of folders and a new Rproj file within a specified directory. Folders included are Scripts, Data, and Graphics to house anything necessary for a new analysis.\n\n\n\nconstruct functions\n\nconstruct_shiny() Generates an app.R file along with scss theme templates and images for a shiny dashboard with CPAL branding that can be uploaded to shinyapps.io.\nconstruct_web_report() Generates a .qmd file along with _quarto.yml theme templates and images for a web report with CPAL branding that can be uploaded to github pages.\n\n\n\nuse functions\n\nuse_content() Imports content from package templates folder into respective product types. Content such as CPAL branded images/logos.\nuse_css() Imports scss file where needed from package templates folder into respective product types such as web reports or fact sheets.\nuse_git_ignore_cpal() Generates a .gitignore file for use in files that will be uploaded to github.\nuse_instructions() Generates an instructions markdown document for respective product types to guide users on correct practices for use of web products.\nuse_readme_cpal()Generates a readme markdown document which should be filled out by user to provide necessary information project being completed.\nuse_shiny_app() Generates a new shiny app template for use alongside construct_shiny() function, when new app templates are needed.\nuse_web_report() Generates a new web report template for use alongside construct_web_report() function, when new app templates are needed.\n\n\n\ntheme functions\n\ncpal_shiny Theme to be used for all CPAL branded shiny dashboards. Shiny template already contains insertion of this function.\ntheme_cpal Used to provide aggplot2 for use across all CPAL branded plots.\n\n\n\nscale functions\n\nscale_fill_cpal() Fill function used for ggplot2 visualizations, contains three themes named factor, diverge, and triad that should be used with respective visualization type.\nscale_color_cpal() Color function used for ggplot2 visualizations, contains three themes named factor, diverge, and triad that should be used with respective visualization type.\n\n\n\ndatasets\n\nacs_variables Contains commonly used acs field tables which are consistently used when pulling data from the tidycensus package.\nntx_county Contains a named list of the eight surrounding counties around Dallas County.\ncpal_leaflet Contains attribution information for leaflet maps.\ncpal_mapbox Contains mapbox link for theming leaflet maps."
   },
   {
     "objectID": "packagesfunctions.html#cpaltools",
     "href": "packagesfunctions.html#cpaltools",
-    "title": "Packages and Functions",
+    "title": "Functions",
     "section": "cpaltools",
     "text": "cpaltools\nA package containing functions for analysis by CPAL Analytics team.\nYou can install the latest version of CPALtools from GitHub:\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"childpovertyactionlab/CPALtools\")\n\n\nUsage\nlibrary(cpaltools) contains three families of functions:\nGeo* functions related to geographic interactions within data that are not currently available within commonly used GIS packages such as sf.\nextract_* utility functions focused on extracting specific pieces of information from a string.\nget_* loop functions related to downloading multiple years of data from various api’s such as tidycensus\n\nGeo* functions\n\nGeoIntersect() Similar to the summarize within functionality within ArcGIS. Compares fields between two geography types and generates estimates between them.\n\n\n\nextract_* functions\n\nextract_zip() Extracts the 5 digit zip code from a string address.\nextract_city() Extracts a city name from a string address.\n\n\n\nget_* functions\n\nget_acs_years() Pulls multiple years of data from the census api through tidycensus for specified fields, geographies, and years."
   },
@@ -102,7 +102,7 @@
     "href": "projectdirectory.html",
     "title": "Project Directory",
     "section": "",
-    "text": "All projects listed in this directory contain a set of four icons describing what CPAL pillar, update cadence, intended audience, and product type the project is. Additionally, projects are classified into one of three sections.\n\nActive: A product that is currently being used by its intended audience and that contains an underlying infrastructure which needs to be updated at variance cadences.\nIn Progress: A product that is currently being developed or thought through which will be released within the next 6 months.\nDeprecated: A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.\n\n\nIcon Key\n\n\n\n\n\n\n\n\n\nIcon\nPillar\n\n\n\n\n               \n\nStrong Neighborhoods\nSocial Capital\nBirth to Three\nReproductive Health\nBenefits Delivery\nHousing\nPublic Safety\nCriminal Justice\n\n\n\n\n\n\n\n\n\n\n\n\n\nIcon\nUpdate Cadence\n\n\n\n\n           \n\nDaily\nWeekly\nMonthly\nQuarterly\nYearly\nNot Updated\n\n\n\n\n\n\n\n\n\n\n\n\n\nIcon\nAudience\n\n\n\n\n     \n\nInternal\nExternal\nPower User\n\n\n\n\n\n\n\n\n\n\n\n\n\nIcon\nProduct Type\n\n\n\n\n       \n\nWeb Report\nMapping Tool\nDashboard\nFact Sheet\n\n\n\n\n\n\n\n\nActive\n\n\nDallas ISD Campus Housing Profiles (2023)\n\n\n   \n\n\nThis is a tool generated to give Dallas ISD information related to middle of the year moves and evictions in attendance zones for all school campuses.\n\n\nTrust Her Clinic Reimbursement (2023)\n\n\n   \n\n\nA private tableau dashboard intended to help produce reimbursement estimates for Trust Her partner clinics.\n\n\nNorth Texas Evictions Project (2022)\n\n\n   \n\n\nNorth Texas Evictions was developed with the intention of aiding advocacy partners in North Texas to blah, blah, blah.\n\n\nDaily Eviction Filings (2022)\n\n\n   \n\n\nSpreadsheet shared with partner organizations containing new daily eviction case filings in Dallas County.\n\n\nNorth Texas Small-Area Fair Market Rent (2022)\n\n\n   \n\n\nComparison of current Small-Area Fair Market rent from HUD against the average rents for apartment complexes in North Texas across various bedroom sizes.\n\n\nPublicly Owned Land in Dallas County (2022)\n\n\n   \n\n\nReview of all publicly owned land in the City of Dallas by owner type. Intended to understand how much land owned by the City of Dallas is available for development.\n\n\nAfterschool Landscape Tool (2022)\n\n\n   \n\n\nAn analysis generated for Dallas Afterschool intended to aid them in understanding the current landscape of after school programming need relative to programs they currently offer.\n\n\nCUSP Housing Quality Analysis (2022)\n\n\n   \n\n\nAn analysis generated by the NYU CUSP Team as a two semester program. The project was intended to review the state of housing quality in the City of Dallas and estimate need for housing repairs across City of Dallas Census Tracts.\n\n\nUrban Blight Explorer (2022)\n\n\n   \n\n\nMachine learning model of select neighborhoods in the City of Dallas intended to spot areas of blight across the city based on photos captured by a mobile photo car.\n\n\nChild Care Deserts (2022)\n\n\n   \n\n\nDescription\n\n\nDallas Police Department Incident Report (2021)\n\n\n   \n\n\nAn online web report detailing violent gun crime in the City of Dallas using Incidents from the Open Data Portal.\n\n\nNorth Texas Social Mobility Hub (2021)\n\n\n   \n\n\nThe Social Mobility Hub was developed in conjunction with UNTD in order to do a thing.\n\n\nCommunity Resource Explorer (2020)\n\n\n   \n\n\nThe Community Resource Explorer is a mapping tool first developed in 2020 in order to help allocate a 40 million dollar bond package to Dallas ISD Campuses.\n\n\nCity of Dallas Lighting Analysis (2022)\n\n\n   \n\n\nAn analysis reviewing areas of highest need and ROI for LED lighting improvements acrosss the City of Dallas.\n\n\n\n\nIn Progress\n\n\nBirth Rate Explorer (2023)\n\n\n   \n\n\nBirth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.\n\n\n\n\nDeprecated\n\n\nTeen Birth Rates (2022)\n\n\n   \n\n\nA report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL.\n\n\nWIC Participation Report (2020)\n\n\n   \n\n\nA report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL."
+    "text": "All projects listed in this directory contain a set of four icons describing what CPAL pillar, update cadence, intended audience, and product type the project is. Additionally, projects are classified into one of three sections."
   },
   {
     "objectID": "projectdirectory.html#social-capital",
@@ -185,8 +185,8 @@
     "objectID": "index.html#project-directory",
     "href": "index.html#project-directory",
     "title": "CPAL Analytics",
-    "section": "Project Directory",
-    "text": "Project Directory\nThe Project Directory contains links and descriptions of completed projects and tools created by the Analytics team at the Child Poverty Action Lab. The projects and tools included in the directory are mostly web-based, such as Shiny dashboards and Quarto web reports. Each project or tool listed in the directory includes a brief description, outlining its purpose and functionality, as well as a link to access the project or tool."
+    "section": "",
+    "text": "The Project Directory contains links and descriptions of completed projects and tools created by the Analytics team at the Child Poverty Action Lab. The projects and tools included in the directory are mostly web-based, such as Shiny dashboards and Quarto web reports. Each project or tool listed in the directory includes a brief description, outlining its purpose and functionality, as well as a link to access the project or tool."
   },
   {
     "objectID": "index.html#packages-and-functions",
@@ -199,8 +199,8 @@
     "objectID": "index.html#data-visualization",
     "href": "index.html#data-visualization",
     "title": "CPAL Analytics",
-    "section": "Data Visualization",
-    "text": "Data Visualization\nThis section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization."
+    "section": "",
+    "text": "This section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization."
   },
   {
     "objectID": "index.html#data-principles",
@@ -292,5 +292,173 @@
     "title": "Project Directory",
     "section": "Title With Link",
     "text": "Title With Link"
+  },
+  {
+    "objectID": "packagesfunctions.html#cpaldirectory",
+    "href": "packagesfunctions.html#cpaldirectory",
+    "title": "Functions",
+    "section": "cpaldirectory",
+    "text": "cpaldirectory\nDirectory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.\nYou can install the latest version of cpaldirectory from GitHub:\n\n# install.packages(\"devtools\")\n#devtools::install_github(\"childpovertyactionlab/cpaldirectory\")"
+  },
+  {
+    "objectID": "index.html#directory",
+    "href": "index.html#directory",
+    "title": "CPAL Directory",
+    "section": "DIRECTORY",
+    "text": "DIRECTORY\nThe Directory contains links and descriptions of completed projects and tools created by the Analytics team at the Child Poverty Action Lab. The projects and tools included in the directory are mostly web-based, such as Shiny dashboards and Quarto web reports. Each project or tool listed in the directory includes a brief description, outlining its purpose and functionality, as well as a link to access the project or tool."
+  },
+  {
+    "objectID": "index.html#functions",
+    "href": "index.html#functions",
+    "title": "CPAL Analytics",
+    "section": "",
+    "text": "This section details the functions contained within the R packages generated by the Child Poverty Action Lab’s analytics team and their use cases. The packages are designed to make it easier for team members to access and use specific functions for their projects. Each package includes a brief description of its purpose, as well as a list of the functions included within the package and their intended use cases. This information is useful for team members who are looking for specific functionality within their R code and need to know which package to use."
+  },
+  {
+    "objectID": "index.html#graphics",
+    "href": "index.html#graphics",
+    "title": "CPAL Directory",
+    "section": "GRAPHICS",
+    "text": "GRAPHICS\nThis section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization."
+  },
+  {
+    "objectID": "dataviz.html#graphic-design-principles",
+    "href": "dataviz.html#graphic-design-principles",
+    "title": "Data Visualization",
+    "section": "Graphic Design Principles",
+    "text": "Graphic Design Principles"
+  },
+  {
+    "objectID": "dataviz.html",
+    "href": "dataviz.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "If you have any questions, please contact Michael Lopez (michael@childpovertyactionlab.org)."
+  },
+  {
+    "objectID": "projectdirectory.html#section",
+    "href": "projectdirectory.html#section",
+    "title": "Project Directory",
+    "section": "2023",
+    "text": "2023\n\n\nDallas ISD Campus Housing Profiles (2023)\n\n\n   \n\n\nThis is a tool generated to give Dallas ISD information related to middle of the year moves and evictions in attendance zones for all school campuses.\n\n\nTrust Her Clinic Reimbursement (2023)\n\n\n   \n\n\nA private tableau dashboard intended to help produce reimbursement estimates for Trust Her partner clinics."
+  },
+  {
+    "objectID": "projectdirectory.html#section-1",
+    "href": "projectdirectory.html#section-1",
+    "title": "Project Directory",
+    "section": "2022",
+    "text": "2022\n\n\nNorth Texas Evictions Project (2022)\n\n\n   \n\n\nNorth Texas Evictions was developed with the intention of aiding advocacy partners in North Texas with actionable insight.\n\n\nDaily Eviction Filings (2022)\n\n\n   \n\n\nSpreadsheet shared with partner organizations containing new daily eviction case filings in Dallas County.\n\n\nNorth Texas Small-Area Fair Market Rent (2022)\n\n\n   \n\n\nComparison of current Small-Area Fair Market rent from HUD against the average rents for apartment complexes in North Texas across various bedroom sizes.\n\n\nPublicly Owned Land in Dallas County (2022)\n\n\n   \n\n\nReview of all publicly owned land in the City of Dallas by owner type. Intended use is to understand how much land owned by the City of Dallas is available for development.\n\n\nAfterschool Landscape Tool (2022)\n\n\n   \n\n\nAn analysis generated for Dallas Afterschool intended to aid them in understanding the current landscape of after school programming need relative to programs they currently offer.\n\n\nCUSP Housing Quality Analysis (2022)\n\n\n   \n\n\nAn analysis generated by the NYU CUSP Team as a two semester program. The project was intended to review the state of housing quality in the City of Dallas and estimate need for housing repairs across City of Dallas Census Tracts.\n\n\nUrban Blight Explorer (2022)\n\n\n   \n\n\nMachine learning model of select neighborhoods in the City of Dallas intended to spot areas of blight across the city based on photos captured by a mobile photo car.\n\n\nChild Care Deserts (2022)\n\n\n   \n\n\nAn analysis of areas of high need for child care centers across North Texas based on capacity of child care centers by type."
+  },
+  {
+    "objectID": "projectdirectory.html#section-2",
+    "href": "projectdirectory.html#section-2",
+    "title": "Project Directory",
+    "section": "2021",
+    "text": "2021\n\n\nDallas Police Department Incident Report (2021)\n\n\n   \n\n\nAn online web report detailing violent gun crime in the City of Dallas using Incidents from the Open Data Portal.\n\n\nNorth Texas Social Mobility Hub (2021)\n\n\n   \n\n\nThe Social Mobility Hub was developed in conjunction with UNTD in understand the barriers and drivers towards upward mobility, and how the chances for upward mobility can be increased for all communities."
+  },
+  {
+    "objectID": "projectdirectory.html#section-3",
+    "href": "projectdirectory.html#section-3",
+    "title": "Project Directory",
+    "section": "2020",
+    "text": "2020\n\n\nCommunity Resource Explorer (2020)\n\n\n   \n\n\nThe Community Resource Explorer is a data tool that reveals where assets and needs exist so individuals and institutions can have the greatest impact.\n\n\nCity of Dallas Lighting Analysis (2022)\n\n\n   \n\n\nAn analysis reviewing areas of highest need and ROI for LED lighting improvements across the City of Dallas."
+  },
+  {
+    "objectID": "projectdirectory.html#section-4",
+    "href": "projectdirectory.html#section-4",
+    "title": "Project Directory",
+    "section": "2023",
+    "text": "2023\n\n\nBirth Rate Explorer (2023)\n\n\n   \n\n\nBirth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL."
+  },
+  {
+    "objectID": "projectdirectory.html#section-5",
+    "href": "projectdirectory.html#section-5",
+    "title": "Project Directory",
+    "section": "2022",
+    "text": "2022\n\n\nTeen Birth Rates (2022)\n\n\n   \n\n\nA dashboard visualizing teen birth rates across North Texas using data from the North Texas Hospital Council Foundation. To be superseded by the Birth Rate Explorer."
+  },
+  {
+    "objectID": "projectdirectory.html#section-6",
+    "href": "projectdirectory.html#section-6",
+    "title": "Project Directory",
+    "section": "2021",
+    "text": "2021\n\n\nBirth to Three Overview Rates (2021)\n\n\n   \n\n\nA mapping tool visualizing a number of American Community Survey Metrics related to the Birth to Three space."
+  },
+  {
+    "objectID": "projectdirectory.html#section-7",
+    "href": "projectdirectory.html#section-7",
+    "title": "Project Directory",
+    "section": "2020",
+    "text": "2020\n\n\nWIC Participation Report (2020)\n\n\n   \n\n\nA report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL."
+  },
+  {
+    "objectID": "dataviz.html#one-color-scatter-plot",
+    "href": "dataviz.html#one-color-scatter-plot",
+    "title": "Data Visualization",
+    "section": "One-Color Scatter PLot",
+    "text": "One-Color Scatter PLot\nScatter plots are useful for visualizing the relationship between two variables, identifying patterns or trends, and detecting outliers or anomalies.\n\n\nReveal Code\nggplot(cpal_1mil, aes(x=cbp, y=mhiE)) + \n  geom_point(size=2, color = \"#008097\") +\n  theme_cpal() +\n  labs(title = \"MHI vs Child Poverty Rate\",\n       subtitle = \"Cities Over 1,000,000 Population\",\n       x = \"Child Poverty Rate\",\n       y = \"Median Household Income\") +\n  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) + # &lt;1&gt; Format scale to $ amounts and start at 0.\n  scale_x_continuous(labels = scales::percent_format()) # &lt;2&gt; Format scale into percentage.\n\n\n\n\n\nA basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.\n\n\n\n\n\n\nReveal Code\nggplot(cpal_comp, aes(x=cbp, y=mhiE)) + \n  geom_point(size=1, alpha = 0.2, color = \"#008097\") + #&lt;1&gt; alpha changes the transparency of points plotted.\n  theme_cpal() +\n  labs(title = \"MHI vs Child Poverty Rate\",\n       subtitle = \"Cities in the United States\",\n       x = \"Child Poverty Rate\",\n       y = \"Median Household Income\") +\n  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +\n  scale_x_continuous(labels = scales::percent_format())\n\n\n\n\n\nA high density scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population."
+  },
+  {
+    "objectID": "dataviz.html#verying-point-size-scatter-plot",
+    "href": "dataviz.html#verying-point-size-scatter-plot",
+    "title": "Data Visualization",
+    "section": "Verying Point Size Scatter Plot",
+    "text": "Verying Point Size Scatter Plot\n\n\nReveal Code\nBAMMtools::getJenksBreaks(cpal_1mil$bp_u18E, k = 4)\n\n\n[1]  13900 143156 289822 553499\n\n\nReveal Code\ncpal_1mil%&gt;%\n  ggplot(aes(x=cbp, y=mhiE)) + \n  geom_point(aes(size = pop_u18E), alpha = 0.3, color = \"#008097\") + # &lt;1&gt; size aesthetic can be mapped to a variable in dataframe, but scale_radius will need to be defined\n  scale_radius(range = c(3, 15), \n               breaks = c(200000, 430000, 870000, 1800000),\n               labels = scales::comma) +\n  theme_cpal() +\n  labs(title = \"MHI vs Child Poverty Rate\",\n       subtitle = \"Cities in the United States\",\n       x = \"Child Poverty Rate\",\n       y = \"Median Household Income\") +\n  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +\n  scale_x_continuous(labels = scales::percent_format())\n\n\n\n\n\nA size adjusted scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population with points adjusted based on total number of children below poverty."
+  },
+  {
+    "objectID": "dataviz.html#basic-line-graph",
+    "href": "dataviz.html#basic-line-graph",
+    "title": "Data Visualization",
+    "section": "Basic Line Graph",
+    "text": "Basic Line Graph\n\n\nReveal Code\nunique(cpal_1mil$CODE)\n\n\n [1] \"CHI\"  \"DAL\"  \"HOU\"  \"LA\"   \"NYC\"  \"PHI\"  \"PHO\"  \"SATX\" \"SD\"   \"SJ\"  \n\n\nReveal Code\ncpal_1mil %&gt;%\n  filter(highlight == \"DAL\") %&gt;%\n  ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + \n  geom_line(size = 2) +\n  geom_point(size=3) +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       subtitle = \"Between 2010 to 2021\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +\n  scale_x_date(date_breaks = \"3 years\", date_labels = \"%Y\")\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas"
+  },
+  {
+    "objectID": "dataviz.html#multiples-line-graph",
+    "href": "dataviz.html#multiples-line-graph",
+    "title": "Data Visualization",
+    "section": "Multiples Line Graph",
+    "text": "Multiples Line Graph\n\n\nReveal Code\ncpal_1mil %&gt;%\n    filter(CODE %in% c(\"DAL\", \"HOU\", \"SATX\")) %&gt;%\n  ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + \n  geom_line(size = 2) +\n  geom_point(size=3) +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in Texas Cities\",\n       subtitle = \"Between 2010 to 2021\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +\n  scale_x_date(date_breaks = \"1 years\", date_labels = \"%Y\")\n\n\n\n\n\nA multiples line graph visualizing the child poverty rate of multiple cities since 2010."
+  },
+  {
+    "objectID": "dataviz.html#bar-graph",
+    "href": "dataviz.html#bar-graph",
+    "title": "Data Visualization",
+    "section": "Bar Graph",
+    "text": "Bar Graph\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_1mil %&gt;%\n  filter(year == as.Date(\"2021-01-01\")) %&gt;%\n  ggplot(aes(x=cbp, y=CODE)) + \n  geom_bar(stat = \"identity\", size = 2, fill = \"#008097\", color = \"#E7ECEE\") +\n  theme_cpal() +\n  labs(title = \"Child Poverty Rate in the City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\") +\n  scale_color_cpal(theme = \"factor\") +\n  scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))\n\n\n\n\n\nA basic line graph visualizing a the Child Poverty Rate in the City of Dallas"
+  },
+  {
+    "objectID": "dataviz.html#histogram",
+    "href": "dataviz.html#histogram",
+    "title": "Data Visualization",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nReveal Code\n# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas\ncpal_dallas %&gt;%\n  ggplot(aes(x = pop_u18E)) + \n  geom_histogram(colour=\"#E7ECEE\", fill=\"#008097\") +\n  geom_vline(aes(xintercept = mean(pop_u18E)), color=\"#E98816\", linetype=\"dashed\", size=1) +\n  theme_cpal() +\n  labs(title = \"Histogram of Children Below Poverty in City of Dallas\",\n       x = \"Year\",\n       y = \"Child Poverty Rate\")\n\n\n\n\n\nA basic histogram visualizing"
+  },
+  {
+    "objectID": "dataviz.html#facet-graph",
+    "href": "dataviz.html#facet-graph",
+    "title": "Data Visualization",
+    "section": "Facet Graph",
+    "text": "Facet Graph"
+  },
+  {
+    "objectID": "dataviz.html#map",
+    "href": "dataviz.html#map",
+    "title": "Data Visualization",
+    "section": "Map",
+    "text": "Map"
+  },
+  {
+    "objectID": "packagesfunctions.html#etl-packages",
+    "href": "packagesfunctions.html#etl-packages",
+    "title": "Functions",
+    "section": "",
+    "text": "In R we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.\n\nlibrary(tidyverse) # Hadley Wickham universe of packages\nlibrary(tidycensus) # Interaction with census API\nlibrary(googlesheets4) # Interaction with google ecosystem\nlibrary(sf) # Geographic analysis and data wrangling\nlibrary(arcgisbinding) # interaction with ArcGIS\nlibrary(tidygeocoder) # geocoding\nlibrary(tigris) # shapefiles"
+  },
+  {
+    "objectID": "packagesfunctions.html#visualization-packages",
+    "href": "packagesfunctions.html#visualization-packages",
+    "title": "Functions",
+    "section": "Visualization Packages",
+    "text": "Visualization Packages\nIn R we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.\n\nlibrary(cpaltemplates)\nlibrary(shiny) # dashboard tool\nlibrary(ggplot2) # visualization\nlibrary(leaflet) # interactive maps\nlibrary(leaflet.extras) # more map options\nlibrary(plotly) # interactive graphs\nlibrary(reactable) # interactive tables"
   }
 ]

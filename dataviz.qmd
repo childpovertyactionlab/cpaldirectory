@@ -2,7 +2,7 @@
 title: "Data Visualization"
 title-block-banner: TRUE
 fig-width: 7
-fig-height: 5
+#fig-height: 5
 warning: FALSE
 error: TRUE
 echo: FALSE
@@ -12,8 +12,9 @@ code-summary: "Reveal Code"
 code-copy: hover
 ---
 
-```{r}
+```{r, Load Data}
 #| include: FALSE
+library(cpaltemplates)
 library(tidycensus)
 library(tidyverse)
 library(rio)
@@ -152,83 +153,118 @@ cpal_texas <- cpal_comp %>%
 
 rm(cpal_old)
 rm(cpal_multi)
-rm(cpal_comp)
 rm(cpal_2020)
 rm(yearsNew)
 rm(yearsOld)
 
 ```
 
+# Background
+If you have any questions, please contact Michael Lopez (michael@childpovertyactionlab.org).
 
 ## Graphic Design Principles
 
-## ETL Packages
-In `R` we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.
+## Installing Templates
 
-```{r}
+## Tips and Tricks
+
+# Scatter Plots
+
+## One-Color Scatter PLot
+Scatter plots are useful for visualizing the relationship between two variables, identifying patterns or trends, and detecting outliers or anomalies.
+```{r, One Color Scatter Plot}
 #| echo: TRUE
-
-library(tidyverse) # Hadley Wickham universe of packages
-library(tidycensus) # Interaction with census API
-library(googlesheets4) # Interaction with google ecosystem
-library(sf) # Geographic analysis and data wrangling
-library(arcgisbinding) # interaction with ArcGIS
-library(tidygeocoder) # geocoding
-library(tigris) # shapefiles
-```
-
-## Visualization Packages
-In `R` we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.
-
-```{r}
-#| echo: TRUE
-
-library(cpaltemplates)
-library(shiny) # dashboard tool
-library(ggplot2) # visualization
-library(leaflet) # interactive maps
-library(leaflet.extras) # more map options
-library(plotly) # interactive graphs
-library(reactable) # interactive tables
-```
-
-## ggplot2
-### Scatter Plot
-```{r, Scatter Plot}
-#| echo: TRUE
-#| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income
-# A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income
-ggplot(cpal_1mil, aes(x=cbp, y=mhiE, color=highlight)) + 
-  geom_point(size=2) +
+#| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
+ggplot(cpal_1mil, aes(x=cbp, y=mhiE)) + 
+  geom_point(size=2, color = "#008097") +
   theme_cpal() +
-  labs(title = "Median Household Income vs Child Poverty Rate",
+  labs(title = "MHI vs Child Poverty Rate",
        subtitle = "Cities Over 1,000,000 Population",
        x = "Child Poverty Rate",
        y = "Median Household Income") +
-  scale_color_cpal(theme = "factor") +
+  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) + # <1> Format scale to $ amounts and start at 0.
+  scale_x_continuous(labels = scales::percent_format()) # <2> Format scale into percentage.
+```
+
+```{r, High Density Scatter Plot}
+#| echo: TRUE
+#| fig-cap: A high density scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
+ggplot(cpal_comp, aes(x=cbp, y=mhiE)) + 
+  geom_point(size=1, alpha = 0.2, color = "#008097") + #<1> alpha changes the transparency of points plotted.
+  theme_cpal() +
+  labs(title = "MHI vs Child Poverty Rate",
+       subtitle = "Cities in the United States",
+       x = "Child Poverty Rate",
+       y = "Median Household Income") +
   scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +
   scale_x_continuous(labels = scales::percent_format())
 ```
 
-### Line Graph
-```{r, Line Plot}
+## Verying Point Size Scatter Plot
+```{r, Varying Point Size Scatter Plot}
+#| echo: TRUE
+#| fig-cap: A size adjusted scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population with points adjusted based on total number of children below poverty.
+
+BAMMtools::getJenksBreaks(cpal_1mil$bp_u18E, k = 4)
+
+cpal_1mil%>%
+  ggplot(aes(x=cbp, y=mhiE)) + 
+  geom_point(aes(size = pop_u18E), alpha = 0.3, color = "#008097") + # <1> size aesthetic can be mapped to a variable in dataframe, but scale_radius will need to be defined
+  scale_radius(range = c(3, 15), 
+               breaks = c(200000, 430000, 870000, 1800000),
+               labels = scales::comma) +
+  theme_cpal() +
+  labs(title = "MHI vs Child Poverty Rate",
+       subtitle = "Cities in the United States",
+       x = "Child Poverty Rate",
+       y = "Median Household Income") +
+  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +
+  scale_x_continuous(labels = scales::percent_format())
+```
+
+# Line Graph
+
+## Basic Line Graph
+```{r, Line Graph}
 #| echo: TRUE
 #| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
-# A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
+unique(cpal_1mil$CODE)
+
 cpal_1mil %>%
   filter(highlight == "DAL") %>%
-  ggplot(aes(x=year, y=cbp)) + 
-  geom_line(size = 2, color = "#008097") +
-  geom_point(size=3, color = "#008097") +
+  ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + 
+  geom_line(size = 2) +
+  geom_point(size=3) +
   theme_cpal() +
   labs(title = "Child Poverty Rate in the City of Dallas",
+       subtitle = "Between 2010 to 2021",
        x = "Year",
        y = "Child Poverty Rate") +
   scale_color_cpal(theme = "factor") +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
-  scale_x_date(date_breaks = "2 years", date_labels = "%Y")
+  scale_x_date(date_breaks = "3 years", date_labels = "%Y")
 ```
-### Bar Graph
+
+## Multiples Line Graph
+```{r, Multiple Line Graph}
+#| echo: TRUE
+#| fig-cap: A multiples line graph visualizing the child poverty rate of multiple cities since 2010.
+cpal_1mil %>%
+    filter(CODE %in% c("DAL", "HOU", "SATX")) %>%
+  ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + 
+  geom_line(size = 2) +
+  geom_point(size=3) +
+  theme_cpal() +
+  labs(title = "Child Poverty Rate in Texas Cities",
+       subtitle = "Between 2010 to 2021",
+       x = "Year",
+       y = "Child Poverty Rate") +
+  scale_color_cpal(theme = "factor") +
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
+  scale_x_date(date_breaks = "1 years", date_labels = "%Y")
+```
+
+## Bar Graph
 ```{r, Bar Graph}
 #| echo: TRUE
 #| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
@@ -245,7 +281,7 @@ cpal_1mil %>%
   scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))
 ```
 
-### Histogram
+## Histogram
 ```{r, Histogram}
 #| echo: TRUE
 #| fig-cap: A basic histogram visualizing 
@@ -259,9 +295,11 @@ cpal_dallas %>%
        x = "Year",
        y = "Child Poverty Rate")
 ```
-### Facet Graph
+## Facet Graph
 
-### Map
+## Map
+
+# Interactive Graphics
 
 ## plotly
 

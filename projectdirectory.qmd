@@ -77,6 +77,8 @@ Additionally, projects are classified into one of three sections.
 :::
 
 # Active
+
+## 2023
 ::: {.grid}
 ::: {.g-col-8}
 [**Dallas ISD Campus Housing Profiles (2023)**](https://cpal.shinyapps.io/disd-profiles/)
@@ -96,6 +98,10 @@ This is a tool generated to give Dallas ISD information related to middle of the
 ::: {.g-col-12}
 A private tableau dashboard intended to help produce reimbursement estimates for Trust Her partner clinics.
 :::
+:::
+
+## 2022
+::: {.grid}
 ::: {.g-col-8}
 [**North Texas Evictions Project (2022)**](https://northtexasevictions.org/)
 :::
@@ -103,7 +109,7 @@ A private tableau dashboard intended to help produce reimbursement estimates for
 {{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-week size=lg title="Weekly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-North Texas Evictions was developed with the intention of aiding advocacy partners in North Texas to blah, blah, blah.
+North Texas Evictions was developed with the intention of aiding advocacy partners in North Texas with actionable insight.
 :::
 ::: {.g-col-8}
 [**Daily Eviction Filings (2022)**](https://docs.google.com/spreadsheets/d/1qk6AYls47fg3L1k7d-Le4J3cSg5smGgXoaE7QQhAck4)
@@ -130,7 +136,7 @@ Comparison of current Small-Area Fair Market rent from HUD against the average r
 {{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-Review of all publicly owned land in the City of Dallas by owner type. Intended to understand how much land owned by the City of Dallas is available for development.
+Review of all publicly owned land in the City of Dallas by owner type. Intended use is to understand how much land owned by the City of Dallas is available for development.
 :::
 ::: {.g-col-8}
 [**Afterschool Landscape Tool (2022)**](https://childpovertyactionlab.github.io/dallas-afterschool/) 
@@ -166,8 +172,11 @@ Machine learning model of select neighborhoods in the City of Dallas intended to
 {{< fa baby-carriage size=lg title="Birth to Three" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
 :::
 ::: {.g-col-12}
-Description
+An analysis of areas of high need for child care centers across North Texas based on capacity of child care centers by type.
 :::
+:::
+## 2021
+::: {.grid}
 ::: {.g-col-8}
 [**Dallas Police Department Incident Report (2021)**](https://childpovertyactionlab.github.io/dpd-incident-report//)
 :::
@@ -184,8 +193,12 @@ An online web report detailing violent gun crime in the City of Dallas using Inc
 {{< fa palette size=lg title="Social Capital" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-The Social Mobility Hub was developed in conjunction with UNTD in order to do a thing.
+The Social Mobility Hub was developed in conjunction with UNTD in understand the barriers and drivers towards upward mobility, and how the chances for upward mobility can be increased for all communities.
 :::
+:::
+
+## 2020
+::: {.grid}
 ::: {.g-col-8}
 [**Community Resource Explorer (2020)**](https://dallasisd.resourceexplorer.org/) 
 :::
@@ -193,7 +206,7 @@ The Social Mobility Hub was developed in conjunction with UNTD in order to do a 
 {{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-The Community Resource Explorer is a mapping tool first developed in 2020 in order to help allocate a 40 million dollar bond package to Dallas ISD Campuses.
+The Community Resource Explorer is a data tool that reveals where assets and needs exist so individuals and institutions can have the greatest impact.
 :::
 ::: {.g-col-8}
 [**City of Dallas Lighting Analysis (2022)**](NONE)
@@ -202,11 +215,13 @@ The Community Resource Explorer is a mapping tool first developed in 2020 in ord
 {{< fa shield size=lg title="Public Safety" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
 :::
 ::: {.g-col-12}
-An analysis reviewing areas of highest need and ROI for LED lighting improvements acrosss the City of Dallas.
+An analysis reviewing areas of highest need and ROI for LED lighting improvements across the City of Dallas.
 :::
 :::
 
 # In Progress
+
+## 2023
 ::: {.grid}
 ::: {.g-col-8}
 [**Birth Rate Explorer (2023)**](Link)
@@ -220,6 +235,7 @@ Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
 :::
 
 # Deprecated
+## 2022
 ::: {.grid}
 ::: {.g-col-8}
 [**Teen Birth Rates (2022)**](https://public.tableau.com/app/profile/cpal/viz/THCICTeenBirths/TeenBirthRateinNorthTexas)
@@ -228,8 +244,23 @@ Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
 {{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-A report aggregating WIC Local Agency 7 reports by clinic and comparing that to WIC eligiblity estimates generated by CPAL.
+A dashboard visualizing teen birth rates across North Texas using data from the North Texas Hospital Council Foundation. To be superseded by the Birth Rate Explorer.
 :::
+:::
+## 2021
+::: {.grid}
+::: {.g-col-8}
+[**Birth to Three Overview Rates (2021)**](https://childpovertyactionlab.github.io/birthto3-overview/leafletmap.html)
+:::
+::: {.g-col-4}
+{{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+A mapping tool visualizing a number of American Community Survey Metrics related to the Birth to Three space.
+:::
+:::
+## 2020
+::: {.grid}
 ::: {.g-col-8}
 [**WIC Participation Report (2020)**](https://childpovertyactionlab.github.io/wic-participation-reports/)
 :::

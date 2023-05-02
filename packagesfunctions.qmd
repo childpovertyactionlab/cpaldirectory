@@ -1,5 +1,5 @@
 ---
-title: "Packages and Functions"
+title: "Functions"
 title-block-banner: TRUE
 fig-width: 7
 fig-height: 5
@@ -8,6 +8,36 @@ error: TRUE
 echo: TRUE
 message: FALSE
 ---
+
+## ETL Packages
+In `R` we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.
+
+```{r}
+#| echo: TRUE
+
+library(tidyverse) # Hadley Wickham universe of packages
+library(tidycensus) # Interaction with census API
+library(googlesheets4) # Interaction with google ecosystem
+library(sf) # Geographic analysis and data wrangling
+library(arcgisbinding) # interaction with ArcGIS
+library(tidygeocoder) # geocoding
+library(tigris) # shapefiles
+```
+
+## Visualization Packages
+In `R` we primarily use a mix of the ggplot2, plotly, and leaflet. Packages for data visualization. These are the following packages you should have installed on your computer for visualization across the team.
+
+```{r}
+#| echo: TRUE
+
+library(cpaltemplates)
+library(shiny) # dashboard tool
+library(ggplot2) # visualization
+library(leaflet) # interactive maps
+library(leaflet.extras) # more map options
+library(plotly) # interactive graphs
+library(reactable) # interactive tables
+```
 
 ## cpaldirectory
 
