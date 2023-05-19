@@ -9,8 +9,8 @@ format:
     toc-depth: 4
     anchor-sections: false
 website:
-  favicon: www/images/CPAL_favicon.ico
-  description: Description of this web report.
+#  favicon: www/images/CPAL_favicon.ico
+#  description: Description of this web report.
 #  site-url:
 #  repo-url:
 #  google-analytics:
@@ -22,17 +22,23 @@ website:
 #      logo-href: "https://childpovertyactionlab.org/"
       collapse: TRUE
       right:
-        - icon: gem
+        - icon: house-door-fill
           text: "Home"
           href: index.html
         - icon: card-list
-          text: "Project Directory"
-          href: projectdirectory.html
+          text: "Directory"
+          href: directory.html
         - icon: box-seam
-          text: "Packages"
-          href: packagesfunctions.html
+          text: "Tools"
+          href: tools.html
+        - icon: box-seam
+          text: "Functions"
+          href: functions.html
+        - icon: box-seam
+          text: "Templates"
+          href: templates.html
         - icon: bar-chart-fill
-          text: "Data Visualization"
+          text: "Visualization"
           href: dataviz.html
         - icon: github
           text: "Github"

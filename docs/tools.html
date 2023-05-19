@@ -64,7 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./www/images/CPAL_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -114,19 +113,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projectdirectory.html" rel="" target=""><i class="bi bi-card-list" role="img">
+    <a class="nav-link" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
 </i> 
- <span class="menu-text">Project Directory</span></a>
+ <span class="menu-text">Directory</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./packagesfunctions.html" rel="" target="" aria-current="page"><i class="bi bi-box-seam" role="img">
+    <a class="nav-link active" href="./tools.html" rel="" target="" aria-current="page"><i class="bi bi-box-seam" role="img">
 </i> 
- <span class="menu-text">Packages</span></a>
+ <span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./functions.html" rel="" target=""><i class="bi bi-box-seam" role="img">
+</i> 
+ <span class="menu-text">Functions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./templates.html" rel="" target=""><i class="bi bi-box-seam" role="img">
+</i> 
+ <span class="menu-text">Templates</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
 </i> 
- <span class="menu-text">Data Visualization</span></a>
+ <span class="menu-text">Visualization</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
@@ -173,13 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-rtools" id="toc-install-rtools" class="nav-link" data-scroll-target="#install-rtools">Install RTools</a></li>
   <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link" data-scroll-target="#install-quarto">Install Quarto</a></li>
   <li><a href="#install-cran-packages" id="toc-install-cran-packages" class="nav-link" data-scroll-target="#install-cran-packages">Install CRAN Packages</a></li>
-  <li><a href="#install-cpal-packages" id="toc-install-cpal-packages" class="nav-link" data-scroll-target="#install-cpal-packages">Install CPAL Packages</a>
-  <ul class="collapse">
-  <li><a href="#cpaldirectory" id="toc-cpaldirectory" class="nav-link" data-scroll-target="#cpaldirectory">cpaldirectory</a></li>
-  <li><a href="#cpaltemplates" id="toc-cpaltemplates" class="nav-link" data-scroll-target="#cpaltemplates">cpaltemplates</a></li>
-  <li><a href="#cpalthemes" id="toc-cpalthemes" class="nav-link" data-scroll-target="#cpalthemes">cpalthemes</a></li>
-  <li><a href="#cpaltools" id="toc-cpaltools" class="nav-link" data-scroll-target="#cpaltools">cpaltools</a></li>
-  </ul></li>
+  <li><a href="#install-cpal-packages" id="toc-install-cpal-packages" class="nav-link" data-scroll-target="#install-cpal-packages">Install CPAL Packages</a></li>
   <li><a href="#additional-programs" id="toc-additional-programs" class="nav-link" data-scroll-target="#additional-programs">Additional Programs</a></li>
   </ul></li>
   </ul>
@@ -282,45 +285,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="install-cpal-packages" class="level2">
 <h2 data-anchor-id="install-cpal-packages">Install CPAL Packages</h2>
-<section id="cpaldirectory" class="level3">
-<h3 data-anchor-id="cpaldirectory">cpaldirectory</h3>
-<p>Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.</p>
 <p>You can install the latest version of <code>cpaldirectory</code> from GitHub:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaldirectory")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaldirectory")</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaltemplates")</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpalthemes")</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaltools")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="cpaltemplates" class="level3">
-<h3 data-anchor-id="cpaltemplates">cpaltemplates</h3>
-<p>Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.</p>
-<p>You can install the latest version of <code>cpaltemplates</code> from GitHub:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaltemplates")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="cpalthemes" class="level3">
-<h3 data-anchor-id="cpalthemes">cpalthemes</h3>
-<p>A package containing functions for analysis by CPAL Analytics team.</p>
-<p>You can install the latest version of <code>cpalthemes</code> from GitHub:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpalthemes")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="cpaltools" class="level3">
-<h3 data-anchor-id="cpaltools">cpaltools</h3>
-<p>A package containing functions for analysis by CPAL Analytics team.</p>
-<p>You can install the latest version of <code>cpaltools</code> from GitHub:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpaltools")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+<p><strong>cpaldirectory</strong> Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository. <strong>cpaltemplates</strong> Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations. <strong>cpalthemes</strong> A package containing functions for analysis by CPAL Analytics team. <strong>cpaltools</strong></p>
 </section>
 <section id="additional-programs" class="level2">
 <h2 data-anchor-id="additional-programs">Additional Programs</h2>
+<p>Other programs currently being used by the analytics team include the following. Some of these may need licences that will be provided to you dependent on need.</p>
+<p><strong>QGIS</strong></p>
+<p><strong>ArcGIS</strong></p>
+<p><strong>Tableau</strong></p>
+<p><strong>Tableau Prep</strong></p>
 
 
 </section>

@@ -1,0 +1,151 @@
+---
+title: "Tools and Packages"
+title-block-banner: TRUE
+fig-width: 7
+fig-height: 5
+warning: FALSE
+error: TRUE
+echo: TRUE
+message: FALSE
+---
+
+# About Our Tools
+
+As part of our data-driven approach to making a positive impact, we rely on the programming language R to drive our work forward. With R at the core of our analytics toolkit, we harness its versatility and extensive library of packages to tackle complex challenges and uncover valuable insights.
+
+As an analytics team, our primary focus is on leveraging R's capabilities to analyze and visualize data, build statistical models, and develop predictive algorithms. R enables us to efficiently manipulate and transform data, ensuring that we can extract meaningful information and uncover hidden patterns.
+
+Our team fosters a collaborative environment, where we share knowledge, explore innovative approaches, and support one another in leveraging R to its full potential. Through the use of R and its associated packages, we strive to harness the power of data and analytics to drive evidence-based decision-making and make a meaningful difference in the communities we serve.
+
+# Program Installation
+
+To facilitate our work, we extensively utilize various R packages that cater to our specific needs. These packages provide us with specialized functions and tools to enhance our analytical capabilities.
+
+We have also developed a number of packages containing themes and templates in order to facilitate brand consistency across our products.
+
+## Install R
+
+R is a programming language and environment specifically designed for statistical computing and graphics. It provides a wide range of statistical and graphical techniques, and it is widely used in data analysis, data visualization, machine learning, and statistical modeling.
+
+To install R, follow these steps:
+
+* Visit the official R website at https://cran.r-project.org/.
+* Under the 'Download and Install R' section click on the most recent release for your platform.
+* Select the base sub-directory.
+* Download the most recent release for your platform.
+* Run the installer file and follow the installation wizard instructions.
+
+## Install RStudio
+
+RStudio is an integrated development environment (IDE) for the R programming language. It provides a user-friendly interface for writing, debugging, and running R code, as well as features for data analysis, visualization, and package management. RStudio is available in both open-source and commercial versions.
+
+To install RStudio, follow these steps:
+
+* Visit the official RStudio website at https://posit.co/download/rstudio-desktop/.
+* Download the most recent release for your platform.
+* Run the installer file and follow the installation wizard instructions.
+
+## Install RTools
+
+RTools is a collection of software tools required to build and install R packages on Windows. It includes a C/C++ compiler, make tools, and other utilities necessary for compiling packages with native code extensions.
+To install RTools, follow these steps:
+
+* Visit the official RTools website at https://cran.r-project.org/bin/windows/Rtools/.
+* Download the most recent release for your platform that matches your installed version of R.
+* Run the installer file and follow the installation wizard instructions.
+
+## Install Quarto
+
+Quarto is a document format and toolchain for scientific and technical publishing. It allows you to create dynamic and reproducible documents that combine code, text, and visualizations. Quarto integrates with programming languages such as R, Python, and Julia, and supports various output formats like HTML, PDF, and Word.
+
+To install RStudio, follow these steps:
+
+* Visit the official Quarto website at https://quarto.org/.
+* Click on the 'Get Started' section.
+* Download the most recent release for your platform.
+* Run the installer file and follow the installation wizard instructions.
+
+## Install CRAN Packages
+In `R` we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.
+
+```{r}
+#| echo: TRUE
+
+library(tidyverse) # Hadley Wickham universe of packages
+library(tidycensus) # Interaction with census API
+library(googlesheets4) # Interaction with google ecosystem
+library(sf) # Geographic analysis and data wrangling
+library(arcgisbinding) # interaction with ArcGIS
+library(tidygeocoder) # geocoding
+library(tigris) # shapefiles
+
+library(lubridate)
+library(shiny) # dashboard tool
+library(ggplot2) # visualization
+library(leaflet) # interactive maps
+library(leaflet.extras) # more map options
+library(plotly) # interactive graphs
+library(reactable) # interactive tables
+
+```
+
+**arcgisbinding** provides a bridge between R and the ArcGIS geospatial software. It allows users to interact with ArcGIS tools and data directly from R, enabling spatial data analysis and manipulation.
+
+**dplyr** is a popular package for data manipulation and transformation in R. It provides a set of functions that streamline the process of filtering, selecting, summarizing, and joining datasets, making it easier to work with data frames.
+
+**forcats** is a package that focuses on handling and manipulating categorical variables in R. It provides functions to reorder, rename, and recode factor levels, as well as tools for creating summaries and visualizations of categorical data.
+
+**ggplot2** is a powerful package for data visualization in R. It implements the grammar of graphics, allowing users to create highly customizable and publication-quality plots with a concise syntax.
+
+**googlesheets4** is a package that facilitates the interaction with Google Sheets from R. It provides functions to read, write, and modify Google Sheets, enabling seamless integration of spreadsheet data in R workflows.
+
+**janitor** is a package that offers various functions for cleaning and tidying messy datasets in R. It provides tools to handle missing values, remove duplicated rows, and transform data into a tidy format, making it easier to analyze and visualize.
+
+**leaflet** is a package for creating interactive maps in R. It allows users to generate maps with various base layers, add markers, shapes, and other graphical elements, and customize the interactive features for web-based visualization.
+
+**leaflet.extras** is an extension package for leaflet that provides additional functionality and components for interactive mapping in R. It offers features such as heatmaps, clustered markers, and advanced controls to enhance the capabilities of leaflet.
+
+**lubridate** is a package that facilitates the manipulation and parsing of dates and times. It provides a set of functions that simplify common date-related tasks, such as extracting components from a date-time object, modifying specific components, and performing calculations with dates and times.
+
+**plotly** is a package for creating interactive and dynamic visualizations in R. It supports a wide range of chart types and provides tools for adding interactivity, such as tooltips and zooming, making it useful for exploratory data analysis and web-based dashboards.
+
+**purrr** is a package that enhances the functional programming capabilities in R. It provides a set of functions that enable more concise and expressive code for working with lists, vectors, and other data structures.
+
+**reactable** is a package for creating interactive tables in R. It allows users to create customizable and responsive tables with features like sorting, filtering, pagination, and row grouping, making it suitable for presenting and exploring tabular data.
+
+**rio** is a package that simplifies the import and export of data between R and various file formats. It provides a unified interface for reading and writing data in formats such as CSV, Excel, SPSS, and Stata, reducing the need for format-specific functions.
+
+**sf** is a package for working with spatial data in R. It provides classes and functions for handling spatial objects, performing geometric operations, and conducting spatial analysis, enabling efficient and intuitive manipulation of spatial datasets.
+
+**shiny** is a web application framework for R. It allows users to create interactive web applications directly from R scripts, enabling the development of data-driven dashboards, interactive visualizations, and user interfaces.
+
+**stringr** is a package that provides a set of functions for manipulating and working with strings in R. It offers tools for pattern matching, string splitting, substitution, and other common string operations, simplifying text data processing
+
+## Install CPAL Packages
+
+You can install the latest version of `cpaldirectory` from GitHub:
+
+```{r}
+# install.packages("devtools")
+#devtools::install_github("childpovertyactionlab/cpaldirectory")
+#devtools::install_github("childpovertyactionlab/cpaltemplates")
+#devtools::install_github("childpovertyactionlab/cpalthemes")
+#devtools::install_github("childpovertyactionlab/cpaltools")
+```
+
+**cpaldirectory** Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.
+**cpaltemplates** Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.
+**cpalthemes** A package containing functions for analysis by CPAL Analytics team.
+**cpaltools** 
+
+## Additional Programs
+
+Other programs currently being used by the analytics team include the following. Some of these may need licences that will be provided to you dependent on need.
+
+**QGIS**
+
+**ArcGIS**
+
+**Tableau**
+
+**Tableau Prep**

@@ -22,77 +22,30 @@ library(sf)
 
 counties <- tigris::counties(state = "TX")
 
-yearsOld <- lst(2010, 2011)
-yearsNew <- lst(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021)
+years <- lst(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021)
 
-acs_varOld <- c(
-  tot_pop = "S1703_C01_001", #total population
-  pop_u18 = "S1703_C01_004", #population under 18
-  pop_bp = "S1703_C03_001", #population below poverty
-  bp_u18 = "S1701_C02_002", #population under 18 below poverty
-  mhi = "S0501_C01_101", #median household income
-  rcb = "S0501_C01_137", #renter cost burden over 30%
-  ocb = "S0501_C01_134", #owner cost burden over 30%
-  rohh = "S0501_C01_135", #renter occupied households
-  oohh = "S0501_C01_132" #owner occupied households
-)
-
-acs_varNew <- c(
+acs_var <- c(
   tot_pop = "S1701_C01_001", #total population
   pop_u18 = "S1701_C01_002", #population under 18
   pop_bp = "S1701_C02_001", #population below poverty
   bp_u18 = "S1701_C02_002", #population under 18 below poverty
-  mhi = "S0501_C01_101", #median household income
-  rcb = "S0501_C01_137", #renter cost burden over 30%
-  ocb = "S0501_C01_134", #owner cost burden over 30%
-  rohh = "S0501_C01_135", #renter occupied households
-  oohh = "S0501_C01_132" #owner occupied households
+  mhi = "B19013_001", #median household income
+  thh = "B25003_001", #total housing units
+  rohh = "B25003_003", #renter occupied households
+  oohh = "B25003_002" #owner occupied households
 )
 
-##### Pull Data from 2010 to 2020 #####
-cpal_old <- map(
-  yearsOld,
-  ~get_acs(
-    geography = "place", 
-    variables = acs_varOld,
-    year = .x,
-    survey = "acs1", 
-    output = "wide"),
-  ) %>%
-  map2(yearsOld, ~mutate(.x, year = .y)) %>%
-  reduce(., rbind) %>%
-  mutate(NAME = str_replace(NAME, " city", "")) %>%
-  mutate(cbp = bp_u18E/pop_u18E,
-         bp = pop_bpE/100,
-         pop_bpE = bp*tot_popE,
-         #bp_u18E = cbp*pop_u18E,
-         pop_bpM = round(pop_bpE*(pop_bpM/100), digits = 0),
-         #bp_u18M = round(bp_u18E*(bp_u18M/100), digits = 0),
-         pop_bpE = round(pop_bpE, digits = 0),
-         #bp_u18E = round(bp_u18E, digits = 0)
-  )
-
-cpal_2020 <- get_acs(
-    geography = "place", 
-    variables = acs_varNew,
-    year = 2020, 
-    survey = "acs5", 
-    output = "wide") %>%
-  mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
-         bp = round(pop_bpE/tot_popE, digits = 4),
-         NAME = str_replace(NAME, " city", ""),
-         year = 2020)
-
+##### Pull Data from 2012 to 2021 #####
 cpal_multi <- map(
-  yearsNew,
+  years,
   ~get_acs(
     geography = "place", 
-    variables = acs_varNew,
+    variables = acs_var,
     year = .x, 
-    survey = "acs1", 
+    survey = "acs5", 
     output = "wide"),
   ) %>%
-  map2(yearsNew, ~mutate(.x, year = .y)) %>%
+  map2(years, ~mutate(.x, year = .y)) %>%
   reduce(., rbind) %>%
   mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
          bp = round(pop_bpE/tot_popE, digits = 4),
@@ -102,7 +55,7 @@ cpal_dallas <- get_acs(
     geography = "tract", 
     state = "TX",
     county = "Dallas County",
-    variables = acs_varNew,
+    variables = acs_var,
     year = 2021, 
     survey = "acs5", 
     output = "wide") %>%
@@ -110,23 +63,13 @@ cpal_dallas <- get_acs(
          bp = round(pop_bpE/tot_popE, digits = 4))
 
 ##### Join into Complete Dataset #####
-cpal_comp <- rbind(cpal_old, cpal_multi) %>%
-  rbind(., cpal_2020) %>%
+cpal_comp <- cpal_multi %>%
   group_by(NAME) %>%
   arrange(NAME, year) %>%
-  mutate(rcbE = rcbE/100,
-         ocbE = ocbE/100) %>%
   mutate(cbp_diff = cbp-lag(cbp, n=1),
          cbp_ave = (cbp+lag(cbp, n=1)+lag(cbp, n=2))/3,
-         cbp_avedif = cbp_ave-lag(cbp_ave, n=1),
-         
-         rcb_diff = rcbE-lag(rcbE, n=1),
-         rcb_ave = (rcbE+lag(rcbE, n=1)+lag(rcbE, n=2))/3,
-         rcb_avedif = rcb_ave-lag(rcb_ave, n=1),
-         
-         ocb_diff = ocbE-lag(ocbE, n=1),
-         ocb_ave = (ocbE+lag(ocbE, n=1)+lag(ocbE, n=2))/3,
-         ocb_avedif = ocb_ave-lag(ocb_ave, n=1)) %>%
+         cbp_avedif = cbp_ave-lag(cbp_ave, n=1)
+         ) %>%
   ungroup() %>%
   mutate(highlight=ifelse(NAME == "Dallas, Texas", "DAL", "NONE"),
          year = as.Date(paste0(year, "-01-01")))
@@ -145,17 +88,12 @@ cpal_1mil <- cpal_comp %>%
                                                                  ifelse(NAME == "San Antonio, Texas", "SATX", 
                                                                         ifelse(NAME == "San Diego, California", "SD", 
                                                                                ifelse(NAME == "San Jose, California", "SJ", "ERROR")))))))))))
+
 cpal_texas <- cpal_comp %>%
   filter(str_detect(NAME, ", Texas")) %>%
   group_by(NAME) %>%
   filter(any(tot_popE >= 500000)) %>%
   mutate(CITY = str_remove(NAME, ", Texas"))
-
-rm(cpal_old)
-rm(cpal_multi)
-rm(cpal_2020)
-rm(yearsNew)
-rm(yearsOld)
 
 ```
 
@@ -164,7 +102,25 @@ If you have any questions, please contact Michael Lopez (michael@childpovertyact
 
 ## Graphic Design Principles
 
-## Installing Templates
+When creating graphics to share with stakeholders, it is important to consider key graphic design principles. These principles help ensure that the visuals effectively communicate information while maintaining clarity and transparency:
+
+**Simplicity:** Keep the design clean, uncluttered, and visually straightforward. Use minimalistic and intuitive elements that allow stakeholders to focus on the data without distractions.
+
+**Consistency:** Maintain a consistent visual style throughout your graphics, including colors, fonts, and icons. Consistency helps stakeholders easily understand and interpret the information presented.
+
+**Visual Hierarchy:** Arrange elements based on their importance and relevance. Use visual cues such as size, color, and position to guide stakeholders' attention and emphasize key data points.
+
+**Clear Typography:** Choose legible fonts and font sizes that ensure readability. Use typography strategically to highlight key findings or data points while maintaining overall coherence.
+
+**Color Palette:** Employ a cohesive color scheme that is visually appealing and enhances data comprehension. Ensure that color choices align with the intended message and accurately represent the underlying data.
+
+**Data Visualization:** Select appropriate chart types, such as bar graphs, pie charts, or line graphs, based on the nature of the data. Use effective data visualization techniques to present complex information in a clear and accessible manner.
+
+**Labeling and Annotation:** Provide clear labels, titles, and annotations to help stakeholders understand the context and meaning of the data. Avoid ambiguity and provide necessary explanations to maintain transparency.
+
+**Data Accuracy and Transparency:** Ensure that the data used in the graphics is accurate, up-to-date, and transparently sourced. Clearly cite the data origins and provide contextual information to promote trust and credibility.
+
+By incorporating these graphic design principles, you can create visually appealing graphics that effectively communicate data to stakeholders while upholding transparency and facilitating easy comprehension and interpretation of the information presented.
 
 ## Tips and Tricks
 
@@ -190,7 +146,7 @@ ggplot(cpal_1mil, aes(x=cbp, y=mhiE)) +
 #| echo: TRUE
 #| fig-cap: A high density scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
 ggplot(cpal_comp, aes(x=cbp, y=mhiE)) + 
-  geom_point(size=1, alpha = 0.2, color = "#008097") + #<1> alpha changes the transparency of points plotted.
+  geom_point(size=1, alpha = 0.05, color = "#008097") + #<1> alpha changes the transparency of points plotted.
   theme_cpal() +
   labs(title = "MHI vs Child Poverty Rate",
        subtitle = "Cities in the United States",
@@ -200,7 +156,7 @@ ggplot(cpal_comp, aes(x=cbp, y=mhiE)) +
   scale_x_continuous(labels = scales::percent_format())
 ```
 
-## Verying Point Size Scatter Plot
+## Varying Point Size Scatter Plot
 ```{r, Varying Point Size Scatter Plot}
 #| echo: TRUE
 #| fig-cap: A size adjusted scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population with points adjusted based on total number of children below poverty.
@@ -295,20 +251,17 @@ cpal_dallas %>%
        x = "Year",
        y = "Child Poverty Rate")
 ```
-## Facet Graph
-
-## Map
 
 # Interactive Graphics
 
-## plotly
-
-## leaflet
+## leaflet Map
 ```{r, Leaflet}
 #| echo: TRUE
 # A basic leaflet map
 
 #counties <- tigris::counties(state = "TX")
+
+library(leaflet)
 
 dallas <- filter(counties, NAME == "Dallas")
 
@@ -325,3 +278,9 @@ leaflet(dallas) %>%
               fillOpacity = 0.1)
 
 ```
+
+## Facet Graph
+
+## Map
+
+## plotly
