@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization"
 title-block-banner: TRUE
-fig-width: 7
+fig-width: 9
 #fig-height: 5
 warning: FALSE
 error: TRUE
@@ -15,64 +15,11 @@ code-copy: hover
 ```{r, Load Data}
 #| include: FALSE
 library(cpaltemplates)
-library(tidycensus)
 library(tidyverse)
 library(rio)
 library(sf)
 
-counties <- tigris::counties(state = "TX")
-
-years <- lst(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021)
-
-acs_var <- c(
-  tot_pop = "S1701_C01_001", #total population
-  pop_u18 = "S1701_C01_002", #population under 18
-  pop_bp = "S1701_C02_001", #population below poverty
-  bp_u18 = "S1701_C02_002", #population under 18 below poverty
-  mhi = "B19013_001", #median household income
-  thh = "B25003_001", #total housing units
-  rohh = "B25003_003", #renter occupied households
-  oohh = "B25003_002" #owner occupied households
-)
-
-##### Pull Data from 2012 to 2021 #####
-cpal_multi <- map(
-  years,
-  ~get_acs(
-    geography = "place", 
-    variables = acs_var,
-    year = .x, 
-    survey = "acs5", 
-    output = "wide"),
-  ) %>%
-  map2(years, ~mutate(.x, year = .y)) %>%
-  reduce(., rbind) %>%
-  mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
-         bp = round(pop_bpE/tot_popE, digits = 4),
-         NAME = str_replace(NAME, " city", ""))
-
-cpal_dallas <- get_acs(
-    geography = "tract", 
-    state = "TX",
-    county = "Dallas County",
-    variables = acs_var,
-    year = 2021, 
-    survey = "acs5", 
-    output = "wide") %>%
-  mutate(cbp = round(bp_u18E/pop_u18E, digits = 4),
-         bp = round(pop_bpE/tot_popE, digits = 4))
-
-##### Join into Complete Dataset #####
-cpal_comp <- cpal_multi %>%
-  group_by(NAME) %>%
-  arrange(NAME, year) %>%
-  mutate(cbp_diff = cbp-lag(cbp, n=1),
-         cbp_ave = (cbp+lag(cbp, n=1)+lag(cbp, n=2))/3,
-         cbp_avedif = cbp_ave-lag(cbp_ave, n=1)
-         ) %>%
-  ungroup() %>%
-  mutate(highlight=ifelse(NAME == "Dallas, Texas", "DAL", "NONE"),
-         year = as.Date(paste0(year, "-01-01")))
+cpal_comp <- import("data/American Community Survey Places.csv")
 
 ##### Filter out multiple groups based on population size #####
 cpal_1mil <- cpal_comp %>%
@@ -122,7 +69,13 @@ When creating graphics to share with stakeholders, it is important to consider k
 
 By incorporating these graphic design principles, you can create visually appealing graphics that effectively communicate data to stakeholders while upholding transparency and facilitating easy comprehension and interpretation of the information presented.
 
-## Tips and Tricks
+## Installing Poppins
+Your computer may not have the Poppins font installed. If it is not installed, please install the free Poppins font from Google. Below are step by step instructions:
+
+Download the Poppins font (as a zip file).
+Unzip the file on your computer.
+For each .ttf file in the unzipped Poppins/ folder, double click the file and click Install (on Windows) or Install Font (on Mac).
+You only need to install Lato once per computer.
 
 # Scatter Plots
 
@@ -130,44 +83,57 @@ By incorporating these graphic design principles, you can create visually appeal
 Scatter plots are useful for visualizing the relationship between two variables, identifying patterns or trends, and detecting outliers or anomalies.
 ```{r, One Color Scatter Plot}
 #| echo: TRUE
-#| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
-ggplot(cpal_1mil, aes(x=cbp, y=mhiE)) + 
+#| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with a population greater than 75,000.
+cpal_comp %>%
+  filter(year == as.Date("2021-01-01")) %>%
+  filter(tot_popE >= 75000) %>%
+  ggplot(aes(x=cbp, y=mhiE)) + 
   geom_point(size=2, color = "#008097") +
   theme_cpal() +
-  labs(title = "MHI vs Child Poverty Rate",
-       subtitle = "Cities Over 1,000,000 Population",
+  labs(title = "Relationship Between MHI and CBP",
+       subtitle = "Cities Over 75,000 Population",
        x = "Child Poverty Rate",
        y = "Median Household Income") +
-  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) + # <1> Format scale to $ amounts and start at 0.
-  scale_x_continuous(labels = scales::percent_format()) # <2> Format scale into percentage.
+  scale_x_continuous(labels = scales::percent_format()) + # <2> Format scale into percentage.
+  scale_y_continuous(labels = scales::comma) +
+  theme(axis.line = element_line(colour = "#595959", 
+                      linewidth = 1, linetype = "solid"))
+
 ```
 
+## High Density Scatter Plot
 ```{r, High Density Scatter Plot}
 #| echo: TRUE
-#| fig-cap: A high density scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
-ggplot(cpal_comp, aes(x=cbp, y=mhiE)) + 
-  geom_point(size=1, alpha = 0.05, color = "#008097") + #<1> alpha changes the transparency of points plotted.
+#| fig-cap: A high density scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with a population greater than 10,000.
+cpal_comp %>%
+  filter(tot_popE >= 10000) %>%
+  ggplot(aes(x=cbp, y=mhiE)) + 
+  geom_point(alpha = 0.05, color = "#008097") + #<1> alpha changes the transparency of points plotted.
   theme_cpal() +
-  labs(title = "MHI vs Child Poverty Rate",
-       subtitle = "Cities in the United States",
+  labs(title = "Relationship Between MHI and CBP",
+       subtitle = "Cities Over 10,000 Population",
        x = "Child Poverty Rate",
        y = "Median Household Income") +
-  scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +
-  scale_x_continuous(labels = scales::percent_format())
+  scale_x_continuous(labels = scales::percent_format()) + # <2> Format scale into percentage.
+  scale_y_continuous(labels = scales::comma) +
+  theme(axis.line = element_line(colour = "#595959", 
+                      linewidth = 1, linetype = "solid"))
+
 ```
 
 ## Varying Point Size Scatter Plot
 ```{r, Varying Point Size Scatter Plot}
 #| echo: TRUE
 #| fig-cap: A size adjusted scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population with points adjusted based on total number of children below poverty.
+BAMMtools::getJenksBreaks(cpal_comp$bp_u18E, k = 6)
 
-BAMMtools::getJenksBreaks(cpal_1mil$bp_u18E, k = 4)
-
-cpal_1mil%>%
+cpal_comp %>%
+  filter(year == as.Date("2021-01-01")) %>%
+  filter(tot_popE >= 150000) %>%
   ggplot(aes(x=cbp, y=mhiE)) + 
   geom_point(aes(size = pop_u18E), alpha = 0.3, color = "#008097") + # <1> size aesthetic can be mapped to a variable in dataframe, but scale_radius will need to be defined
   scale_radius(range = c(3, 15), 
-               breaks = c(200000, 430000, 870000, 1800000),
+               breaks = c(20000, 40000, 60000, 80000),
                labels = scales::comma) +
   theme_cpal() +
   labs(title = "MHI vs Child Poverty Rate",
@@ -175,7 +141,32 @@ cpal_1mil%>%
        x = "Child Poverty Rate",
        y = "Median Household Income") +
   scale_y_continuous(labels = scales::dollar_format(), limits = c(0, NA)) +
-  scale_x_continuous(labels = scales::percent_format())
+  scale_x_continuous(labels = scales::percent_format()) +
+    theme(axis.line = element_line(colour = "#595959", 
+                      linewidth = 1, linetype = "solid"))
+
+```
+
+## Lollipop Chart
+```{r, Lollipop Chart}
+#| echo: TRUE
+#| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
+cpal_1mil %>%
+  filter(CODE == "DAL") %>%
+  ggplot(aes(x=year, y=cbp)) + 
+  geom_segment(aes(x = year, xend = year, y = 0, yend = cbp), color = "#595959", linewidth = 1) +
+  geom_point(size=6, color = "#008097") +
+  coord_flip() +
+  theme_cpal() +
+  labs(title = "MHI vs Child Poverty Rate",
+       subtitle = "Cities Over 1,000,000 Population",
+       x = "",
+       y = "Child Poverty Rate") +
+  scale_y_continuous(labels = scales::percent_format()) + #+ <2> Format scale into percentage.
+  theme(panel.grid.major.x = element_line(color = "#595959",
+                                          linewidth = 0.5,
+                                          linetype = 2)) 
+
 ```
 
 # Line Graph
@@ -184,8 +175,6 @@ cpal_1mil%>%
 ```{r, Line Graph}
 #| echo: TRUE
 #| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
-unique(cpal_1mil$CODE)
-
 cpal_1mil %>%
   filter(highlight == "DAL") %>%
   ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + 
@@ -198,8 +187,12 @@ cpal_1mil %>%
        y = "Child Poverty Rate") +
   scale_color_cpal(theme = "factor") +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
-  scale_x_date(date_breaks = "3 years", date_labels = "%Y")
+  scale_x_date(date_breaks = "3 years", date_labels = "%Y") +
+    theme(axis.line = element_line(colour = "#595959", 
+                      linewidth = 1, linetype = "solid"))
+
 ```
+
 
 ## Multiples Line Graph
 ```{r, Multiple Line Graph}
@@ -217,10 +210,15 @@ cpal_1mil %>%
        y = "Child Poverty Rate") +
   scale_color_cpal(theme = "factor") +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
-  scale_x_date(date_breaks = "1 years", date_labels = "%Y")
+  scale_x_date(date_breaks = "1 years", date_labels = "%Y") +
+      theme(axis.line = element_line(colour = "#595959", 
+                      linewidth = 1, linetype = "solid"))
+
 ```
 
-## Bar Graph
+# Bar Graphs
+
+## One-Color Bar Graph
 ```{r, Bar Graph}
 #| echo: TRUE
 #| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
@@ -237,19 +235,82 @@ cpal_1mil %>%
   scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))
 ```
 
+## Stacked Bar Plot
+```{r, Stacked Bar Plot}
+#| echo: TRUE
+#| fig-cap: A stacked bar plot comparing Renter and Owner Occupied Households in Large Cities.
+cpal_1mil %>%
+  filter(year == as.Date("2021-01-01")) %>%
+  mutate(ap_u18E = pop_u18E-bp_u18E) %>%
+  select(NAME, ap_u18E, bp_u18E) %>%
+  pivot_longer(!NAME, names_to = "children", values_to = "estimate") %>%
+  ggplot(aes(x = estimate, y = NAME, fill = children)) + 
+  geom_bar(position = "stack", stat = "identity") +
+  theme_cpal() +
+  scale_x_continuous(labels = scales::comma) +
+  labs(title = "Children Below Poverty",
+       subtitle = "Cities Over 1,000,000 by Poverty Status",
+       x = "",
+       y = "") +
+  scale_fill_cpal(theme = "factor")
+```
+
+## Percent Stacked Bar Plot
+```{r, Percent Stacked Bar Plot}
+#| echo: TRUE
+#| fig-cap: A stacked bar plot comparing Renter and Owner Occupied Households in Large Cities.
+cpal_1mil %>%
+  filter(year == as.Date("2021-01-01")) %>%
+  mutate(ap_u18E = pop_u18E-bp_u18E) %>%
+  select(NAME, ap_u18E, bp_u18E) %>%
+  pivot_longer(!NAME, names_to = "children", values_to = "estimate") %>%
+  arrange(estimate) %>%
+  ggplot(aes(x = estimate, y = NAME, fill = children)) + 
+  geom_bar(position = "fill", stat = "identity") +
+  theme_cpal() +
+  scale_x_continuous(labels = scales::percent) +
+  labs(title = "Children Living in Poverty",
+       subtitle = "Children in Cities Over 1,000,000",
+       x = "",
+       y = "") +
+  scale_fill_cpal(theme = "factor")
+```
+
 ## Histogram
 ```{r, Histogram}
 #| echo: TRUE
 #| fig-cap: A basic histogram visualizing 
 # A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
-cpal_dallas %>%
+cpal_comp %>%
+  filter(tot_popE >= 250000) %>%
   ggplot(aes(x = pop_u18E)) + 
   geom_histogram(colour="#E7ECEE", fill="#008097") +
   geom_vline(aes(xintercept = mean(pop_u18E)), color="#E98816", linetype="dashed", size=1) +
   theme_cpal() +
-  labs(title = "Histogram of Children Below Poverty in City of Dallas",
+  scale_x_continuous(labels = scales::comma) +
+  labs(title = "Histogram of Children Below Poverty in Cities Over 250,000",
        x = "Year",
        y = "Child Poverty Rate")
+```
+
+# Density
+
+## 2D Hexbin Chart
+```{r, 2D Hexbin Chart}
+cpal_comp %>%
+  filter(year == as.Date("2021-01-01")) %>%
+  filter(tot_popE >= 10000) %>%
+  ggplot(aes(x = cbp, y = mhiE)) +
+  geom_hex(bins = 50) +
+  scale_fill_distiller(palette = "BuPu") +
+  theme_cpal() +
+  scale_x_continuous(labels = scales::percent) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(title = "Distribution of MHI and CBP",
+       subtitle = "In Cities Over 10,000 Population",
+       x = "",
+       y = "")
+  
 ```
 
 # Interactive Graphics
@@ -263,7 +324,7 @@ cpal_dallas %>%
 
 library(leaflet)
 
-dallas <- filter(counties, NAME == "Dallas")
+dallas <- tigris::tracts(state = "TX", county = "Dallas County", year = 2021)
 
 bbox <- dallas %>%
       st_bbox(.) %>%
@@ -279,8 +340,3 @@ leaflet(dallas) %>%
 
 ```
 
-## Facet Graph
-
-## Map
-
-## plotly

@@ -31,9 +31,9 @@ website:
         - icon: box-seam
           text: "Tools"
           href: tools.html
-        - icon: box-seam
-          text: "Functions"
-          href: functions.html
+#        - icon: box-seam
+#          text: "Functions"
+#          href: functions.html
         - icon: box-seam
           text: "Templates"
           href: templates.html
