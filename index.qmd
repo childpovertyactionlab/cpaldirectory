@@ -56,3 +56,6 @@ We understand that data doesn't exist in a vacuum and that historical context is
 ## People-Centric
 
 At the Child Poverty Action Lab, we understand that child poverty affects different individuals and communities in unique ways. That's why we include data on different races, ethnicity, incomes, and family structures to provide a nuanced understanding of child poverty. Ensuring that our data is people-centric and reflective of the diverse experiences of individuals and communities of Dallas
+
+# Contact Us
+If you have any questions, please contact Michael Lopez (michael@childpovertyactionlab.org).

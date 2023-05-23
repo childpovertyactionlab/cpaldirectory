@@ -18,6 +18,9 @@ library(cpaltemplates)
 library(tidyverse)
 library(rio)
 library(sf)
+library(leaflet)
+
+dallas <- tigris::tracts(state = "TX", county = "Dallas County", year = 2021)
 
 cpal_comp <- import("data/American Community Survey Places.csv")
 
@@ -43,9 +46,6 @@ cpal_texas <- cpal_comp %>%
   mutate(CITY = str_remove(NAME, ", Texas"))
 
 ```
-
-# Background
-If you have any questions, please contact Michael Lopez (michael@childpovertyactionlab.org).
 
 ## Graphic Design Principles
 
@@ -319,13 +319,6 @@ cpal_comp %>%
 ```{r, Leaflet}
 #| echo: TRUE
 # A basic leaflet map
-
-#counties <- tigris::counties(state = "TX")
-
-library(leaflet)
-
-dallas <- tigris::tracts(state = "TX", county = "Dallas County", year = 2021)
-
 bbox <- dallas %>%
       st_bbox(.) %>%
       as.vector()
@@ -338,5 +331,18 @@ leaflet(dallas) %>%
               color = "#686158",
               fillOpacity = 0.1)
 
+```
+
+
+# Miscellaneous Graphics
+
+## Flow Chart
+```{mermaid}
+flowchart LR
+  A[Start] --> B(Step One)
+  B --> C{Step Two}
+  C --> D[Step Three]
+  D --> E{Outcome One}
+  D --> F{Outcome Two}
 ```
 

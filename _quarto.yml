@@ -28,7 +28,7 @@ website:
         - icon: card-list
           text: "Directory"
           href: directory.html
-        - icon: box-seam
+        - icon: tools
           text: "Tools"
           href: tools.html
 #        - icon: box-seam
