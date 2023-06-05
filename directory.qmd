@@ -81,6 +81,15 @@ Additionally, projects are classified into one of three sections.
 ## 2023
 ::: {.grid}
 ::: {.g-col-8}
+[**CPAL Internal Metrics Dashboard (2023)**](https://cpal.shinyapps.io/internal-dashboard/)
+:::
+::: {.g-col-4}
+{{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+This shiny dashboard is an internal reference tool which various pillars may use in order to find metrics across various topic areas across a number of different geographies (census tracts, zip codes, counties, and cities) from 2017 to present.
+:::
+::: {.g-col-8}
 [**Dallas ISD Campus Housing Profiles (2023)**](https://cpal.shinyapps.io/disd-profiles/)
 :::
 ::: {.g-col-4}
