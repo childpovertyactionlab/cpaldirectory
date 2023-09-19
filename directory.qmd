@@ -22,18 +22,19 @@ Additionally, projects are classified into one of three sections.
 ::: {.grid}
 
 ::: {.g-col-6}
-+--------------------------------------------------------------------------+------------------------+
-| **Icon**                                                                 | **Pillar**             |
-+:========================================================================:+:=======================+
-| {{< fa people-group size=lg title="Strong Neighborhoods" >}} <br>        | - Strong Neighborhoods |
-| {{< fa palette size=lg title="Social Capital" >}} <br>                   | - Social Capital       |
-| {{< fa baby-carriage size=lg title="Birth to Three" >}} <br>             | - Birth to Three       |
-| {{< fa person-breastfeeding size=lg title="Reproductive Health" >}} <br> | - Reproductive Health  |
-| {{< fa truck size=lg title="Benefits Delivery" >}} <br>                  | - Benefits Delivery    |
-| {{< fa house-chimney size=lg title="Housing" >}} <br>                    | - Housing              |
-| {{< fa shield size=lg title="Public Safety" >}} <br>                     | - Public Safety        |
-| {{< fa scale-balanced size=lg title="Criminal Justice" >}} <br>          | - Criminal Justice     |
-+--------------------------------------------------------------------------+------------------------+
++----------------------------------------------------------------------------+--------------------------------+
+| **Icon**                                                                   | **Pillar**                     |
++:==========================================================================:+:===============================+
+| {{< fa building size=lg title="Organizational" >}} <br>                    | - Organizational               |
+| {{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} <br>  | - Well-Resourced Neighborhoods |
+| {{< fa palette size=lg title="Social Capital" >}} <br>                     | - Social Capital               |
+| {{< fa baby-carriage size=lg title="Early Development" >}} <br>            | - Early Development            |
+| {{< fa person-breastfeeding size=lg title="Maternal Health" >}} <br>       | - Maternal Health              |
+| {{< fa truck size=lg title="Benefits Delivery" >}} <br>                    | - Benefits Delivery            |
+| {{< fa house-chimney size=lg title="Housing" >}} <br>                      | - Housing                      |
+| {{< fa shield size=lg title="Safety" >}} <br>                              | - Safety                       |
+| {{< fa scale-balanced size=lg title="Criminal Justice" >}} <br>            | - Criminal Justice             |
++----------------------------------------------------------------------------+--------------------------------+
 : {tbl-colwidths="[30,70]"}
 :::
 
@@ -81,13 +82,58 @@ Additionally, projects are classified into one of three sections.
 ## 2023
 ::: {.grid}
 ::: {.g-col-8}
+[**CPAL Talking Points Report (2023)**](https://childpovertyactionlab.github.io/talking-points/)
+:::
+::: {.g-col-4}
+{{< fa building size=lg title="Organizational" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+A web report collating a number of city wide metrics important to organizational goals across all Child Poverty Action Lab domain areas. Currently focused on metrics related to Child Poverty.
+:::
+::: {.g-col-8}
 [**CPAL Internal Metrics Dashboard (2023)**](https://cpal.shinyapps.io/internal-dashboard/)
 :::
 ::: {.g-col-4}
-{{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
 :::
 ::: {.g-col-12}
 This shiny dashboard is an internal reference tool which various pillars may use in order to find metrics across various topic areas across a number of different geographies (census tracts, zip codes, counties, and cities) from 2017 to present.
+:::
+::: {.g-col-8}
+[**Community Displacement Tool (2023)**](https://cpal.shinyapps.io/community-displacement/)
+:::
+::: {.g-col-4}
+{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa sun size=lg title="External" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+Analysis conducted with the aid of the Charles Schwab Community Development and Investment Team in order to assess where the areas of highest risk for displacement of residents in Dallas County may be when viewed through the lens of property level changes such as evictions, property value changes, ownership changes, and new building permits across time.
+:::
+::: {.g-col-8}
+[**RAPID Survey Report (2023)**](https://childpovertyactionlab.github.io/rapid-survey-report/)
+:::
+::: {.g-col-4}
+{{< fa baby-carriage size=lg title="Early Development" >}} {{< fa calendar size=lg title="Quarterly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+A web report that is intended to be updated quarterly in order to visualize new survey responses from households participating in the RAPID survey. The households participating in the survey are the same throughout the course of the project, responses are intended to show how households views on topics change over time throughout the City of Dallas.
+:::
+::: {.g-col-8}
+[**WIC Clinic Reports (2023)**](https://childpovertyactionlab.github.io/wic-clinic-reports/)
+:::
+::: {.g-col-4}
+{{< fa baby-carriage size=lg title="Early Development" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa sun size=lg title="External" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+An internal-external tool intended to aid WIC Clinics and WIC Clinic Managers in assessing needs and performance based on key metrics identified by Early Development Domain leads at the Child Poverty Action Lab.
+:::
+::: {.g-col-8}
+[**Dallas County Court Observation Report (2023)**](https://childpovertyactionlab.github.io/eviction-court-observations/)
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar size=lg title="Quarterly" >}} {{< fa sun size=lg title="External" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+A web report visualizing eviction court case proceedings observed across Dallas County through efforts led by the Child Poverty Action Lab and aided by the SMU School of Law.
 :::
 ::: {.g-col-8}
 [**Dallas ISD Campus Housing Profiles (2023)**](https://cpal.shinyapps.io/disd-profiles/)
@@ -102,7 +148,7 @@ This is a tool generated to give Dallas ISD information related to middle of the
 [**Trust Her Clinic Reimbursement (2023)**](NONE)
 :::
 ::: {.g-col-4}
-{{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
 :::
 ::: {.g-col-12}
 A private tableau dashboard intended to help produce reimbursement estimates for Trust Her partner clinics.
@@ -151,7 +197,7 @@ Review of all publicly owned land in the City of Dallas by owner type. Intended 
 [**Afterschool Landscape Tool (2022)**](https://childpovertyactionlab.github.io/dallas-afterschool/) 
 :::
 ::: {.g-col-4}
-{{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
 An analysis generated for Dallas Afterschool intended to aid them in understanding the current landscape of after school programming need relative to programs they currently offer. 
@@ -178,7 +224,7 @@ Machine learning model of select neighborhoods in the City of Dallas intended to
 [**Child Care Deserts (2022)**](https://public.tableau.com/app/profile/cpal/viz/TexasChildCareDesertsandCenters/ChildCareDeserts)
 :::
 ::: {.g-col-4}
-{{< fa baby-carriage size=lg title="Birth to Three" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+{{< fa baby-carriage size=lg title="Early Development" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
 :::
 ::: {.g-col-12}
 An analysis of areas of high need for child care centers across North Texas based on capacity of child care centers by type.
@@ -212,7 +258,7 @@ The Social Mobility Hub was developed in conjunction with UNTD in understand the
 [**Community Resource Explorer (2020)**](https://dallasisd.resourceexplorer.org/) 
 :::
 ::: {.g-col-4}
-{{< fa people-group size=lg title="Strong Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
 The Community Resource Explorer is a data tool that reveals where assets and needs exist so individuals and institutions can have the greatest impact.
@@ -236,7 +282,7 @@ An analysis reviewing areas of highest need and ROI for LED lighting improvement
 [**Birth Rate Explorer (2023)**](Link)
 :::
 ::: {.g-col-4}
-{{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
 Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
@@ -250,7 +296,7 @@ Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
 [**Teen Birth Rates (2022)**](https://public.tableau.com/app/profile/cpal/viz/THCICTeenBirths/TeenBirthRateinNorthTexas)
 :::
 ::: {.g-col-4}
-{{< fa person-breastfeeding size=lg title="Reproductive Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
 A dashboard visualizing teen birth rates across North Texas using data from the North Texas Hospital Council Foundation. To be superseded by the Birth Rate Explorer.
@@ -259,13 +305,13 @@ A dashboard visualizing teen birth rates across North Texas using data from the 
 ## 2021
 ::: {.grid}
 ::: {.g-col-8}
-[**Birth to Three Overview Rates (2021)**](https://childpovertyactionlab.github.io/birthto3-overview/leafletmap.html)
+[**Early Development Overview Rates (2021)**](https://childpovertyactionlab.github.io/birthto3-overview/leafletmap.html)
 :::
 ::: {.g-col-4}
 {{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-A mapping tool visualizing a number of American Community Survey Metrics related to the Birth to Three space.
+A mapping tool visualizing a number of American Community Survey Metrics related to the Early Development space.
 :::
 :::
 ## 2020
