@@ -11,7 +11,7 @@ Additionally, projects are classified into one of three sections.
 
 - **Deprecated:** A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.
 
-:::{.column-margin style="position: fixed; class: collapsible"}
+:::{.column-margin style="position: fixed; class: collapsible; padding: 10px; border-radius: 15px; background: #FAFAFA; border-radius: 15px; -moz-border-radius: 10px"}
 
 +----------------------------------------------------------------------------+--------------------------------+
 | **Icon**                                                                   | **Pillar**                     |
