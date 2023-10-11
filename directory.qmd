@@ -11,16 +11,13 @@ Additionally, projects are classified into one of three sections.
 
 - **Deprecated:** A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.
 
-# Icon Key
-:::{.shadecontent}
-::: {.grid}
+:::{.column-margin style="position: fixed; class: collapsible"}
 
-::: {.g-col-6}
 +----------------------------------------------------------------------------+--------------------------------+
 | **Icon**                                                                   | **Pillar**                     |
 +:==========================================================================:+:===============================+
 | {{< fa building size=lg title="Organizational" >}} <br>                    | - Organizational               |
-| {{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} <br>  | - Well-Resourced Neighborhoods |
+| {{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} <br>  | - Neighborhoods                |
 | {{< fa palette size=lg title="Social Capital" >}} <br>                     | - Social Capital               |
 | {{< fa baby-carriage size=lg title="Early Development" >}} <br>            | - Early Development            |
 | {{< fa person-breastfeeding size=lg title="Maternal Health" >}} <br>       | - Maternal Health              |
@@ -30,9 +27,7 @@ Additionally, projects are classified into one of three sections.
 | {{< fa scale-balanced size=lg title="Criminal Justice" >}} <br>            | - Criminal Justice             |
 +----------------------------------------------------------------------------+--------------------------------+
 : {tbl-colwidths="[30,70]"}
-:::
 
-::: {.g-col-6}
 +--------------------------------------------------------------------------+------------------------+
 | **Icon**                                                                 | **Update Cadence**     |
 +:========================================================================:+:=======================+
@@ -44,9 +39,7 @@ Additionally, projects are classified into one of three sections.
 | {{< fa calendar-xmark size=lg title="Not Updated" >}} <br>               | - Not Updated          |
 +--------------------------------------------------------------------------+------------------------+
 : {tbl-colwidths="[30,70]"}
-:::
 
-::: {.g-col-6}
 +--------------------------------------------------------------------------+------------------------+
 | **Icon**                                                                 | **Audience**           |
 +:========================================================================:+:=======================+
@@ -55,9 +48,7 @@ Additionally, projects are classified into one of three sections.
 | {{< fa skull-crossbones size=lg title="Power User" >}} <br>              | - Power User           |
 +--------------------------------------------------------------------------+------------------------+
 : {tbl-colwidths="[30,70]"}
-:::
 
-::: {.g-col-6}
 +--------------------------------------------------------------------------+------------------------+
 | **Icon**                                                                 | **Product Type**       |
 +:========================================================================:+:=======================+
@@ -67,15 +58,11 @@ Additionally, projects are classified into one of three sections.
 | {{< fa sheet-plastic size=lg title="Fact Sheet" >}} <br>                 | - Fact Sheet           |
 +--------------------------------------------------------------------------+------------------------+
 : {tbl-colwidths="[30,70]"}
-:::
 
 :::
-
-:::
-
-# Active
 
 ## 2023
+
 ::: {.grid}
 ::: {.g-col-8}
 [**CPAL Talking Points Report (2023)**](https://childpovertyactionlab.github.io/talking-points/)
@@ -104,6 +91,16 @@ This shiny dashboard is an internal reference tool which various pillars may use
 ::: {.g-col-12}
 Analysis conducted with the aid of the Charles Schwab Community Development and Investment Team in order to assess where the areas of highest risk for displacement of residents in Dallas County may be when viewed through the lens of property level changes such as evictions, property value changes, ownership changes, and new building permits across time.
 :::
+::: {.g-col-8}
+[**Birth Rate Explorer (2023)**](Link) `In Progress`
+:::
+::: {.g-col-4}
+{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
+:::
+
 ::: {.g-col-8}
 [**RAPID Survey Report (2023)**](https://childpovertyactionlab.github.io/rapid-survey-report/)
 :::
@@ -152,6 +149,7 @@ A private tableau dashboard intended to help produce reimbursement estimates for
 :::
 
 ## 2022
+
 ::: {.grid}
 ::: {.g-col-8}
 [**North Texas Evictions Project (2022)**](https://northtexasevictions.org/)
@@ -225,8 +223,19 @@ Machine learning model of select neighborhoods in the City of Dallas intended to
 ::: {.g-col-12}
 An analysis of areas of high need for child care centers across North Texas based on capacity of child care centers by type.
 :::
+::: {.g-col-8}
+[**Teen Birth Rates (2022)**](https://public.tableau.com/app/profile/cpal/viz/THCICTeenBirths/TeenBirthRateinNorthTexas) `Deprecated`
 :::
+::: {.g-col-4}
+{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+A dashboard visualizing teen birth rates across North Texas using data from the North Texas Hospital Council Foundation. To be superseded by the Birth Rate Explorer.
+:::
+:::
+
 ## 2021
+
 ::: {.grid}
 ::: {.g-col-8}
 [**Dallas Police Department Incident Report (2021)**](https://childpovertyactionlab.github.io/dpd-incident-report//)
@@ -246,9 +255,19 @@ An online web report detailing violent gun crime in the City of Dallas using Inc
 ::: {.g-col-12}
 The Social Mobility Hub was developed in conjunction with UNTD in understand the barriers and drivers towards upward mobility, and how the chances for upward mobility can be increased for all communities.
 :::
+::: {.g-col-8}
+[**Early Development Overview Rates (2021)**](https://childpovertyactionlab.github.io/birthto3-overview/leafletmap.html) `Deprecated`
+:::
+::: {.g-col-4}
+{{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+A mapping tool visualizing a number of American Community Survey Metrics related to the Early Development space.
+:::
 :::
 
 ## 2020
+
 ::: {.grid}
 ::: {.g-col-8}
 [**Community Resource Explorer (2020)**](https://dallasisd.resourceexplorer.org/) 
@@ -268,52 +287,8 @@ The Community Resource Explorer is a data tool that reveals where assets and nee
 ::: {.g-col-12}
 An analysis reviewing areas of highest need and ROI for LED lighting improvements across the City of Dallas.
 :::
-:::
-
-# In Progress
-
-## 2023
-::: {.grid}
 ::: {.g-col-8}
-[**Birth Rate Explorer (2023)**](Link)
-:::
-::: {.g-col-4}
-{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
-:::
-::: {.g-col-12}
-Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL.
-:::
-:::
-
-# Deprecated
-## 2022
-::: {.grid}
-::: {.g-col-8}
-[**Teen Birth Rates (2022)**](https://public.tableau.com/app/profile/cpal/viz/THCICTeenBirths/TeenBirthRateinNorthTexas)
-:::
-::: {.g-col-4}
-{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
-:::
-::: {.g-col-12}
-A dashboard visualizing teen birth rates across North Texas using data from the North Texas Hospital Council Foundation. To be superseded by the Birth Rate Explorer.
-:::
-:::
-## 2021
-::: {.grid}
-::: {.g-col-8}
-[**Early Development Overview Rates (2021)**](https://childpovertyactionlab.github.io/birthto3-overview/leafletmap.html)
-:::
-::: {.g-col-4}
-{{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
-:::
-::: {.g-col-12}
-A mapping tool visualizing a number of American Community Survey Metrics related to the Early Development space.
-:::
-:::
-## 2020
-::: {.grid}
-::: {.g-col-8}
-[**WIC Participation Report (2020)**](https://childpovertyactionlab.github.io/wic-participation-reports/)
+[**WIC Participation Report (2020)**](https://childpovertyactionlab.github.io/wic-participation-reports/) `Deprecated`
 :::
 ::: {.g-col-4}
 {{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}

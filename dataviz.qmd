@@ -115,8 +115,6 @@ cpal_comp %>%
 ```{r, Varying Point Size Scatter Plot}
 #| echo: TRUE
 #| fig-cap: A size adjusted scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population with points adjusted based on total number of children below poverty.
-BAMMtools::getJenksBreaks(cpal_comp$bp_u18E, k = 6)
-
 cpal_comp %>%
   filter(year == as.Date("2021-01-01")) %>%
   filter(tot_popE >= 150000) %>%
@@ -175,7 +173,7 @@ cpal_1mil %>%
        subtitle = "Between 2010 to 2021",
        x = "Year",
        y = "Child Poverty Rate") +
-  scale_color_cpal(theme = "factor") +
+  scale_color_manual(values = palette_cpal_main) +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
   scale_x_date(date_breaks = "3 years", date_labels = "%Y") +
     theme(axis.line = element_line(colour = "#595959", 
@@ -198,7 +196,7 @@ cpal_1mil %>%
        subtitle = "Between 2010 to 2021",
        x = "Year",
        y = "Child Poverty Rate") +
-  scale_color_cpal(theme = "factor") +
+  scale_color_manual(values = palette_cpal_main) +
   scale_y_continuous(labels = scales::percent_format(), limits = c(0, NA)) +
   scale_x_date(date_breaks = "1 years", date_labels = "%Y") +
       theme(axis.line = element_line(colour = "#595959", 
@@ -221,7 +219,7 @@ cpal_1mil %>%
   labs(title = "Child Poverty Rate in the City of Dallas",
        x = "Year",
        y = "Child Poverty Rate") +
-  scale_color_cpal(theme = "factor") +
+  scale_color_manual(values = palette_cpal_main) +
   scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))
 ```
 
@@ -242,7 +240,7 @@ cpal_1mil %>%
        subtitle = "Cities Over 1,000,000 by Poverty Status",
        x = "",
        y = "") +
-  scale_fill_cpal(theme = "factor")
+  scale_fill_manual(values = palette_cpal_main)
 ```
 
 ## Percent Stacked Bar Plot
@@ -263,7 +261,7 @@ cpal_1mil %>%
        subtitle = "Children in Cities Over 1,000,000",
        x = "",
        y = "") +
-  scale_fill_cpal(theme = "factor")
+  scale_fill_manual(values = palette_cpal_main)
 ```
 
 ## Histogram
@@ -328,7 +326,7 @@ leaflet(dallas) %>%
 
 ## Flow Chart
 ```{mermaid}
-flowchart LR
+flowchart TD
   A[Start] --> B(Step One)
   B --> C{Step Two}
   C --> D[Step Three]

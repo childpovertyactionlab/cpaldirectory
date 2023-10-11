@@ -7,6 +7,7 @@ format:
     toc-title: Contents
     toc: true
     toc-depth: 2
+    toc-location: right
     anchor-sections: false
     code-summary: "Reveal Code"
     code-copy: hover
@@ -18,8 +19,8 @@ format:
       margin-width: 300px
     code-block-bg: true
     code-block-border-left: "#008097"
-    fig-width: 9
-    fig-height: 5
+    fig-width: 7.5
+    fig-height: 4.2
     warning: FALSE
     error: TRUE
     echo: FALSE
@@ -38,7 +39,7 @@ website:
       pinned: TRUE
       search: TRUE
       logo: www/images/CPAL_Logo_White.png
-      logo-href: "https://childpovertyactionlab.org/"
+      logo-href: "https://childpovertyactionlab.github.io/cpaldirectory/"
       collapse: false
       right:
         - text: "<b>Menu<b>"
