@@ -1,12 +1,5 @@
 ---
 title: "Project Directory"
-title-block-banner: TRUE
-fig-width: 7
-fig-height: 5
-warning: FALSE
-error: TRUE
-echo: FALSE
-message: FALSE
 ---
 
 All projects listed in this directory contain a set of four icons describing what CPAL pillar, update cadence, intended audience, and product type the project is. 
@@ -19,6 +12,7 @@ Additionally, projects are classified into one of three sections.
 - **Deprecated:** A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.
 
 # Icon Key
+:::{.shadecontent}
 ::: {.grid}
 
 ::: {.g-col-6}
@@ -73,6 +67,8 @@ Additionally, projects are classified into one of three sections.
 | {{< fa sheet-plastic size=lg title="Fact Sheet" >}} <br>                 | - Fact Sheet           |
 +--------------------------------------------------------------------------+------------------------+
 : {tbl-colwidths="[30,70]"}
+:::
+
 :::
 
 :::

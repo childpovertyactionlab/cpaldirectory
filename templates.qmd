@@ -1,12 +1,5 @@
 ---
-title: "Template Outputs"
-title-block-banner: TRUE
-fig-width: 7
-fig-height: 5
-warning: FALSE
-error: TRUE
-echo: TRUE
-message: FALSE
+title: "Product Templates"
 ---
 
 # About Our Templates
@@ -28,8 +21,9 @@ A static web report is a tool that enables the creation of dynamic and interacti
 An interactive web report with Shiny integration combines the interactive features of Shiny dashboards with the flexible document format of Quarto. It allows users to create dynamic reports that incorporate interactive data exploration and visualization using Shiny applications. This integration is particularly useful for enabling users to present complex information in an engaging and interactive manner.
 
 (Adding interactive elements like the graph below!)
+
 ```{=html}
- <iframe id="example1" src="https://gallery.shinyapps.io/goog-trend-index/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>
+ <iframe id="example1" src="https://gallery.shinyapps.io/goog-trend-index/" style="border: none; width: 100%; height: 430px" frameborder="0"></iframe>
 ```
 
 ## Shiny Dashboard (Shiny)

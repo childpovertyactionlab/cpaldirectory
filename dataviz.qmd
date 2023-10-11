@@ -1,15 +1,5 @@
 ---
 title: "Data Visualization"
-title-block-banner: TRUE
-fig-width: 9
-#fig-height: 5
-warning: FALSE
-error: TRUE
-echo: FALSE
-message: FALSE
-code-fold: TRUE
-code-summary: "Reveal Code"
-code-copy: hover
 ---
 
 ```{r, Load Data}
@@ -89,7 +79,7 @@ cpal_comp %>%
   filter(tot_popE >= 75000) %>%
   ggplot(aes(x=cbp, y=mhiE)) + 
   geom_point(size=2, color = "#008097") +
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "Relationship Between MHI and CBP",
        subtitle = "Cities Over 75,000 Population",
        x = "Child Poverty Rate",
@@ -109,7 +99,7 @@ cpal_comp %>%
   filter(tot_popE >= 10000) %>%
   ggplot(aes(x=cbp, y=mhiE)) + 
   geom_point(alpha = 0.05, color = "#008097") + #<1> alpha changes the transparency of points plotted.
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "Relationship Between MHI and CBP",
        subtitle = "Cities Over 10,000 Population",
        x = "Child Poverty Rate",
@@ -135,7 +125,7 @@ cpal_comp %>%
   scale_radius(range = c(3, 15), 
                breaks = c(20000, 40000, 60000, 80000),
                labels = scales::comma) +
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "MHI vs Child Poverty Rate",
        subtitle = "Cities in the United States",
        x = "Child Poverty Rate",
@@ -157,7 +147,7 @@ cpal_1mil %>%
   geom_segment(aes(x = year, xend = year, y = 0, yend = cbp), color = "#595959", linewidth = 1) +
   geom_point(size=6, color = "#008097") +
   coord_flip() +
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "MHI vs Child Poverty Rate",
        subtitle = "Cities Over 1,000,000 Population",
        x = "",
@@ -180,7 +170,7 @@ cpal_1mil %>%
   ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + 
   geom_line(size = 2) +
   geom_point(size=3) +
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "Child Poverty Rate in the City of Dallas",
        subtitle = "Between 2010 to 2021",
        x = "Year",
@@ -203,7 +193,7 @@ cpal_1mil %>%
   ggplot(aes(x=year, y=cbp, group = CODE, color = CODE)) + 
   geom_line(size = 2) +
   geom_point(size=3) +
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "Child Poverty Rate in Texas Cities",
        subtitle = "Between 2010 to 2021",
        x = "Year",
@@ -227,7 +217,7 @@ cpal_1mil %>%
   filter(year == as.Date("2021-01-01")) %>%
   ggplot(aes(x=cbp, y=CODE)) + 
   geom_bar(stat = "identity", size = 2, fill = "#008097", color = "#E7ECEE") +
-  theme_cpal() +
+  theme_cpal_print() +
   labs(title = "Child Poverty Rate in the City of Dallas",
        x = "Year",
        y = "Child Poverty Rate") +
@@ -246,7 +236,7 @@ cpal_1mil %>%
   pivot_longer(!NAME, names_to = "children", values_to = "estimate") %>%
   ggplot(aes(x = estimate, y = NAME, fill = children)) + 
   geom_bar(position = "stack", stat = "identity") +
-  theme_cpal() +
+  theme_cpal_print() +
   scale_x_continuous(labels = scales::comma) +
   labs(title = "Children Below Poverty",
        subtitle = "Cities Over 1,000,000 by Poverty Status",
@@ -267,7 +257,7 @@ cpal_1mil %>%
   arrange(estimate) %>%
   ggplot(aes(x = estimate, y = NAME, fill = children)) + 
   geom_bar(position = "fill", stat = "identity") +
-  theme_cpal() +
+  theme_cpal_print() +
   scale_x_continuous(labels = scales::percent) +
   labs(title = "Children Living in Poverty",
        subtitle = "Children in Cities Over 1,000,000",
@@ -286,7 +276,7 @@ cpal_comp %>%
   ggplot(aes(x = pop_u18E)) + 
   geom_histogram(colour="#E7ECEE", fill="#008097") +
   geom_vline(aes(xintercept = mean(pop_u18E)), color="#E98816", linetype="dashed", size=1) +
-  theme_cpal() +
+  theme_cpal_print() +
   scale_x_continuous(labels = scales::comma) +
   labs(title = "Histogram of Children Below Poverty in Cities Over 250,000",
        x = "Year",
@@ -303,7 +293,7 @@ cpal_comp %>%
   ggplot(aes(x = cbp, y = mhiE)) +
   geom_hex(bins = 50) +
   scale_fill_distiller(palette = "BuPu") +
-  theme_cpal() +
+  theme_cpal_print() +
   scale_x_continuous(labels = scales::percent) +
   scale_y_continuous(labels = scales::comma) +
   labs(title = "Distribution of MHI and CBP",

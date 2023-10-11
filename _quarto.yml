@@ -1,48 +1,66 @@
 project:
   type: website
   output-dir: "docs"
-#  title: "CPAL Analytics"
 format:
   html:
     theme: www/web_report.scss
+    toc-title: Contents
     toc: true
-    toc-depth: 4
+    toc-depth: 2
     anchor-sections: false
+    code-summary: "Reveal Code"
+    code-copy: hover
+    code-fold: true
+    smooth-scroll: true
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
+    code-block-bg: true
+    code-block-border-left: "#008097"
+    fig-width: 9
+    fig-height: 5
+    warning: FALSE
+    error: TRUE
+    echo: FALSE
+    message: FALSE
 website:
-#  favicon: www/images/CPAL_favicon.ico
+  search:
+    location: navbar
+    type: textbox
+  favicon: www/images/CPAL_favicon.ico
 #  description: Description of this web report.
 #  site-url:
 #  repo-url:
 #  google-analytics:
 #  cookie consent: implied
-  search:
-    location: navbar
   navbar:
-#      logo: www/images/CPAL_Skyline_White.png
-#      logo-href: "https://childpovertyactionlab.org/"
-      collapse: TRUE
+      pinned: TRUE
+      search: TRUE
+      logo: www/images/CPAL_Logo_White.png
+      logo-href: "https://childpovertyactionlab.org/"
+      collapse: false
       right:
-        - icon: house-door-fill
-          text: "Home"
-          href: index.html
-        - icon: card-list
-          text: "Directory"
-          href: directory.html
-        - icon: tools
-          text: "Tools"
-          href: tools.html
-#        - icon: box-seam
-#          text: "Functions"
-#          href: functions.html
-        - icon: box-seam
-          text: "Templates"
-          href: templates.html
-        - icon: bar-chart-fill
-          text: "Visualization"
-          href: dataviz.html
-        - icon: github
-          text: "Github"
-          href: "https://github.com/childpovertyactionlab/"
+        - text: "<b>Menu<b>"
+          menu:
+            - icon: house-door-fill
+              text: "Home"
+              href: index.html
+            - icon: card-list
+              text: "Directory"
+              href: directory.html
+            - icon: tools
+              text: "Tools"
+              href: tools.html
+            - icon: box-seam
+              text: "Templates"
+              href: templates.html
+            - icon: bar-chart-fill
+              text: "Visualization"
+              href: dataviz.html
+            - icon: github
+              text: "Github"
+              href: "https://github.com/childpovertyactionlab/"
   page-footer:
     center: Copyright 2023 <b>[The Child Poverty Action Lab](https://childpovertyactionlab.org/).</b>
     background: "#008097"

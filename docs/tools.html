@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tools and Packages</title>
+<title>Data Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,12 +58,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./www/images/CPAL_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "overlay",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -91,6 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -99,80 +100,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand navbar-dark ">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target=""><i class="bi bi-house-door-fill" role="img">
+      <div class="navbar-brand-container">
+    <a href="https://childpovertyactionlab.org/" class="navbar-brand navbar-brand-logo">
+    <img src="./www/images/CPAL_Logo_White.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bmenub" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><b>Menu<b></b></b></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bmenub">    
+        <li>
+    <a class="dropdown-item" href="./index.html" rel="" target=""><i class="bi bi-house-door-fill" role="img">
 </i> 
- <span class="menu-text">Home</span></a>
+ <span class="dropdown-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
+        <li>
+    <a class="dropdown-item" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
 </i> 
- <span class="menu-text">Directory</span></a>
+ <span class="dropdown-text">Directory</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./tools.html" rel="" target="" aria-current="page"><i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="./tools.html" rel="" target=""><i class="bi bi-tools" role="img">
 </i> 
- <span class="menu-text">Tools</span></a>
+ <span class="dropdown-text">Tools</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./templates.html" rel="" target=""><i class="bi bi-box-seam" role="img">
+        <li>
+    <a class="dropdown-item" href="./templates.html" rel="" target=""><i class="bi bi-box-seam" role="img">
 </i> 
- <span class="menu-text">Templates</span></a>
+ <span class="dropdown-text">Templates</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
+        <li>
+    <a class="dropdown-item" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
 </i> 
- <span class="menu-text">Visualization</span></a>
+ <span class="dropdown-text">Visualization</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
+        <li>
+    <a class="dropdown-item" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text">Github</span></a>
+ <span class="dropdown-text">Github</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Tools and Packages</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#about-our-tools" id="toc-about-our-tools" class="nav-link active" data-scroll-target="#about-our-tools">About Our Tools</a></li>
   <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources">Learning Resources</a></li>
   <li><a href="#program-installation" id="toc-program-installation" class="nav-link" data-scroll-target="#program-installation">Program Installation</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#install-r" id="toc-install-r" class="nav-link" data-scroll-target="#install-r">Install R</a></li>
   <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install RStudio</a></li>
   <li><a href="#install-rtools" id="toc-install-rtools" class="nav-link" data-scroll-target="#install-rtools">Install RTools</a></li>
@@ -184,10 +176,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Tools</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="about-our-tools" class="level1">
 <h1>About Our Tools</h1>
@@ -253,9 +259,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-anchor-id="install-cran-packages">Install CRAN Packages</h2>
 <p>In <code>R</code> we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.</p>
 <div class="cell">
+<details>
+<summary>Reveal Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("devtools", "tidyverse", "tidycensus", "googlesheets4", "sf", "arcgisbinding", "tidygeocoder", "tigris", "shiny", "leaflet", "leaflet.extra", "reactble", "DT", ))</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(c("stenevang/sftp"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p><strong>arcgisbinding</strong> provides a bridge between R and the ArcGIS geospatial software. It allows users to interact with ArcGIS tools and data directly from R, enabling spatial data analysis and manipulation.</p>
 <p><strong>dplyr</strong> is a popular package for data manipulation and transformation in R. It provides a set of functions that streamline the process of filtering, selecting, summarizing, and joining datasets, making it easier to work with data frames.</p>
@@ -277,20 +286,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-cpal-packages" class="level2">
 <h2 data-anchor-id="install-cpal-packages">Install CPAL Packages</h2>
 <p>You can install the latest version of <code>cpaldirectory</code> from GitHub:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(c("childpovertyactionlab/cpaldirectory", "childpovertyactionlab/cpaltemplates", "childpovertyactionlab/cpaltools"))</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github("childpovertyactionlab/cpalthemes")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p><strong>cpaldirectory</strong> Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.</p>
 <p><strong>cpaltemplates</strong> Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.</p>
 <p><strong>cpalthemes</strong> A package containing functions for analysis by CPAL Analytics team. Currently not built.</p>
 <p><strong>cpaltools</strong> A package containing commonly used functions generated by the data team.</p>
+<b><b>
 
+</b></b></section><b><b>
+</b></b></section><b><b>
 
-</section>
-</section>
-
-</main> <!-- /main -->
+</b></b></main><b><b> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -517,7 +522,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</b></b></div><b><b> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -532,4 +537,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+</b></b><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Template Outputs</title>
+<title>Product Templates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,12 +24,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./www/images/CPAL_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "overlay",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -57,6 +57,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -65,78 +66,69 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand navbar-dark ">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target=""><i class="bi bi-house-door-fill" role="img">
+      <div class="navbar-brand-container">
+    <a href="https://childpovertyactionlab.org/" class="navbar-brand navbar-brand-logo">
+    <img src="./www/images/CPAL_Logo_White.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bmenub" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><b>Menu<b></b></b></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bmenub">    
+        <li>
+    <a class="dropdown-item" href="./index.html" rel="" target=""><i class="bi bi-house-door-fill" role="img">
 </i> 
- <span class="menu-text">Home</span></a>
+ <span class="dropdown-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
+        <li>
+    <a class="dropdown-item" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
 </i> 
- <span class="menu-text">Directory</span></a>
+ <span class="dropdown-text">Directory</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tools.html" rel="" target=""><i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="./tools.html" rel="" target=""><i class="bi bi-tools" role="img">
 </i> 
- <span class="menu-text">Tools</span></a>
+ <span class="dropdown-text">Tools</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./templates.html" rel="" target="" aria-current="page"><i class="bi bi-box-seam" role="img">
+        <li>
+    <a class="dropdown-item" href="./templates.html" rel="" target=""><i class="bi bi-box-seam" role="img">
 </i> 
- <span class="menu-text">Templates</span></a>
+ <span class="dropdown-text">Templates</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
+        <li>
+    <a class="dropdown-item" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
 </i> 
- <span class="menu-text">Visualization</span></a>
+ <span class="dropdown-text">Visualization</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
+        <li>
+    <a class="dropdown-item" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text">Github</span></a>
+ <span class="dropdown-text">Github</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Template Outputs</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#about-our-templates" id="toc-about-our-templates" class="nav-link active" data-scroll-target="#about-our-templates">About Our Templates</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#static-web-report-quarto" id="toc-static-web-report-quarto" class="nav-link" data-scroll-target="#static-web-report-quarto">Static Web Report (Quarto)</a></li>
   <li><a href="#interactive-web-report-quarto-with-shiny" id="toc-interactive-web-report-quarto-with-shiny" class="nav-link" data-scroll-target="#interactive-web-report-quarto-with-shiny">Interactive Web Report (Quarto with Shiny)</a></li>
   <li><a href="#shiny-dashboard-shiny" id="toc-shiny-dashboard-shiny" class="nav-link" data-scroll-target="#shiny-dashboard-shiny">Shiny Dashboard (Shiny)</a></li>
@@ -146,10 +138,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Product Templates</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
 
 <section id="about-our-templates" class="level1">
 <h1>About Our Templates</h1>
@@ -165,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-anchor-id="interactive-web-report-quarto-with-shiny">Interactive Web Report (Quarto with Shiny)</h2>
 <p>An interactive web report with Shiny integration combines the interactive features of Shiny dashboards with the flexible document format of Quarto. It allows users to create dynamic reports that incorporate interactive data exploration and visualization using Shiny applications. This integration is particularly useful for enabling users to present complex information in an engaging and interactive manner.</p>
 <p>(Adding interactive elements like the graph below!)</p>
- <iframe id="example1" src="https://gallery.shinyapps.io/goog-trend-index/" style="border: none; width: 100%; height: 720px" frameborder="0"></iframe>
+ <iframe id="example1" src="https://gallery.shinyapps.io/goog-trend-index/" style="border: none; width: 100%; height: 430px" frameborder="0"></iframe>
 </section>
 <section id="shiny-dashboard-shiny" class="level2">
 <h2 data-anchor-id="shiny-dashboard-shiny">Shiny Dashboard (Shiny)</h2>
@@ -182,12 +188,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-anchor-id="iterated-fact-sheets-quarto">Iterated Fact Sheets (Quarto)</h2>
 <p>An iterative fact sheet is a dynamic report that can be automatically regenerated to cater to different topics or geographical regions while maintaining a consistent overall structure. While the core subject remains the same, the frame of reference, such as the geography or specific topic, can be customized. This allows for the generation of tailored fact sheets that provide relevant information specific to different regions or topics while retaining a standardized format.</p>
 <p>(Automatically generated reports we can make across different neighborhoods!)</p>
+<b><b>
 
+</b></b></section><b><b>
+</b></b></section><b><b>
 
-</section>
-</section>
-
-</main> <!-- /main -->
+</b></b></main><b><b> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -414,7 +420,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</b></b></div><b><b> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -429,4 +435,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+</b></b><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

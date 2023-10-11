@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CPAL Analytics</title>
+<title>Analytics Team Directory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,12 +24,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./www/images/CPAL_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "overlay",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -57,6 +57,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -65,86 +66,74 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand navbar-dark ">
       <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page"><i class="bi bi-house-door-fill" role="img">
+      <div class="navbar-brand-container">
+    <a href="https://childpovertyactionlab.org/" class="navbar-brand navbar-brand-logo">
+    <img src="./www/images/CPAL_Logo_White.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bmenub" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><b>Menu<b></b></b></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bmenub">    
+        <li>
+    <a class="dropdown-item" href="./index.html" rel="" target=""><i class="bi bi-house-door-fill" role="img">
 </i> 
- <span class="menu-text">Home</span></a>
+ <span class="dropdown-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
+        <li>
+    <a class="dropdown-item" href="./directory.html" rel="" target=""><i class="bi bi-card-list" role="img">
 </i> 
- <span class="menu-text">Directory</span></a>
+ <span class="dropdown-text">Directory</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tools.html" rel="" target=""><i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="./tools.html" rel="" target=""><i class="bi bi-tools" role="img">
 </i> 
- <span class="menu-text">Tools</span></a>
+ <span class="dropdown-text">Tools</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./templates.html" rel="" target=""><i class="bi bi-box-seam" role="img">
+        <li>
+    <a class="dropdown-item" href="./templates.html" rel="" target=""><i class="bi bi-box-seam" role="img">
 </i> 
- <span class="menu-text">Templates</span></a>
+ <span class="dropdown-text">Templates</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
+        <li>
+    <a class="dropdown-item" href="./dataviz.html" rel="" target=""><i class="bi bi-bar-chart-fill" role="img">
 </i> 
- <span class="menu-text">Visualization</span></a>
+ <span class="dropdown-text">Visualization</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
+        <li>
+    <a class="dropdown-item" href="https://github.com/childpovertyactionlab/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text">Github</span></a>
+ <span class="dropdown-text">Github</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">CPAL Analytics</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
-  <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a>
-  <ul>
-  <li><a href="#project-directory" id="toc-project-directory" class="nav-link" data-scroll-target="#project-directory">Project Directory</a></li>
+  <ul class="collapse">
+  <li><a href="#project-directory" id="toc-project-directory" class="nav-link active" data-scroll-target="#project-directory">Project Directory</a></li>
   <li><a href="#tools-and-packages" id="toc-tools-and-packages" class="nav-link" data-scroll-target="#tools-and-packages">Tools and Packages</a></li>
   <li><a href="#custom-functions" id="toc-custom-functions" class="nav-link" data-scroll-target="#custom-functions">Custom Functions</a></li>
   <li><a href="#custom-templates" id="toc-custom-templates" class="nav-link" data-scroll-target="#custom-templates">Custom Templates</a></li>
   <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
-  </ul></li>
   <li><a href="#data-principles" id="toc-data-principles" class="nav-link" data-scroll-target="#data-principles">Data Principles</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#comprehensive" id="toc-comprehensive" class="nav-link" data-scroll-target="#comprehensive">Comprehensive</a></li>
   <li><a href="#understandable" id="toc-understandable" class="nav-link" data-scroll-target="#understandable">Understandable</a></li>
   <li><a href="#factual-and-unbiased" id="toc-factual-and-unbiased" class="nav-link" data-scroll-target="#factual-and-unbiased">Factual and Unbiased</a></li>
@@ -156,34 +145,45 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analytics Team Directory</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="about" class="level1">
-<h1>About</h1>
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <p>This page and directory serve as a central hub for the Child Poverty Action Lab’s internal analytics team to access and share information about completed projects, tools, and R packages. The directory is designed to help the team stay organized and informed about the different resources available, and to facilitate collaboration and knowledge-sharing among team members.</p>
-<section id="project-directory" class="level2">
-<h2 data-anchor-id="project-directory">Project Directory</h2>
+<section id="project-directory" class="level1">
+<h1>Project Directory</h1>
 <p>The Project Directory contains links and descriptions of completed projects and tools created by the Analytics team at the Child Poverty Action Lab. The projects and tools included in the directory are mostly web-based, such as Shiny dashboards and Quarto web reports. Each project or tool listed in the directory includes a brief description, outlining its purpose and functionality, as well as a link to access the project or tool.</p>
 </section>
-<section id="tools-and-packages" class="level2">
-<h2 data-anchor-id="tools-and-packages">Tools and Packages</h2>
+<section id="tools-and-packages" class="level1">
+<h1>Tools and Packages</h1>
 <p>The Tools and Packages section is maintained in order to list the current programs being used by the Analytics Team along with associated R packages. Provide descriptions for these packages and instructions for how to install them on your company provided computer.</p>
 </section>
-<section id="custom-functions" class="level2">
-<h2 data-anchor-id="custom-functions">Custom Functions</h2>
+<section id="custom-functions" class="level1">
+<h1>Custom Functions</h1>
 <p>This section details the custom functions contained within R packages generated by the Child Poverty Action Lab’s analytics team and their use cases. These packages are designed to make it easier for team members to access and use specific functions for their projects. Each package includes a brief description of its purpose, as well as a list of the functions included within the package and their intended use cases. This information is useful for team members who are looking for specific functionality within their R code and need to know which package to use.</p>
 </section>
-<section id="custom-templates" class="level2">
-<h2 data-anchor-id="custom-templates">Custom Templates</h2>
+<section id="custom-templates" class="level1">
+<h1>Custom Templates</h1>
 <p>This section is focused on the currently available output products that the Analytics team at the Child Poverty Action Lab is able to produce. Along with instructions detailing how a data team member will be able to generate templates and begin working on a new project.</p>
 </section>
-<section id="data-visualization" class="level2">
-<h2 data-anchor-id="data-visualization">Data Visualization</h2>
+<section id="data-visualization" class="level1">
+<h1>Data Visualization</h1>
 <p>This section details the scripting and graphic design principles using R code for visualizations produced by the analytics team at the Child Poverty Action Lab. The team uses R to create a wide range of visualizations, from basic plots to more complex interactive graphics. Each visualization includes the R code used to create it, as well as an explanation of the design choices made by the team. This information is useful for team members who want to create their own visualizations or who want to learn more about best practices in data visualization.</p>
-</section>
 </section>
 <section id="data-principles" class="level1">
 <h1>Data Principles</h1>
@@ -212,11 +212,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="contact-us" class="level1">
 <h1>Contact Us</h1>
 <p>If you have any questions, please contact our team at (analytics@childpovertyactionlab.org).</p>
+<b><b>
 
+</b></b></section><b><b>
 
-</section>
-
-</main> <!-- /main -->
+</b></b></main><b><b> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -443,7 +443,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</b></b></div><b><b> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -458,4 +458,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+</b></b><script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
