@@ -50,4 +50,10 @@ At the Child Poverty Action Lab, we understand that child poverty affects differ
 
 # Contact Us
 
-If you have any questions, please contact our team at (analytics\@childpovertyactionlab.org).
+If you'd like to set up a time to ask any data questions or need some help brainstorming come to our office hours! 
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2W4jVwLpS3ghSwPlFepMds0d-3J-t9B_pX9jALaDqrtiHlbc1EzTHiHtYWDQAyQbuIFsz3dFPo?gv=true" style="border: 0" width="100%" height="650" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
+
+For any other questions, please contact our team at (analytics\@childpovertyactionlab.org).

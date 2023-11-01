@@ -19,8 +19,9 @@ format:
       margin-width: 300px
     code-block-bg: true
     code-block-border-left: "#008097"
-    fig-width: 7.5
-    fig-height: 4.2
+    fig-width: 9
+    fig-height: 7
+    fig-dpi: 300
     warning: FALSE
     error: TRUE
     echo: FALSE
@@ -64,4 +65,4 @@ website:
               href: "https://github.com/childpovertyactionlab/"
   page-footer:
     center: Copyright 2023 <b>[The Child Poverty Action Lab](https://childpovertyactionlab.org/).</b>
-    background: "#008097"
+    background: "#042D33"
