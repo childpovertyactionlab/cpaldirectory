@@ -65,6 +65,15 @@ Additionally, projects are classified into one of three sections.
 
 ::: {.grid}
 ::: {.g-col-8}
+[**Neighborhood Crime Dashboard (2023)**](https://cpal.shinyapps.io/neighborhood-incidents/)
+:::
+::: {.g-col-4}
+{{< fa shield size=lg title="Safety" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa sun size=lg title="External" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+A prototype dashboard centered around bcWorkshop neighborhoods in the City of Dallas where users can review general metrics about when specified incidents occur within a neighborhood and what kinds of incidents occur.
+:::
+::: {.g-col-8}
 [**CPAL Talking Points Report (2023)**](https://childpovertyactionlab.github.io/talking-points/)
 :::
 ::: {.g-col-4}
