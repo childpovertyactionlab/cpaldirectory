@@ -1,0 +1,60 @@
+---
+title: "Project Directory"
+format: html
+---
+
+```{r}
+#| include: false
+library(googlesheets4)
+library(knitr)
+library(tidyverse)
+
+projectdir <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/1QuUHl_O4sI7vUFaY54Zf8mnifPOzLU4OYO2x3FblSj8", sheet = "Directory Projects") #%>%
+#    mutate(Domain = case_when(
+#    Domain == "Well-Resourced Neighborhoods" ~ sprintf('{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} Well-Resourced Neighborhoods'),
+#    TRUE ~ as.character(Domain)
+#  ))
+```
+
+<label for="filterInput">Filter:</label>
+<input type="text" id="filterInput" onkeyup="filterCards()" placeholder="Type to filter...">
+
+<div class="card-container">
+```{r echo=FALSE, results='asis'}
+for (i in 1:nrow(projectdir)) {
+  row <- projectdir[i, ]
+  cat('<div class="card" data-project-name="', row$`Project Name`, '" data-status="', row$Status, '" data-domain="', row$Domain, '">\n')
+  cat('  <div class="card-header">\n')
+  cat('    <h3>', row$`Project Name`, '</h3>\n')
+  cat('    <p>Status: ', row$Status, '</p>\n')
+  cat('  </div>\n')
+  cat('  <div class="card-body">\n')
+  cat('    <p><strong>Domain:</strong> ', row$Domain, '</p>\n')
+  cat('    <p><strong>Update Cadence:</strong> ', row$`Update Cadence`, '</p>\n')
+  cat('    <p><strong>Audience:</strong> ', row$Audience, '</p>\n')
+  cat('    <p><strong>Product Type:</strong> ', row$`Product Type`, '</p>\n')
+  cat('    <p><strong>Description:</strong> ', row$Description, '</p>\n')
+  cat('    <p><strong>Date Released:</strong> ', row$`Date Released`, '</p>\n')
+  cat('    <p><a href="', row$Link, '" target="_blank">View Project</a></p>\n')
+  cat('  </div>\n')
+  cat('</div>\n')
+}
+```
+</div>
+
+<script>
+function filterCards() {
+  const input = document.getElementById('filterInput');
+  const filter = input.value.toUpperCase();
+  const cards = document.getElementsByClassName('card');
+
+  for (let i = 0; i < cards.length; i++) {
+    const projectName = cards[i].getAttribute('data-project-name');
+    if (projectName.toUpperCase().indexOf(filter) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+</script>

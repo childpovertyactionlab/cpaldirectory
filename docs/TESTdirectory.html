@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Tools</title>
+<title>Project Directory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -157,29 +123,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul class="collapse">
-  <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link active" data-scroll-target="#learning-resources">Learning Resources</a></li>
-  <li><a href="#program-installation" id="toc-program-installation" class="nav-link" data-scroll-target="#program-installation">Program Installation</a>
-  <ul class="collapse">
-  <li><a href="#install-r" id="toc-install-r" class="nav-link" data-scroll-target="#install-r">Install R</a></li>
-  <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install RStudio</a></li>
-  <li><a href="#install-rtools" id="toc-install-rtools" class="nav-link" data-scroll-target="#install-rtools">Install RTools</a></li>
-  <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link" data-scroll-target="#install-quarto">Install Quarto</a></li>
-  <li><a href="#install-cran-packages" id="toc-install-cran-packages" class="nav-link" data-scroll-target="#install-cran-packages">Install CRAN Packages</a></li>
-  <li><a href="#install-cpal-packages" id="toc-install-cpal-packages" class="nav-link" data-scroll-target="#install-cpal-packages">Install CPAL Packages</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Tools</h1>
+<h1 class="title">Project Directory</h1>
 </div>
 
 
@@ -194,102 +145,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>As part of our data-driven approach to making a positive impact, we rely on the programming language R to drive our work forward. With R at the core of our analytics toolkit, we harness its versatility and extensive library of packages to tackle complex challenges and uncover valuable insights.</p>
-<p>As an analytics team, our primary focus is on leveraging R’s capabilities to analyze and visualize data, build statistical models, and develop predictive algorithms. R enables us to efficiently manipulate and transform data, ensuring that we can extract meaningful information and uncover hidden patterns.</p>
-<p>Our team fosters a collaborative environment, where we share knowledge, explore innovative approaches, and support one another in leveraging R to its full potential. Through the use of R and its associated packages, we strive to harness the power of data and analytics to drive evidence-based decision-making and make a meaningful difference in the communities we serve.</p>
-<section id="learning-resources" class="level1">
-<h1>Learning Resources</h1>
-<p><a href="https://quarto.org/docs/guide/">Quarto Posit Guide</a></p>
-<p><a href="https://r-graphics.org/">R Graphics Cookbook</a></p>
-<p><a href="https://walker-data.com/census-r/">Analyzing U.S. Census Data</a></p>
-<p><a href="https://mastering-shiny.org/index.html">Mastering Shiny</a></p>
-<p><a href="https://r.geocompx.org/">Geocomputation with R</a></p>
-</section>
-<section id="program-installation" class="level1">
-<h1>Program Installation</h1>
-<p>To facilitate our work, we extensively utilize various R packages that cater to our specific needs. These packages provide us with specialized functions and tools to enhance our analytical capabilities.</p>
-<p>We have also developed a number of packages containing themes and templates in order to facilitate brand consistency across our products.</p>
-<section id="install-r" class="level2">
-<h2 data-anchor-id="install-r">Install R</h2>
-<p>R is a programming language and environment specifically designed for statistical computing and graphics. It provides a wide range of statistical and graphical techniques, and it is widely used in data analysis, data visualization, machine learning, and statistical modeling.</p>
-<p>To install R, follow these steps:</p>
-<ul>
-<li>Visit the official R website at https://cran.r-project.org/.</li>
-<li>Under the ‘Download and Install R’ section click on the most recent release for your platform.</li>
-<li>Select the base sub-directory.</li>
-<li>Download the most recent release for your platform.</li>
-<li>Run the installer file and follow the installation wizard instructions.</li>
-</ul>
-</section>
-<section id="install-rstudio" class="level2">
-<h2 data-anchor-id="install-rstudio">Install RStudio</h2>
-<p>RStudio is an integrated development environment (IDE) for the R programming language. It provides a user-friendly interface for writing, debugging, and running R code, as well as features for data analysis, visualization, and package management. RStudio is available in both open-source and commercial versions.</p>
-<p>To install RStudio, follow these steps:</p>
-<ul>
-<li>Visit the official RStudio website at https://posit.co/download/rstudio-desktop/.</li>
-<li>Download the most recent release for your platform.</li>
-<li>Run the installer file and follow the installation wizard instructions.</li>
-</ul>
-</section>
-<section id="install-rtools" class="level2">
-<h2 data-anchor-id="install-rtools">Install RTools</h2>
-<p>RTools is a collection of software tools required to build and install R packages on Windows. It includes a C/C++ compiler, make tools, and other utilities necessary for compiling packages with native code extensions. To install RTools, follow these steps:</p>
-<ul>
-<li>Visit the official RTools website at https://cran.r-project.org/bin/windows/Rtools/.</li>
-<li>Download the most recent release for your platform that matches your installed version of R.</li>
-<li>Run the installer file and follow the installation wizard instructions.</li>
-</ul>
-</section>
-<section id="install-quarto" class="level2">
-<h2 data-anchor-id="install-quarto">Install Quarto</h2>
-<p>Quarto is a document format and toolchain for scientific and technical publishing. It allows you to create dynamic and reproducible documents that combine code, text, and visualizations. Quarto integrates with programming languages such as R, Python, and Julia, and supports various output formats like HTML, PDF, and Word.</p>
-<p>To install RStudio, follow these steps:</p>
-<ul>
-<li>Visit the official Quarto website at https://quarto.org/.</li>
-<li>Click on the ‘Get Started’ section.</li>
-<li>Download the most recent release for your platform.</li>
-<li>Run the installer file and follow the installation wizard instructions.</li>
-</ul>
-</section>
-<section id="install-cran-packages" class="level2">
-<h2 data-anchor-id="install-cran-packages">Install CRAN Packages</h2>
-<p>In <code>R</code> we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.</p>
-<div class="cell">
-<details>
-<summary>Reveal Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("devtools", "tidyverse", "tidycensus", "googlesheets4", "sf", "arcgisbinding", "tidygeocoder", "tigris", "shiny", "leaflet", "leaflet.extra", "reactble", "DT", ))</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(c("stenevang/sftp"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p><label for="filterInput">Filter:</label> <input type="text" id="filterInput" onkeyup="filterCards()" placeholder="Type to filter..."></p>
+<div class="card-container">
+<div class="card" data-project-name=" Child Poverty Talking Points " data-status=" Active " data-domain=" Organizational ">
+<div class="card-header">
+<pre><code>&lt;h3&gt; Child Poverty Talking Points &lt;/h3&gt;
+&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
 </div>
-<p><strong>arcgisbinding</strong> provides a bridge between R and the ArcGIS geospatial software. It allows users to interact with ArcGIS tools and data directly from R, enabling spatial data analysis and manipulation.</p>
-<p><strong>dplyr</strong> is a popular package for data manipulation and transformation in R. It provides a set of functions that streamline the process of filtering, selecting, summarizing, and joining datasets, making it easier to work with data frames.</p>
-<p><strong>forcats</strong> is a package that focuses on handling and manipulating categorical variables in R. It provides functions to reorder, rename, and recode factor levels, as well as tools for creating summaries and visualizations of categorical data.</p>
-<p><strong>ggplot2</strong> is a powerful package for data visualization in R. It implements the grammar of graphics, allowing users to create highly customizable and publication-quality plots with a concise syntax.</p>
-<p><strong>googlesheets4</strong> is a package that facilitates the interaction with Google Sheets from R. It provides functions to read, write, and modify Google Sheets, enabling seamless integration of spreadsheet data in R workflows.</p>
-<p><strong>janitor</strong> is a package that offers various functions for cleaning and tidying messy datasets in R. It provides tools to handle missing values, remove duplicated rows, and transform data into a tidy format, making it easier to analyze and visualize.</p>
-<p><strong>leaflet</strong> is a package for creating interactive maps in R. It allows users to generate maps with various base layers, add markers, shapes, and other graphical elements, and customize the interactive features for web-based visualization.</p>
-<p><strong>leaflet.extras</strong> is an extension package for leaflet that provides additional functionality and components for interactive mapping in R. It offers features such as heatmaps, clustered markers, and advanced controls to enhance the capabilities of leaflet.</p>
-<p><strong>lubridate</strong> is a package that facilitates the manipulation and parsing of dates and times. It provides a set of functions that simplify common date-related tasks, such as extracting components from a date-time object, modifying specific components, and performing calculations with dates and times.</p>
-<p><strong>plotly</strong> is a package for creating interactive and dynamic visualizations in R. It supports a wide range of chart types and provides tools for adding interactivity, such as tooltips and zooming, making it useful for exploratory data analysis and web-based dashboards.</p>
-<p><strong>purrr</strong> is a package that enhances the functional programming capabilities in R. It provides a set of functions that enable more concise and expressive code for working with lists, vectors, and other data structures.</p>
-<p><strong>reactable</strong> is a package for creating interactive tables in R. It allows users to create customizable and responsive tables with features like sorting, filtering, pagination, and row grouping, making it suitable for presenting and exploring tabular data.</p>
-<p><strong>rio</strong> is a package that simplifies the import and export of data between R and various file formats. It provides a unified interface for reading and writing data in formats such as CSV, Excel, SPSS, and Stata, reducing the need for format-specific functions.</p>
-<p><strong>sf</strong> is a package for working with spatial data in R. It provides classes and functions for handling spatial objects, performing geometric operations, and conducting spatial analysis, enabling efficient and intuitive manipulation of spatial datasets.</p>
-<p><strong>shiny</strong> is a web application framework for R. It allows users to create interactive web applications directly from R scripts, enabling the development of data-driven dashboards, interactive visualizations, and user interfaces.</p>
-<p><strong>stringr</strong> is a package that provides a set of functions for manipulating and working with strings in R. It offers tools for pattern matching, string splitting, substitution, and other common string operations, simplifying text data processing</p>
-</section>
-<section id="install-cpal-packages" class="level2">
-<h2 data-anchor-id="install-cpal-packages">Install CPAL Packages</h2>
-<p>You can install the latest version of <code>cpaldirectory</code> from GitHub:</p>
-<p><strong>cpaldirectory</strong> Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.</p>
-<p><strong>cpaltemplates</strong> Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.</p>
-<p><strong>cpalthemes</strong> A package containing functions for analysis by CPAL Analytics team. Currently not built.</p>
-<p><strong>cpaltools</strong> A package containing commonly used functions generated by the data team.</p>
+<div class="card-body">
+<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Organizational &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Yearly &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  Internal &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Web Report &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  A web report collating a number of city wide metrics important to organizational goals across all Child Poverty Action Lab domain areas. Currently focused on metrics related to Child Poverty. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1693526400 &lt;/p&gt;
+&lt;p&gt;&lt;a href=" https://childpovertyactionlab.github.io/talking-points/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div class="card" data-project-name=" Internal Metrics Dashboard " data-status=" Active " data-domain=" Well-Resourced Neighborhoods ">
+<div class="card-header">
+<pre><code>&lt;h3&gt; Internal Metrics Dashboard &lt;/h3&gt;
+&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
+</div>
+<div class="card-body">
+<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Well-Resourced Neighborhoods &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Yearly &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  Internal &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Advanced Dashboard &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  This shiny dashboard is an internal reference tool which various pillars may use in order to find metrics across various topic areas across a number of different geographies (census tracts, zip codes, counties, and cities) from 2017 to present. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1685577600 &lt;/p&gt;
+&lt;p&gt;&lt;a href=" https://cpal.shinyapps.io/internal-dashboard/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div class="card" data-project-name=" Community Displacement Tool " data-status=" Active " data-domain=" Well-Resourced Neighborhoods ">
+<div class="card-header">
+<pre><code>&lt;h3&gt; Community Displacement Tool &lt;/h3&gt;
+&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
+</div>
+<div class="card-body">
+<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Well-Resourced Neighborhoods &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Not Updated &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  External &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Advanced Dashboard &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  Analysis conducted with the aid of the Charles Schwab Community Development and Investment Team in order to assess where the areas of highest risk for displacement of residents in Dallas County may be when viewed through the lens of property level changes such as evictions, property value changes, ownership changes, and new building permits across time. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1698796800 &lt;/p&gt;
+&lt;p&gt;&lt;a href=" https://cpal.shinyapps.io/community-displacement/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div class="card" data-project-name=" RAPID Survey Report " data-status=" Active " data-domain=" Early Development ">
+<div class="card-header">
+<pre><code>&lt;h3&gt; RAPID Survey Report &lt;/h3&gt;
+&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
+</div>
+<div class="card-body">
+<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Early Development &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Quarterly &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  Internal &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Web Report &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  A web report that is intended to be updated quarterly in order to visualize new survey responses from households participating in the RAPID survey. The households participating in the survey are the same throughout the course of the project, responses are intended to show how households views on topics change over time throughout the City of Dallas. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1693526400 &lt;/p&gt;
+&lt;p&gt;&lt;a href=" https://childpovertyactionlab.github.io/rapid-survey-report/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div class="card" data-project-name=" Birth Rate Explorer " data-status=" In Progress " data-domain=" Maternal Health ">
+<div class="card-header">
+<pre><code>&lt;h3&gt; Birth Rate Explorer &lt;/h3&gt;
+&lt;p&gt;Status:  In Progress &lt;/p&gt;</code></pre>
+</div>
+<div class="card-body">
+<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Maternal Health &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Yearly &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  External &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Mapping Tool &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1701388800 &lt;/p&gt;
+&lt;p&gt;&lt;a href=" https://childpovertyactionlab.github.io/cpaldirectory/Link " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
+</div>
+</div>
+<script>
+function filterCards() {
+  const input = document.getElementById('filterInput');
+  const filter = input.value.toUpperCase();
+  const cards = document.getElementsByClassName('card');
+
+  for (let i = 0; i < cards.length; i++) {
+    const projectName = cards[i].getAttribute('data-project-name');
+    if (projectName.toUpperCase().indexOf(filter) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+</script>
 <b><b>
 
-</b></b></section><b><b>
-</b></b></section><b><b>
 
 </b></b></main><b><b> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

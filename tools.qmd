@@ -2,8 +2,6 @@
 title: "Data Tools"
 ---
 
-# About Our Tools
-
 As part of our data-driven approach to making a positive impact, we rely on the programming language R to drive our work forward. With R at the core of our analytics toolkit, we harness its versatility and extensive library of packages to tackle complex challenges and uncover valuable insights.
 
 As an analytics team, our primary focus is on leveraging R's capabilities to analyze and visualize data, build statistical models, and develop predictive algorithms. R enables us to efficiently manipulate and transform data, ensuring that we can extract meaningful information and uncover hidden patterns.
