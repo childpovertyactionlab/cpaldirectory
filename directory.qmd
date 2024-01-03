@@ -143,6 +143,16 @@ The WIC Uptake Tool is a dynamic dashboard designed for power users, offering mo
 
 ::: {.grid}
 ::: {.g-col-8}
+[**Justice40 in Dallas County (2023)**](https://childpovertyactionlab.github.io/justice40/)
+:::
+::: {.g-col-4}
+{{< fa building size=lg title="Organizational" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+A mapping report visualizing a number of Justice40 initiative metrics for Dallas County.
+:::
+
+::: {.g-col-8}
 [**Neighborhood Safety Dashboard (2023)**](https://cpal.shinyapps.io/neighborhood-safety/)
 :::
 ::: {.g-col-4}
