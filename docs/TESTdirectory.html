@@ -145,104 +145,48 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><label for="filterInput">Filter:</label> <input type="text" id="filterInput" onkeyup="filterCards()" placeholder="Type to filter..."></p>
+<div class="filters">
+<p><label for="projectNameFilter">Project Name:</label> <input type="text" id="projectNameFilter" onkeyup="filterCards()" placeholder="Filter by Project Name..."></p>
+<p><label for="domainFilter">Domain:</label> <select id="domainFilter" onchange="filterCards()"> <option value="">All Domains</option> <!-- Populate with domains --> </select></p>
+<p><!-- Repeat the above pattern for the other filters: Status, Update Cadence, Audience, Product Type, and Tags --></p>
+</div>
 <div class="card-container">
-<div class="card" data-project-name=" Child Poverty Talking Points " data-status=" Active " data-domain=" Organizational ">
-<div class="card-header">
-<pre><code>&lt;h3&gt; Child Poverty Talking Points &lt;/h3&gt;
-&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
-</div>
-<div class="card-body">
-<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Organizational &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Yearly &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  Internal &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Web Report &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  A web report collating a number of city wide metrics important to organizational goals across all Child Poverty Action Lab domain areas. Currently focused on metrics related to Child Poverty. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1693526400 &lt;/p&gt;
-&lt;p&gt;&lt;a href=" https://childpovertyactionlab.github.io/talking-points/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
-</div>
-</div>
-<div class="card" data-project-name=" Internal Metrics Dashboard " data-status=" Active " data-domain=" Well-Resourced Neighborhoods ">
-<div class="card-header">
-<pre><code>&lt;h3&gt; Internal Metrics Dashboard &lt;/h3&gt;
-&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
-</div>
-<div class="card-body">
-<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Well-Resourced Neighborhoods &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Yearly &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  Internal &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Advanced Dashboard &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  This shiny dashboard is an internal reference tool which various pillars may use in order to find metrics across various topic areas across a number of different geographies (census tracts, zip codes, counties, and cities) from 2017 to present. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1685577600 &lt;/p&gt;
-&lt;p&gt;&lt;a href=" https://cpal.shinyapps.io/internal-dashboard/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
-</div>
-</div>
-<div class="card" data-project-name=" Community Displacement Tool " data-status=" Active " data-domain=" Well-Resourced Neighborhoods ">
-<div class="card-header">
-<pre><code>&lt;h3&gt; Community Displacement Tool &lt;/h3&gt;
-&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
-</div>
-<div class="card-body">
-<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Well-Resourced Neighborhoods &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Not Updated &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  External &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Advanced Dashboard &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  Analysis conducted with the aid of the Charles Schwab Community Development and Investment Team in order to assess where the areas of highest risk for displacement of residents in Dallas County may be when viewed through the lens of property level changes such as evictions, property value changes, ownership changes, and new building permits across time. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1698796800 &lt;/p&gt;
-&lt;p&gt;&lt;a href=" https://cpal.shinyapps.io/community-displacement/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
-</div>
-</div>
-<div class="card" data-project-name=" RAPID Survey Report " data-status=" Active " data-domain=" Early Development ">
-<div class="card-header">
-<pre><code>&lt;h3&gt; RAPID Survey Report &lt;/h3&gt;
-&lt;p&gt;Status:  Active &lt;/p&gt;</code></pre>
-</div>
-<div class="card-body">
-<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Early Development &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Quarterly &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  Internal &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Web Report &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  A web report that is intended to be updated quarterly in order to visualize new survey responses from households participating in the RAPID survey. The households participating in the survey are the same throughout the course of the project, responses are intended to show how households views on topics change over time throughout the City of Dallas. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1693526400 &lt;/p&gt;
-&lt;p&gt;&lt;a href=" https://childpovertyactionlab.github.io/rapid-survey-report/ " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
-</div>
-</div>
-<div class="card" data-project-name=" Birth Rate Explorer " data-status=" In Progress " data-domain=" Maternal Health ">
-<div class="card-header">
-<pre><code>&lt;h3&gt; Birth Rate Explorer &lt;/h3&gt;
-&lt;p&gt;Status:  In Progress &lt;/p&gt;</code></pre>
-</div>
-<div class="card-body">
-<pre><code>&lt;p&gt;&lt;strong&gt;Domain:&lt;/strong&gt;  Maternal Health &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update Cadence:&lt;/strong&gt;  Yearly &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt;  External &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Product Type:&lt;/strong&gt;  Mapping Tool &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;  Birth Rate and Clinic Explorer tool developed by Hyperobjekt for CPAL. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date Released:&lt;/strong&gt;  1701388800 &lt;/p&gt;
-&lt;p&gt;&lt;a href=" https://childpovertyactionlab.github.io/cpaldirectory/Link " target="_blank"&gt;View Project&lt;/a&gt;&lt;/p&gt;</code></pre>
-</div>
-</div>
+
+
+<div class="card" data-project-name=" Child Poverty Talking Points " data-domain=" Organizational " data-status=" Active " data-update-cadence=" Yearly " data-audience=" Internal " data-product-type=" Web Report " data-tags=" ">
+<div class="card" data-project-name=" Internal Metrics Dashboard " data-domain=" Well-Resourced Neighborhoods " data-status=" Active " data-update-cadence=" Yearly " data-audience=" Internal " data-product-type=" Advanced Dashboard " data-tags=" ">
+<div class="card" data-project-name=" Community Displacement Tool " data-domain=" Well-Resourced Neighborhoods " data-status=" Active " data-update-cadence=" Not Updated " data-audience=" External " data-product-type=" Advanced Dashboard " data-tags=" ">
+<div class="card" data-project-name=" RAPID Survey Report " data-domain=" Early Development " data-status=" Active " data-update-cadence=" Quarterly " data-audience=" Internal " data-product-type=" Web Report " data-tags=" ">
+<div class="card" data-project-name=" Birth Rate Explorer " data-domain=" Maternal Health " data-status=" In Progress " data-update-cadence=" Yearly " data-audience=" External " data-product-type=" Mapping Tool " data-tags=" ">
+
 </div>
 <script>
 function filterCards() {
-  const input = document.getElementById('filterInput');
-  const filter = input.value.toUpperCase();
+  const projectNameFilter = document.getElementById('projectNameFilter').value.toUpperCase();
+  // Repeat for other filters...
+  
   const cards = document.getElementsByClassName('card');
 
-  for (let i = 0; i < cards.length; i++) {
-    const projectName = cards[i].getAttribute('data-project-name');
-    if (projectName.toUpperCase().indexOf(filter) > -1) {
-      cards[i].style.display = "";
+  Array.from(cards).forEach(function(card) {
+    const projectName = card.getAttribute('data-project-name').toUpperCase();
+    // Repeat for other data attributes...
+    
+    // Logic to determine if a card should be shown
+    const matchesProjectName = projectName.indexOf(projectNameFilter) > -1 || projectNameFilter === "";
+    // Repeat for other matches...
+    
+    if (matchesProjectName && /* ... other matches ... */) {
+      card.style.display = "";
     } else {
-      cards[i].style.display = "none";
+      card.style.display = "none";
     }
-  }
+  });
 }
 </script>
 <b><b>
 
 
-</b></b></main><b><b> <!-- /main -->
+</b></b></div></div></div></div></div></main><b><b> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

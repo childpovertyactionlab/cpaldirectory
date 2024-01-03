@@ -5,11 +5,15 @@ title: "Project Directory"
 All projects listed in this directory contain a set of four icons describing what CPAL pillar, update cadence, intended audience, and product type the project is. 
 Additionally, projects are classified into one of three sections.
 
-- **Active:** A product that is currently being used by its intended audience and that contains an underlying infrastructure which needs to be updated at variance cadences.
+- **Active:** A product that is currently utilized by its intended audience, maintaining a live status with ongoing support. It undergoes regular updates at defined cadences to ensure its functionality, security, and relevance remain optimal for user needs.
 
-- **In Progress:** A product that is currently being developed or thought through which will be released within the next 6 months.
+- **In Progress:** A product or feature currently under development, which is expected to be launched or significantly updated within the next 6 months. This phase involves active design, development, and testing to prepare the product for its release to the intended audience.
 
-- **Deprecated:** A product that was developed on older infrastructure and is either no longer being used or updated. Or is intended to be rebuilt under a new format at some undefined point in the future.
+- **Upcoming Revamp:** A product that is operational and in use but is scheduled for significant updates or a makeover to improve functionality, user experience, or to incorporate new features. The revamp is typically planned and announced in advance to prepare the user base for changes.
+
+- **Model Update:** A product, especially one reliant on data models or algorithms, scheduled for a systematic update. These updates are often to improve accuracy, efficiency, or adapt to new data. It usually doesn't overhaul the entire product but ensures that the core components are modernized and in line with current standards or needs.
+
+- **Deprecated:** A product that has become outdated or is no longer supported with updates. It was built on older technology or methodologies and may no longer be used actively or recommended for use. Plans for its future might include phasing it out completely or considering it for a major overhaul.
 
 :::{.column-margin style="position: fixed; class: collapsible; padding: 10px; border-radius: 15px; background: #FAFAFA; border-radius: 15px; -moz-border-radius: 10px"}
 
@@ -60,12 +64,86 @@ Additionally, projects are classified into one of three sections.
 : {tbl-colwidths="[30,70]"}
 
 :::
+## 2024
+
+::: {.grid}
+::: {.g-col-8}
+[**CPAL Internal Metrics Dashboard (2024)**](https://cpal.shinyapps.io/internal-dashboard/) `Upcoming Revamp`
+:::
+::: {.g-col-4}
+{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+This shiny dashboard is an internal reference tool which various pillars may use in order to find metrics across various topic areas across a number of different geographies (census tracts, zip codes, counties, and cities) from 2017 to present.
+:::
+
+::: {.g-col-8}
+[**Community Resource Explorer (2024)**] `Model Update`
+:::
+::: {.g-col-4}
+{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+The Community Resource Explorer is an external mapping tool receiving an update to enhance its capability in showcasing neighborhood assets and needs. It's designed to guide impactful decisions and initiatives by individuals and institutions alike.
+:::
+
+::: {.g-col-8}
+[**Children Affected by Poverty (2024)**] `In Progress`
+:::
+::: {.g-col-4}
+{{< fa building size=lg title="Organizational" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+This mapping tool is being developed to quantify and visualize the number of children affected by poverty across the City of Dallas. Its aim is to facilitate understanding and action planning for organizational responsibilities and interventions.
+:::
+
+::: {.g-col-8}
+[**Place and Equity in the City of Dallas (2024)**] `In Progress`
+:::
+::: {.g-col-4}
+{{< fa palette size=lg title="Social Capital" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+This internal web report provides a comprehensive analysis of equity across various sectors in Dallas, contrasted with other cities. It leverages a systems change approach, focusing on key areas like human development, economic vitality, and governance.
+:::
+
+::: {.g-col-8}
+[**Benefits Delivery (SNAP) in Dallas County (2024)**] `In Progress`
+:::
+::: {.g-col-4}
+{{< fa truck size=lg title="Benefits Delivery" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa book size=lg title="Web Report" >}}
+:::
+::: {.g-col-12}
+This internal web report offers a yearly analysis of SNAP benefit access across Dallas County. It provides comparative insights with other cities and includes a high-fidelity tool for detailed geographic assessments within Dallas.
+:::
+
+::: {.g-col-8}
+[**Trust Her Clinic Reimbursement (2024)**] `Upcoming Revamp`
+:::
+::: {.g-col-4}
+{{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa skull-crossbones size=lg title="Power User" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+An impending update to the Trust Her Clinic Reimbursement system is on the horizon. Shifting to a Shiny based dashboard, it will enhance the user experience for clinics affiliated with Trust Her, moving away from the current Tableau system.
+:::
+
+::: {.g-col-8}
+[**WIC Uptake Tool (2024)**](https://cpal.shinyapps.io/wic-uptake-tool/) `In Progress`
+:::
+::: {.g-col-4}
+{{< fa baby-carriage size=lg title="Early Development" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa skull-crossbones size=lg title="Power User" >}} {{< fa table-columns size=lg title="Dashboard" >}}
+:::
+::: {.g-col-12}
+The WIC Uptake Tool is a dynamic dashboard designed for power users, offering monthly updates on WIC participation across Dallas County. It provides a deep dive into Local Agency 7 clinics, enabling targeted insights and actions.
+:::
+
+:::
 
 ## 2023
 
 ::: {.grid}
 ::: {.g-col-8}
-[**Neighborhood Crime Dashboard (2023)**](https://cpal.shinyapps.io/neighborhood-incidents/)
+[**Neighborhood Safety Dashboard (2023)**](https://cpal.shinyapps.io/neighborhood-safety/)
 :::
 ::: {.g-col-4}
 {{< fa shield size=lg title="Safety" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa sun size=lg title="External" >}} {{< fa table-columns size=lg title="Dashboard" >}}
@@ -83,15 +161,6 @@ A prototype dashboard centered around bcWorkshop neighborhoods in the City of Da
 A web report collating a number of city wide metrics important to organizational goals across all Child Poverty Action Lab domain areas. Currently focused on metrics related to Child Poverty.
 :::
 ::: {.g-col-8}
-[**CPAL Internal Metrics Dashboard (2023)**](https://cpal.shinyapps.io/internal-dashboard/)
-:::
-::: {.g-col-4}
-{{< fa people-group size=lg title="Well-Resourced Neighborhoods" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}
-:::
-::: {.g-col-12}
-This shiny dashboard is an internal reference tool which various pillars may use in order to find metrics across various topic areas across a number of different geographies (census tracts, zip codes, counties, and cities) from 2017 to present.
-:::
-::: {.g-col-8}
 [**Community Displacement Tool (2023)**](https://cpal.shinyapps.io/community-displacement/)
 :::
 ::: {.g-col-4}
@@ -101,7 +170,7 @@ This shiny dashboard is an internal reference tool which various pillars may use
 Analysis conducted with the aid of the Charles Schwab Community Development and Investment Team in order to assess where the areas of highest risk for displacement of residents in Dallas County may be when viewed through the lens of property level changes such as evictions, property value changes, ownership changes, and new building permits across time.
 :::
 ::: {.g-col-8}
-[**Birth Rate Explorer (2023)**](Link) `In Progress`
+[**Birth Rate Explorer (2023)**](https://staging--cpal-tp-bre.netlify.app/) `In Progress`
 :::
 ::: {.g-col-4}
 {{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa sun size=lg title="External" >}} {{< fa map size=lg title="Mapping Tool" >}}
@@ -147,7 +216,7 @@ A web report visualizing eviction court case proceedings observed across Dallas 
 This is a tool generated to give Dallas ISD information related to middle of the year moves and evictions in attendance zones for all school campuses.
 :::
 ::: {.g-col-8}
-[**Trust Her Clinic Reimbursement (2023)**](NONE)
+[**Trust Her Clinic Reimbursement (2023)**]
 :::
 ::: {.g-col-4}
 {{< fa person-breastfeeding size=lg title="Maternal Health" >}} {{< fa calendar-days size=lg title="Monthly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa table-columns size=lg title="Dashboard" >}}

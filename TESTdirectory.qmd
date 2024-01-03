@@ -8,6 +8,7 @@ format: html
 library(googlesheets4)
 library(knitr)
 library(tidyverse)
+library(shiny)
 
 projectdir <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/1QuUHl_O4sI7vUFaY54Zf8mnifPOzLU4OYO2x3FblSj8", sheet = "Directory Projects") #%>%
 #    mutate(Domain = case_when(
@@ -16,45 +17,57 @@ projectdir <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/1QuUHl_O4s
 #  ))
 ```
 
-<label for="filterInput">Filter:</label>
-<input type="text" id="filterInput" onkeyup="filterCards()" placeholder="Type to filter...">
+<div class="filters">
+  <label for="projectNameFilter">Project Name:</label>
+  <input type="text" id="projectNameFilter" onkeyup="filterCards()" placeholder="Filter by Project Name...">
+
+  <label for="domainFilter">Domain:</label>
+  <select id="domainFilter" onchange="filterCards()">
+    <option value="">All Domains</option>
+    <!-- Populate with domains -->
+  </select>
+
+  <!-- Repeat the above pattern for the other filters: Status, Update Cadence, Audience, Product Type, and Tags -->
+</div>
 
 <div class="card-container">
+
 ```{r echo=FALSE, results='asis'}
 for (i in 1:nrow(projectdir)) {
   row <- projectdir[i, ]
-  cat('<div class="card" data-project-name="', row$`Project Name`, '" data-status="', row$Status, '" data-domain="', row$Domain, '">\n')
-  cat('  <div class="card-header">\n')
-  cat('    <h3>', row$`Project Name`, '</h3>\n')
-  cat('    <p>Status: ', row$Status, '</p>\n')
-  cat('  </div>\n')
-  cat('  <div class="card-body">\n')
-  cat('    <p><strong>Domain:</strong> ', row$Domain, '</p>\n')
-  cat('    <p><strong>Update Cadence:</strong> ', row$`Update Cadence`, '</p>\n')
-  cat('    <p><strong>Audience:</strong> ', row$Audience, '</p>\n')
-  cat('    <p><strong>Product Type:</strong> ', row$`Product Type`, '</p>\n')
-  cat('    <p><strong>Description:</strong> ', row$Description, '</p>\n')
-  cat('    <p><strong>Date Released:</strong> ', row$`Date Released`, '</p>\n')
-  cat('    <p><a href="', row$Link, '" target="_blank">View Project</a></p>\n')
-  cat('  </div>\n')
-  cat('</div>\n')
+  cat('<div class="card" data-project-name="', row$`Project Name`, 
+      '" data-domain="', row$Domain, 
+      '" data-status="', row$Status, 
+      '" data-update-cadence="', row$`Update Cadence`, 
+      '" data-audience="', row$Audience, 
+      '" data-product-type="', row$`Product Type`, 
+      '" data-tags="', row$Tags, '">\n')
+  # ... rest of the card ...
 }
+
 ```
 </div>
 
 <script>
 function filterCards() {
-  const input = document.getElementById('filterInput');
-  const filter = input.value.toUpperCase();
+  const projectNameFilter = document.getElementById('projectNameFilter').value.toUpperCase();
+  // Repeat for other filters...
+  
   const cards = document.getElementsByClassName('card');
 
-  for (let i = 0; i < cards.length; i++) {
-    const projectName = cards[i].getAttribute('data-project-name');
-    if (projectName.toUpperCase().indexOf(filter) > -1) {
-      cards[i].style.display = "";
+  Array.from(cards).forEach(function(card) {
+    const projectName = card.getAttribute('data-project-name').toUpperCase();
+    // Repeat for other data attributes...
+    
+    // Logic to determine if a card should be shown
+    const matchesProjectName = projectName.indexOf(projectNameFilter) > -1 || projectNameFilter === "";
+    // Repeat for other matches...
+    
+    if (matchesProjectName && /* ... other matches ... */) {
+      card.style.display = "";
     } else {
-      cards[i].style.display = "none";
+      card.style.display = "none";
     }
-  }
+  });
 }
 </script>
