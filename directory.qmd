@@ -108,6 +108,16 @@ This internal web report provides a comprehensive analysis of equity across vari
 :::
 
 ::: {.g-col-8}
+[**Court Observers (2024)**](https://childpovertyactionlab.github.io/court-observer/) `In Progress`
+:::
+::: {.g-col-4}
+{{< fa house-chimney size=lg title="Housing" >}} {{< fa calendar-xmark size=lg title="Not Updated" >}} {{< fa sun size=lg title="External" >}} {{< fa sheet-plastic size=lg title="Fact Sheet" >}}
+:::
+::: {.g-col-12}
+Court Observers is an external fact sheet serving as a link repository for students participating in the Dallas County Court Observation project. It provides students with essential information about their roles and responsibilities, along with relevant project details.
+:::
+
+::: {.g-col-8}
 [**Benefits Delivery (SNAP) in Dallas County (2024)**] `In Progress`
 :::
 ::: {.g-col-4}
