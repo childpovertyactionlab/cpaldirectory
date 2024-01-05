@@ -88,7 +88,7 @@ The Community Resource Explorer is an external mapping tool receiving an update 
 :::
 
 ::: {.g-col-8}
-[**Children Affected by Poverty (2024)**] `In Progress`
+[**Children Affected by Poverty (2024)**](https://cpal.shinyapps.io/poverty-share-dallas/)
 :::
 ::: {.g-col-4}
 {{< fa building size=lg title="Organizational" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
