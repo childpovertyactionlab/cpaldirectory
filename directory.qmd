@@ -68,6 +68,15 @@ Additionally, projects are classified into one of three sections.
 
 ::: {.grid}
 ::: {.g-col-8}
+[**Exploring Poverty in Dallas (2024)**](https://cpal.shinyapps.io/poverty-explore-dallas/)
+:::
+::: {.g-col-4}
+{{< fa building size=lg title="Organizational" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
+:::
+::: {.g-col-12}
+This mapping tool is being developed to quantify and visualize the number of children affected by poverty across the City of Dallas. Its aim is to facilitate understanding and action planning for organizational responsibilities and interventions.
+:::
+::: {.g-col-8}
 [**CPAL Internal Metrics Dashboard (2024)**](https://cpal.shinyapps.io/internal-dashboard/) `Upcoming Revamp`
 :::
 ::: {.g-col-4}
@@ -94,7 +103,7 @@ The Community Resource Explorer is an external mapping tool receiving an update 
 {{< fa building size=lg title="Organizational" >}} {{< fa calendar-plus size=lg title="Yearly" >}} {{< fa moon size=lg title="Internal" >}} {{< fa map size=lg title="Mapping Tool" >}}
 :::
 ::: {.g-col-12}
-This mapping tool is being developed to quantify and visualize the number of children affected by poverty across the City of Dallas. Its aim is to facilitate understanding and action planning for organizational responsibilities and interventions.
+This mapping tool is developed to quantify and visualize the number of children affected by poverty across the City of Dallas. Its aim is to facilitate understanding and action planning for organizational responsibilities and interventions.
 :::
 
 ::: {.g-col-8}
