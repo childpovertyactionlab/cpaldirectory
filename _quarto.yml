@@ -33,11 +33,11 @@ website:
   favicon: www/images/CPAL_favicon.ico
   navbar:
       pinned: TRUE
-      search: TRUE
+      search: FALSE
       logo: www/images/CPAL_Logo_White.png
       logo-href: "https://childpovertyactionlab.github.io/cpaldirectory/"
-      collapse: false
-      left:
+      collapse: FALSE
+      right:
         - text: "<b>Menu<b>"
           menu:
             - icon: house-door-fill

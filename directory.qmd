@@ -14,4 +14,4 @@ listing:
       categories: "Exclude"
 ---
 
-[Link to Private Directory](#directory-private)
+[Link to Private Directory](https://childpovertyactionlab.github.io/cpaldirectory/directory-private.html)
