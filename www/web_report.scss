@@ -200,6 +200,8 @@ div.shadecontent
     -moz-border-radius: 10px;
 }
 
+
+
 h1, h2, h3, h4, h5, h6 {
     position: relative;
     padding: 10px; /* Add more padding to the right to make space for the triangle */
@@ -210,31 +212,21 @@ h1, h2, h3, h4, h5, h6 {
     background: $teal-900;
     border-radius: 8px 10px 10px 8px;
     -moz-border-radius: 0px;
+    vertical-align: middle;
 }
 
 h1 {
-    width: 95%;
-    height: 56px;
-    text-align: center;
-
-    &::after {
-        border-radius: 0;
-        content: '';
-        position: absolute;
-        right: -32px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0;
-        height: 0;
-        border-left: calc(56px * .65) solid $teal-900;
-        border-top: calc(56px / 2 - 2px) solid transparent;
-        border-bottom: calc(56px / 2 - 2px) solid transparent;
-    }
+    font-size: 30px !important;
+    vertical-align: none;
+    background: $teal-900;
+    color: $gray-000 !important;
+    padding-bottom: 0px;
 }
 
 h2 {
-    width: 70%;
-    height: 48px;
+    width: 75%;
+    color: $gray-000 !important;
+    height: 30px;
 
     &::after {
         border-radius: 0;
@@ -262,14 +254,16 @@ h2#toc-title {
 }
 
 h3 {
-    width: 45%;
-    height: 48px;
+    width: 60%;
+    height: 100%;
+    color: $gray-000 !important;
+    font-size: 20px !important;
 
     &::after {
         border-radius: 0;
         content: '';
         position: absolute;
-        right: -26.5px;
+        right: -28.5px;
         top: 50%;
         transform: translateY(-50%);
         width: 0;
@@ -282,10 +276,12 @@ h3 {
 
 h4 {
     position: relative;
-    color: #FFFFFF;
-    padding-left: 85px; /* Space for block and triangle. Adjust as needed. */
+    padding-left: 62px; /* Space for block and triangle. Adjust as needed. */
     background: none;
     color: $teal-900;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 20px !important;
 
     &::before {
         /* Block */
@@ -294,8 +290,8 @@ h4 {
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        width: 50px; /* Adjust as needed */
-        height: 40px; /* Adjust as needed */
+        width: 40px; /* Adjust as needed */
+        height: 30px; /* Adjust as needed */
         background: $teal-900;
         border-radius: 5px 10px 10px 5px;
     }
@@ -304,20 +300,22 @@ h4 {
         /* Triangle */
         content: '';
         position: absolute;
-        left: 46px; /* Adjust based on block width */
+        left: 36px; /* Adjust based on block width */
         top: 50%;
         transform: translateY(-50%);
         width: 0;
         height: 0;
-        border-left: calc(40px * .60) solid $teal-900; /* Adjust based on the height */
-        border-top: calc(40px / 2 - 2px) solid transparent;
-        border-bottom: calc(40px / 2 - 2px) solid transparent;
+        border-left: calc(30px * .60) solid $teal-900; /* Adjust based on the height */
+        border-top: calc(30px / 2 - 2px) solid transparent;
+        border-bottom: calc(30px / 2 - 2px) solid transparent;
     }
 }
 
 h5, h6 {
   display: inline-block;
   font-size: 20px !important;
+  color: $gray-000 !important;
+  vertical-align: middle;
 }
 
 h6 {
@@ -381,6 +379,214 @@ h6 {
 
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-link {
+  text-decoration: none !important;
+  border: none;
+  background-color: $teal-900;
+  color: white;
+  border-radius: 15px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+
+  p {
+    position: relative;
+    font-weight: $headings-font-weight;
+    font-family: $headings-font-family;
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 80px !important;
+    margin: 0;
+    padding: 5px;
+    line-height: 0;
+  }
+
+  span {
+    font-size: 20px !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.grid-item-empty {
+  background-color: $teal-900;
+  color: white;
+  border-radius: 15px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.grid-link.hovered {
+  background-color: $teal-700; /* Update to the lighter teal color when hovered */
+  p {
+    transform: scale(1.05); // Increase icon size on hover
+  }
+}
+
+.info.hovered {
+  border-style: solid;
+  border-color: $teal-700;
+  color: $teal-700;
+}
+
+.info {
+    border-style: solid;
+    border-width: 4px;
+    border-color: transparent;
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+    border-radius: 8px 10px 10px 8px;
+    background: transparent; /* Make sure $teal-900 is defined in your CSS or replace it with a standard color code */
+    padding: 10px; /* Add padding for better visual appearance */
+    display: inline-block; /* This makes the background only wrap the text, not the entire line */
+
+}
+
+.info::after {
+    content: attr(data-description);
+    display: block;
+    margin-left: 10px;
+    font-size: 16px;
+    color: $teal-900;
+}
+
+.subtext {
+  color: #c4c4c4;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.rounded-outline {
+  display: inline-block; /* Makes the div inline */
+  /* width: 60px;  Set a fixed width */
+  font-size: 24px!important;
+  text-align: center; /* Center the text */
+  padding: 0px 5px; /* Some padding around the text */
+  font-weight: bold;
+}
+
+.dark-col {
+  background-color: $teal-900;
+}
+
+.dark-col h1 {
+  color: white;
+}
+
+.card-side {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.cardbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-card-col {
+  width: 42%;
+  display: flex;
+  justify-content: center;
+}
+
+.right-card-col {
+  width: 58%;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .cardbox {
+    flex-direction: column;
+  }
+
+  .left-card-col {
+    width: 100%;
+    display: flex;
+  }
+
+  .right-card-col {
+    width: 100%;
+  }
+}
+
+.mainboxbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mainbox {
+  width: 100%;
+
+  @media (min-width: 768px) and (max-width: 1079px) {
+    width: calc(84% + (16% * (1080px - 100vw)) / (1080px - 768px));
+  }
+
+  @media (min-width: 1080px) {
+    width: 84%;
+  }
+}
+
+
+.mapscroll-container {
+  padding: 15px;
+  padding-bottom: 5px;
+  text-align: right;
+}
+
+.scroll-link {
+    cursor: pointer;
+    color: #9e9e9e; /* Semi light grey color */
+    background-color: transparent; /* No background */
+    text-decoration: none!important;
+    border: none; /* No border */
+}
+
+.scroll-link:hover {
+    color: #919191; /* Slightly darker grey on hover for visual feedback */
+}
+
+
+/*.info.show-description::after {
+    display: inline;
+}*/
+
+/*.info.collapsed::after {
+    content: '...';
+    display: inline;
+}*/
+
+/*.info.show-description.collapsed::after {
+    content: attr(data-description);
+}*/
+
+
+/*.info:hover::after {
+    content: attr(data-description);
+    margin-left: 10px;
+    font-size: 16px;
+    color: #DDD;
+    display: inline;
+}*/
 
 // Mermaid Theme;
 

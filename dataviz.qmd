@@ -37,7 +37,7 @@ cpal_texas <- cpal_comp %>%
 
 ```
 
-## Graphic Design Principles
+#### Graphic Design Principles
 
 When creating graphics to share with stakeholders, it is important to consider key graphic design principles. These principles help ensure that the visuals effectively communicate information while maintaining clarity and transparency:
 
@@ -59,7 +59,7 @@ When creating graphics to share with stakeholders, it is important to consider k
 
 By incorporating these graphic design principles, you can create visually appealing graphics that effectively communicate data to stakeholders while upholding transparency and facilitating easy comprehension and interpretation of the information presented.
 
-## Installing Poppins
+#### Installing Poppins
 Your computer may not have the Poppins font installed. If it is not installed, please install the free Poppins font from Google. Below are step by step instructions:
 
 Download the Poppins font (as a zip file).
@@ -69,7 +69,7 @@ You only need to install Lato once per computer.
 
 # Scatter Plots
 
-## One-Color Scatter PLot
+#### One-Color Scatter PLot
 Scatter plots are useful for visualizing the relationship between two variables, identifying patterns or trends, and detecting outliers or anomalies.
 ```{r, One Color Scatter Plot}
 #| echo: TRUE
@@ -91,7 +91,7 @@ cpal_comp %>%
 
 ```
 
-## High Density Scatter Plot
+#### High Density Scatter Plot
 ```{r, High Density Scatter Plot}
 #| echo: TRUE
 #| fig-cap: A high density scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with a population greater than 10,000.
@@ -111,7 +111,7 @@ cpal_comp %>%
 
 ```
 
-## Varying Point Size Scatter Plot
+#### Varying Point Size Scatter Plot
 ```{r, Varying Point Size Scatter Plot}
 #| echo: TRUE
 #| fig-cap: A size adjusted scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population with points adjusted based on total number of children below poverty.
@@ -135,7 +135,7 @@ cpal_comp %>%
 
 ```
 
-## Lollipop Chart
+#### Lollipop Chart
 ```{r, Lollipop Chart}
 #| echo: TRUE
 #| fig-cap: A basic scatterplot visualizing a relationship between Child Poverty Rate and Median Household Income in cities with over a million population.
@@ -159,7 +159,7 @@ cpal_1mil %>%
 
 # Line Graph
 
-## Basic Line Graph
+#### Basic Line Graph
 ```{r, Line Graph}
 #| echo: TRUE
 #| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
@@ -181,8 +181,7 @@ cpal_1mil %>%
 
 ```
 
-
-## Multiples Line Graph
+#### Multiples Line Graph
 ```{r, Multiple Line Graph}
 #| echo: TRUE
 #| fig-cap: A multiples line graph visualizing the child poverty rate of multiple cities since 2010.
@@ -206,7 +205,7 @@ cpal_1mil %>%
 
 # Bar Graphs
 
-## One-Color Bar Graph
+#### One-Color Bar Graph
 ```{r, Bar Graph}
 #| echo: TRUE
 #| fig-cap: A basic line graph visualizing a the Child Poverty Rate in the City of Dallas
@@ -223,7 +222,7 @@ cpal_1mil %>%
   scale_x_continuous(labels = scales::percent_format(), limits = c(0, NA))
 ```
 
-## Stacked Bar Plot
+#### Stacked Bar Plot
 ```{r, Stacked Bar Plot}
 #| echo: TRUE
 #| fig-cap: A stacked bar plot comparing Renter and Owner Occupied Households in Large Cities.
@@ -243,7 +242,7 @@ cpal_1mil %>%
   scale_fill_manual(values = palette_cpal_main)
 ```
 
-## Percent Stacked Bar Plot
+#### Percent Stacked Bar Plot
 ```{r, Percent Stacked Bar Plot}
 #| echo: TRUE
 #| fig-cap: A stacked bar plot comparing Renter and Owner Occupied Households in Large Cities.
@@ -264,7 +263,7 @@ cpal_1mil %>%
   scale_fill_manual(values = palette_cpal_main)
 ```
 
-## Histogram
+#### Histogram
 ```{r, Histogram}
 #| echo: TRUE
 #| fig-cap: A basic histogram visualizing 
@@ -283,7 +282,7 @@ cpal_comp %>%
 
 # Density
 
-## 2D Hexbin Chart
+#### 2D Hexbin Chart
 ```{r, 2D Hexbin Chart}
 cpal_comp %>%
   filter(year == as.Date("2021-01-01")) %>%
@@ -303,7 +302,7 @@ cpal_comp %>%
 
 # Interactive Graphics
 
-## leaflet Map
+#### leaflet Map
 ```{r, Leaflet}
 #| echo: TRUE
 # A basic leaflet map
@@ -321,10 +320,9 @@ leaflet(dallas) %>%
 
 ```
 
-
 # Miscellaneous Graphics
 
-## Flow Chart
+#### Flow Chart
 ```{mermaid}
 flowchart TD
   A[Start] --> B(Step One)
@@ -333,4 +331,3 @@ flowchart TD
   D --> E{Outcome One}
   D --> F{Outcome Two}
 ```
-

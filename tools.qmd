@@ -8,7 +8,7 @@ As an analytics team, our primary focus is on leveraging R's capabilities to ana
 
 Our team fosters a collaborative environment, where we share knowledge, explore innovative approaches, and support one another in leveraging R to its full potential. Through the use of R and its associated packages, we strive to harness the power of data and analytics to drive evidence-based decision-making and make a meaningful difference in the communities we serve.
 
-# Learning Resources
+#### Learning Resources
 [Quarto Posit Guide](https://quarto.org/docs/guide/)
 
 [R Graphics Cookbook](https://r-graphics.org/)
@@ -19,13 +19,13 @@ Our team fosters a collaborative environment, where we share knowledge, explore 
 
 [Geocomputation with R](https://r.geocompx.org/)
 
-# Program Installation
+#### Program Installation
 
 To facilitate our work, we extensively utilize various R packages that cater to our specific needs. These packages provide us with specialized functions and tools to enhance our analytical capabilities.
 
 We have also developed a number of packages containing themes and templates in order to facilitate brand consistency across our products.
 
-## Install R
+# Install R
 
 R is a programming language and environment specifically designed for statistical computing and graphics. It provides a wide range of statistical and graphical techniques, and it is widely used in data analysis, data visualization, machine learning, and statistical modeling.
 
@@ -37,7 +37,7 @@ To install R, follow these steps:
 * Download the most recent release for your platform.
 * Run the installer file and follow the installation wizard instructions.
 
-## Install RStudio
+# Install RStudio
 
 RStudio is an integrated development environment (IDE) for the R programming language. It provides a user-friendly interface for writing, debugging, and running R code, as well as features for data analysis, visualization, and package management. RStudio is available in both open-source and commercial versions.
 
@@ -47,7 +47,7 @@ To install RStudio, follow these steps:
 * Download the most recent release for your platform.
 * Run the installer file and follow the installation wizard instructions.
 
-## Install RTools
+# Install RTools
 
 RTools is a collection of software tools required to build and install R packages on Windows. It includes a C/C++ compiler, make tools, and other utilities necessary for compiling packages with native code extensions.
 To install RTools, follow these steps:
@@ -56,7 +56,7 @@ To install RTools, follow these steps:
 * Download the most recent release for your platform that matches your installed version of R.
 * Run the installer file and follow the installation wizard instructions.
 
-## Install Quarto
+# Install Quarto
 
 Quarto is a document format and toolchain for scientific and technical publishing. It allows you to create dynamic and reproducible documents that combine code, text, and visualizations. Quarto integrates with programming languages such as R, Python, and Julia, and supports various output formats like HTML, PDF, and Word.
 
@@ -67,7 +67,7 @@ To install RStudio, follow these steps:
 * Download the most recent release for your platform.
 * Run the installer file and follow the installation wizard instructions.
 
-## Install CRAN Packages
+# Install CRAN Packages
 In `R` we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.
 
 ```{r}
@@ -111,7 +111,7 @@ In `R` we primarily use packages from the tidyverse in our analysis pipeline suc
 
 **stringr** is a package that provides a set of functions for manipulating and working with strings in R. It offers tools for pattern matching, string splitting, substitution, and other common string operations, simplifying text data processing
 
-## Install CPAL Packages
+# Install CPAL Packages
 
 You can install the latest version of `cpaldirectory` from GitHub:
 
