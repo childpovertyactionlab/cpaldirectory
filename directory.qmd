@@ -11,7 +11,7 @@ listing:
     image-height: "175px"
     max-description-length: 250
     exclude: 
-      categories: "Exclude"
+      categories: ["Exclude", "In Progress"]
 ---
 
 [Link to Private Directory](https://childpovertyactionlab.github.io/cpaldirectory/directory-private.html)

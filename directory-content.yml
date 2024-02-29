@@ -1,3 +1,24 @@
+- title: "Homestead Exemptions in Dallas County"
+  description: "This mapping tool allows users to explore the uptake of homestead exemptions for homeowners across Dallas County, and view metrics related to home exemption uptake for eligbile households."
+  date: "2024-02-23"
+  categories: [Housing, Mapping Tool, Internal, Yearly, In Progress]
+  image: "/www/images/Housing_1 (Blue).jpg"
+  path: "https://cpal.shinyapps.io/homestead-exemptions-dallas/"
+
+- title: "Parcel Block Walking Neighborhoods"
+  description: "A lookup tool for neighborhoods across the City of Dallas where users can view residential parcels in different neighborhoods and lookup property owner information."
+  date: "2024-02-30"
+  categories: [Housing, Mapping Tool, Internal, Yearly, In Progress]
+  image: "/www/images/Housing_2 (Orange).jpg"
+  path: "https://cpal.shinyapps.io/parcel-block-walking/"
+
+- title: "Neighborhood Eviction Housing Profiles"
+  description: "A neighforhood fact sheet lookup tool that provides users with the ability to review idenfied housing and eviction metrics in neighborhoods across the City of Dallas."
+  date: "2024-02-09"
+  categories: [Housing, Fact Sheet, External, Yearly]
+  image: "/www/images/Safety_1 (Green).jpg"
+  path: "https://cpal.shinyapps.io/neighborhood-housing/"
+
 - title: "Exploring Teen Births in Dallas County Zip Codes"
   description: "This mapping tool allows users to explore the areas with the highest proportions of teen births across zip codes in Dallas County."
   date: "2024-01-26"
