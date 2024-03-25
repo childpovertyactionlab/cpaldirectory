@@ -172,8 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-rstudio" id="toc-install-rstudio" class="nav-link" data-scroll-target="#install-rstudio">Install RStudio</a></li>
   <li><a href="#install-rtools" id="toc-install-rtools" class="nav-link" data-scroll-target="#install-rtools">Install RTools</a></li>
   <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link" data-scroll-target="#install-quarto">Install Quarto</a></li>
-  <li><a href="#install-cran-packages" id="toc-install-cran-packages" class="nav-link" data-scroll-target="#install-cran-packages">Install CRAN Packages</a></li>
-  <li><a href="#install-cpal-packages" id="toc-install-cpal-packages" class="nav-link" data-scroll-target="#install-cpal-packages">Install CPAL Packages</a></li>
+  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages">Install Packages</a></li>
   </ul>
 </nav>
     </div>
@@ -257,41 +256,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Run the installer file and follow the installation wizard instructions.</li>
 </ul>
 </section>
-<section id="install-cran-packages" class="level1">
-<h1>Install CRAN Packages</h1>
+<section id="install-packages" class="level1">
+<h1>Install Packages</h1>
 <p>In <code>R</code> we primarily use packages from the tidyverse in our analysis pipeline such as dplyr, tidyr, and stringr among others. These are the following packages you should have installed on your computer for visualization across the team.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Reveal Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("devtools", "tidyverse", "tidycensus", "googlesheets4", "sf", "arcgisbinding", "tidygeocoder", "tigris", "shiny", "leaflet", "leaflet.extra", "reactble", "DT", ))</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("devtools", "tidyverse", "tidycensus", "googlesheets4", "sf", "tidygeocoder", "tigris", "shiny", "leaflet", "leaflet.extra", "reactable", "DT", "rio", "highcharter", "ipumsr", "pollster", "gmodels", "haven", "survey", "broom", "janitor", "srvyr"))</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(c("stenevang/sftp"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(c("childpovertyactionlab/cpaltemplates", "childpovertyactionlab/cpaltools", "stenevang/sftp"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p><strong>arcgisbinding</strong> provides a bridge between R and the ArcGIS geospatial software. It allows users to interact with ArcGIS tools and data directly from R, enabling spatial data analysis and manipulation.</p>
-<p><strong>dplyr</strong> is a popular package for data manipulation and transformation in R. It provides a set of functions that streamline the process of filtering, selecting, summarizing, and joining datasets, making it easier to work with data frames.</p>
-<p><strong>forcats</strong> is a package that focuses on handling and manipulating categorical variables in R. It provides functions to reorder, rename, and recode factor levels, as well as tools for creating summaries and visualizations of categorical data.</p>
-<p><strong>ggplot2</strong> is a powerful package for data visualization in R. It implements the grammar of graphics, allowing users to create highly customizable and publication-quality plots with a concise syntax.</p>
-<p><strong>googlesheets4</strong> is a package that facilitates the interaction with Google Sheets from R. It provides functions to read, write, and modify Google Sheets, enabling seamless integration of spreadsheet data in R workflows.</p>
-<p><strong>janitor</strong> is a package that offers various functions for cleaning and tidying messy datasets in R. It provides tools to handle missing values, remove duplicated rows, and transform data into a tidy format, making it easier to analyze and visualize.</p>
-<p><strong>leaflet</strong> is a package for creating interactive maps in R. It allows users to generate maps with various base layers, add markers, shapes, and other graphical elements, and customize the interactive features for web-based visualization.</p>
-<p><strong>leaflet.extras</strong> is an extension package for leaflet that provides additional functionality and components for interactive mapping in R. It offers features such as heatmaps, clustered markers, and advanced controls to enhance the capabilities of leaflet.</p>
-<p><strong>lubridate</strong> is a package that facilitates the manipulation and parsing of dates and times. It provides a set of functions that simplify common date-related tasks, such as extracting components from a date-time object, modifying specific components, and performing calculations with dates and times.</p>
-<p><strong>plotly</strong> is a package for creating interactive and dynamic visualizations in R. It supports a wide range of chart types and provides tools for adding interactivity, such as tooltips and zooming, making it useful for exploratory data analysis and web-based dashboards.</p>
-<p><strong>purrr</strong> is a package that enhances the functional programming capabilities in R. It provides a set of functions that enable more concise and expressive code for working with lists, vectors, and other data structures.</p>
-<p><strong>reactable</strong> is a package for creating interactive tables in R. It allows users to create customizable and responsive tables with features like sorting, filtering, pagination, and row grouping, making it suitable for presenting and exploring tabular data.</p>
-<p><strong>rio</strong> is a package that simplifies the import and export of data between R and various file formats. It provides a unified interface for reading and writing data in formats such as CSV, Excel, SPSS, and Stata, reducing the need for format-specific functions.</p>
-<p><strong>sf</strong> is a package for working with spatial data in R. It provides classes and functions for handling spatial objects, performing geometric operations, and conducting spatial analysis, enabling efficient and intuitive manipulation of spatial datasets.</p>
-<p><strong>shiny</strong> is a web application framework for R. It allows users to create interactive web applications directly from R scripts, enabling the development of data-driven dashboards, interactive visualizations, and user interfaces.</p>
-<p><strong>stringr</strong> is a package that provides a set of functions for manipulating and working with strings in R. It offers tools for pattern matching, string splitting, substitution, and other common string operations, simplifying text data processing</p>
-</section>
-<section id="install-cpal-packages" class="level1">
-<h1>Install CPAL Packages</h1>
-<p>You can install the latest version of <code>cpaldirectory</code> from GitHub:</p>
-<p><strong>cpaldirectory</strong> Directory for CPAL Analytics team to organize visualization code and projects into a centralized location. This website is built from this repository.</p>
-<p><strong>cpaltemplates</strong> Primary package containing templates and tools for new project generation across CPAL Analytics data projects. Contains templates for shiny, web reports, websites, project directories, and visualizations.</p>
-<p><strong>cpalthemes</strong> A package containing functions for analysis by CPAL Analytics team. Currently not built.</p>
-<p><strong>cpaltools</strong> A package containing commonly used functions generated by the data team.</p>
 <b><b>
 
 </b></b></section><b><b>
