@@ -1,3 +1,38 @@
+- title: "2024 Bond Package Projects in Infrastructure Deserts"
+  description: "A web map tracking current projects from the 2024 City of Dallas bond package and reviewing which of them align with the 2022 SMU infrastructure desert analysis."
+  date: "2024-05-08"
+  categories: [Well-Resourced Neighborhoods, Web Report, External, Not Updated]
+  image: "/www/images/Housing_1 (Green _ Orange).jpg"
+  path: "https://childpovertyactionlab.github.io/dallas-bond-proposition/"
+
+- title: "Benefits Eligibility Batch Screener"
+  description: "A utility intended to help external partners with access to person level data identify which individuals may qualify for specific benefits within their institution."
+  date: "2024-05-15"
+  categories: [Benefits Delivery, Utility Tool, External, Yearly]
+  image: "/www/images/Benefits Delivery_3.jpg"
+  path: "https://cpal.shinyapps.io/benefits-qualifier/"
+
+- title: "Service Area Generator"
+  description: "A utility intended facilitate the definition of specific service areas. Defined areas within this tool will be integrated into future dashboards developed by the Child Poverty Action Lab (CPAL)."
+  date: "2024-05-08"
+  categories: [Organizational, Utility Tool, External, Not Updated]
+  image: "/www/images/Housing_1 (Blue).jpg"
+  path: "https://cpal.shinyapps.io/service-area-generator/"
+
+- title: "Place and Equity in Dallas"
+  description: "A web report collecting data across a number of dimensions to visualize disparities across the City of Dallas. Highlights underserved areas in the city and generating comparisons across peer cities in the United States."
+  date: "2024-05-15"
+  categories: [Organizational, Web Report, Internal, Not Updated, In Progress]
+  image: "/www/images/Housing_3 (Red).jpg"
+  path: "https://childpovertyactionlab.github.io/place-and-equity/"
+
+- title: "Child Care Quality Dollars"
+  description: "A web report summarizing the amounts of child care quality dollars being spent by different child care centers across Dallas County by zip code intende to help identify where funds are being allocated."
+  date: "2024-04-08"
+  categories: [Early Development, Web Report, Internal, Not Updated]
+  image: "/www/images/Benefits Delivery_1.jpg"
+  path: "https://childpovertyactionlab.github.io/cca-map/"
+
 - title: "Urban Blight Tracker"
   description: "The Urban Blight Tracker is a web-based tool to view and visualize data on urban blight in Dallas, Texas."
   date: "2024-03-29"
@@ -155,7 +190,7 @@
 - title: "WIC Uptake Tool"
   description: "The WIC Uptake Tool is a dynamic dashboard designed for power users, offering monthly updates on WIC participation across Dallas County. It provides a deep dive into Local Agency 7 clinics, enabling targeted insights and actions."
   date: "2024-04-05"
-  categories: [Early Development, Dashboard, External, Monthly, Census Tract, In Progress]
+  categories: [Early Development, Dashboard, External, Monthly, Census Tract]
   image: "/www/images/Benefits Delivery_1.jpg"
   path: "https://cpal.shinyapps.io/wic-uptake-tool/"
 
