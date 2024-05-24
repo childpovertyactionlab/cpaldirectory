@@ -80,7 +80,7 @@
   date: "2024-03-15"
   categories: [Housing, Fact Sheet, Internal, Yearly, County]
   image: "/www/images/Housing_3 (Greenw_ Orange).jpg"
-  path: "https://childpovertyactionlab.github.io/church-land/"
+  path: "https://childpovertyactionlab.github.io/vacant-church-land/"
 
 - title: "Benefits Delivery Batch Processor"
   description: "A utility tool intended to aid organizations with access to consumer demographic data to understand what Federal and State benefits their users may quality for."
@@ -283,7 +283,7 @@
   date: "2024-03-01"
   categories: [Housing, Mapping Tool, Internal, Yearly, County]
   image: "/www/images/Housing_3 (Red).jpg"
-  path: "https://childpovertyactionlab.github.io/dmc-public-land/"
+  path: "https://childpovertyactionlab.github.io/vacant-public-land/"
 
 - title: "Afterschool Landscape Tool"
   description: "An analysis generated for Dallas Afterschool intended to aid them in understanding the current landscape of after school programming need relative to programs they currently offer."
